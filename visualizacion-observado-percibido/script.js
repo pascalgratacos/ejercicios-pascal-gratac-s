@@ -27,10 +27,6 @@ const bands = {
     { x1: 405, y1: 288, x2: 645, y2: 288, nivel: "amarillo", categoria: "cruces",       titulo: "Cruce intermedio", detalle: "Exige atención adicional." },
     { x1: 645, y1: 288, x2: 890, y2: 288, nivel: "verde",    categoria: "cruces",       titulo: "Cruce legible", detalle: "Condiciones más claras para continuar." },
 
-    { x1: 65,  y1: 388, x2: 340, y2: 388, nivel: "verde",    categoria: "ruido",        titulo: "Ruido bajo", detalle: "El entorno permite mantener atención sobre el recorrido." },
-    { x1: 340, y1: 388, x2: 670, y2: 388, nivel: "amarillo", categoria: "ruido",        titulo: "Ruido medio", detalle: "Aumentan los estímulos del entorno." },
-    { x1: 670, y1: 388, x2: 940, y2: 388, nivel: "rojo",     categoria: "ruido",        titulo: "Ruido alto", detalle: "Mayor carga sensorial durante el tránsito." },
-
     { x1: 118, y1: 492, x2: 390, y2: 492, nivel: "amarillo", categoria: "senalizacion", titulo: "Orientación parcial", detalle: "Las referencias existen, pero no son siempre claras." },
     { x1: 390, y1: 492, x2: 640, y2: 492, nivel: "rojo",     categoria: "senalizacion", titulo: "Poca referencia", detalle: "Se dificulta anticipar o comprender el recorrido." },
     { x1: 640, y1: 492, x2: 875, y2: 492, nivel: "verde",    categoria: "senalizacion", titulo: "Referencia clara", detalle: "La información facilita la orientación." }
@@ -45,9 +41,6 @@ const bands = {
 
     { x1: 520, y1: 52,  x2: 520, y2: 250, nivel: "amarillo", categoria: "cruces",       titulo: "Cruce percibido con cautela", detalle: "Se reporta atención adicional." },
     { x1: 520, y1: 250, x2: 520, y2: 570, nivel: "rojo",     categoria: "cruces",       titulo: "Cruce percibido como difícil", detalle: "Aumenta la sensación de dificultad." },
-
-    { x1: 680, y1: 76,  x2: 680, y2: 330, nivel: "verde",    categoria: "ruido",        titulo: "Experiencia cómoda", detalle: "El entorno no aparece como un problema relevante." },
-    { x1: 680, y1: 330, x2: 680, y2: 556, nivel: "rojo",     categoria: "ruido",        titulo: "Experiencia incómoda", detalle: "Se percibe mayor carga o inseguridad." },
 
     { x1: 820, y1: 62,  x2: 820, y2: 285, nivel: "amarillo", categoria: "senalizacion", titulo: "Orientación intermedia", detalle: "La lectura del espacio no es completamente clara." },
     { x1: 820, y1: 285, x2: 820, y2: 540, nivel: "verde",    categoria: "senalizacion", titulo: "Orientación favorable", detalle: "Se percibe claridad suficiente para continuar." }
