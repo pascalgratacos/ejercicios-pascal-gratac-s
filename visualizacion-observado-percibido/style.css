@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
 :root {
   --bg: #f4f1ea;
   --paper: #fbfaf6;
@@ -18,7 +20,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 button { font: inherit; }
@@ -46,7 +48,7 @@ button { font: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--muted);
 }
 
@@ -100,6 +102,7 @@ h1 span {
   color: var(--ink);
   border-radius: 999px;
   padding: 10px 16px;
+  font-weight: 500;
   cursor: pointer;
   transition: 180ms ease;
 }
@@ -138,11 +141,12 @@ h2 {
   margin: 6px 0 0;
   font-size: clamp(28px, 3vw, 48px);
   letter-spacing: -0.035em;
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .mode-description {
   margin: 0;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.5;
   max-width: 380px;
@@ -230,7 +234,10 @@ h2 {
 .legend-item strong,
 .legend-item small { display: block; }
 
-.legend-item strong { font-size: 14px; }
+.legend-item strong {
+  font-size: 14px;
+  font-weight: 500;
+}
 
 .legend-item small {
   margin-top: 3px;
@@ -278,6 +285,7 @@ h2 {
 .reading-block p:last-child {
   margin: 0;
   font-size: 20px;
+  font-weight: 400;
   line-height: 1.55;
 }
 
