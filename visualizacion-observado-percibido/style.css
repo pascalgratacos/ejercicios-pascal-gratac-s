@@ -72,7 +72,7 @@ h1 {
 
 h1 em {
   color: var(--muted);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
 }
 
