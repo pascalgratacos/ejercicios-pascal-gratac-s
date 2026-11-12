@@ -62,8 +62,8 @@ h1 {
   font-size: clamp(48px, 6.3vw, 94px);
   line-height: 1.06;
   letter-spacing: -0.025em;
-  font-family: "Instrument Serif", Georgia, serif;
-  font-weight: 400;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
 }
 
 .title-line {
@@ -73,7 +73,7 @@ h1 {
 h1 em {
   color: var(--muted);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .intro {
