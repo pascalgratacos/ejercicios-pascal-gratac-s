@@ -30,12 +30,13 @@ button { font: inherit; }
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: end;
+  display: block;
   padding-bottom: 42px;
   border-bottom: 1px solid var(--line);
+}
+
+.hero-left {
+  max-width: 920px;
 }
 
 .eyebrow,
@@ -64,8 +65,8 @@ h1 span {
 }
 
 .intro {
-  margin: 0;
-  max-width: 510px;
+  margin: 28px 0 0;
+  max-width: 650px;
   font-size: 18px;
   line-height: 1.55;
   color: var(--muted);
@@ -299,7 +300,6 @@ h2 {
 .tooltip.is-visible { opacity: 1; }
 
 @media (max-width: 980px) {
-  .hero { grid-template-columns: 1fr; }
 
   .controls-panel,
   .filters-wrap {
