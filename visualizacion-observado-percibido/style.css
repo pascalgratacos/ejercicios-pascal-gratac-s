@@ -159,11 +159,7 @@ h2 {
   min-height: 620px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background:
-    linear-gradient(rgba(32,35,33,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32,35,33,.018) 1px, transparent 1px),
-    #f7f6f1;
-  background-size: 40px 40px;
+  background: #f7f6f1;
 }
 
 #mapSvg {
@@ -173,11 +169,8 @@ h2 {
   min-height: 620px;
 }
 
-.base-map path {
-  fill: none;
-  stroke: #d8d6d0;
-  stroke-width: 10;
-  stroke-linecap: butt;
+.base-map {
+  display: none;
 }
 
 .map-labels text {
