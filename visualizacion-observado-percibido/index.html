@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lo observado vs. lo percibido</title>
+  <meta name="description" content="Visualización interactiva sobre accesibilidad del tránsito de adultos mayores en Barrio Puerto, Valparaíso." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Visualización de datos · Barrio Puerto</p>
+      <h1>Lo observado <span>vs.</span> lo percibido</h1>
+      <p class="intro">
+        Una lectura interactiva de cómo las condiciones del entorno y la experiencia de las personas
+        se superponen en un mismo recorrido.
+      </p>
+    </header>
+
+    <section class="controls-panel" aria-label="Controles de visualización">
+      <div class="view-switch" role="group" aria-label="Cambiar capa principal">
+        <button class="view-button is-active" data-view="observado">Observado</button>
+        <button class="view-button" data-view="percibido">Percibido</button>
+        <button class="view-button" data-view="superponer">Superponer</button>
+      </div>
+
+      <div class="filters-wrap">
+        <p class="control-label">Filtrar información</p>
+        <div class="filter-list" id="filterList">
+          <button class="filter-button is-active" data-filter="todos">Todas</button>
+          <button class="filter-button" data-filter="pavimento">Pavimento</button>
+          <button class="filter-button" data-filter="obstaculos">Obstáculos</button>
+          <button class="filter-button" data-filter="cruces">Cruces</button>
+          <button class="filter-button" data-filter="ruido">Ruido</button>
+          <button class="filter-button" data-filter="senalizacion">Señalización</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="visualization-card">
+      <div class="viz-heading">
+        <div>
+          <p class="section-kicker" id="modeKicker">Capa 01</p>
+          <h2 id="modeTitle">Condiciones observadas</h2>
+        </div>
+        <p class="mode-description" id="modeDescription">
+          Registros del entorno levantados durante el recorrido.
+        </p>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-frame" id="mapFrame">
+          <svg id="mapSvg" viewBox="0 0 1000 620" role="img" aria-label="Mapa abstracto del área de estudio">
+            <g id="baseMap" class="base-map">
+              <path d="M90 105 H905" />
+              <path d="M72 195 H930" />
+              <path d="M105 288 H890" />
+              <path d="M65 388 H940" />
+              <path d="M118 492 H875" />
+              <path d="M210 58 V558" />
+              <path d="M365 72 V566" />
+              <path d="M520 52 V570" />
+              <path d="M680 76 V556" />
+              <path d="M820 62 V540" />
+              <path d="M150 145 L845 452" />
+              <path d="M130 455 L855 150" />
+            </g>
+
+            <g id="observedLayer"></g>
+            <g id="perceivedLayer"></g>
+
+            <g class="map-labels" aria-hidden="true">
+              <text x="88" y="88">Barrio Puerto</text>
+              <text x="695" y="592">Área de estudio</text>
+            </g>
+          </svg>
+
+          <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+        </div>
+
+        <aside class="legend">
+          <p class="control-label">Nivel de dificultad</p>
+
+          <div class="legend-item">
+            <span class="legend-line is-green"></span>
+            <div>
+              <strong>Fácil</strong>
+              <small>Tránsito continuo</small>
+            </div>
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-line is-yellow"></span>
+            <div>
+              <strong>Media</strong>
+              <small>Requiere atención</small>
+            </div>
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-line is-red"></span>
+            <div>
+              <strong>Alta</strong>
+              <small>Dificulta el tránsito</small>
+            </div>
+          </div>
+
+          <div class="legend-note">
+            <span class="note-marker"></span>
+            <p>
+              Al superponer capas aparecen zonas de coincidencia y diferencia entre lo registrado y lo vivido.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="reading-block">
+      <p class="section-kicker">Lectura</p>
+      <p id="readingText">
+        Lo observado muestra condiciones visibles del entorno. Cambia de capa para comparar cómo esas mismas calles fueron percibidas.
+      </p>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
