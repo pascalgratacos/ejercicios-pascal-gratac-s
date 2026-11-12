@@ -11,7 +11,7 @@ const COLORS = {
   x2, y2 = final
 
   El SVG usa un sistema de 1000 x 620.
-  Puedes duplicar cualquier objeto y cambiar sus valores.
+  Cada franja se dibuja desde ambos extremos hacia el centro.
 */
 const bands = {
   observado: [
@@ -83,13 +83,16 @@ const tooltip = document.querySelector("#tooltip");
 let activeView = "observado";
 let activeFilter = "todos";
 
-function createBand(item, layerName) {
+function createLineHalf(x1, y1, x2, y2, item, layerName, delay) {
   const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  line.setAttribute("x1", item.x1);
-  line.setAttribute("y1", item.y1);
-  line.setAttribute("x2", item.x2);
-  line.setAttribute("y2", item.y2);
+  line.setAttribute("x1", x1);
+  line.setAttribute("y1", y1);
+  line.setAttribute("x2", x2);
+  line.setAttribute("y2", y2);
+  line.setAttribute("pathLength", "100");
   line.setAttribute("class", "data-band");
+  line.style.animationDelay = `${delay}ms`;
+
   line.dataset.level = item.nivel;
   line.dataset.category = item.categoria;
   line.dataset.layer = layerName;
@@ -103,17 +106,43 @@ function createBand(item, layerName) {
   return line;
 }
 
+function createBand(item, layerName, index) {
+  const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  group.setAttribute("class", "band-pair");
+
+  const midX = (item.x1 + item.x2) / 2;
+  const midY = (item.y1 + item.y2) / 2;
+  const delay = Math.min(index * 55, 420);
+
+  const firstHalf = createLineHalf(
+    item.x1, item.y1,
+    midX, midY,
+    item, layerName, delay
+  );
+
+  const secondHalf = createLineHalf(
+    item.x2, item.y2,
+    midX, midY,
+    item, layerName, delay
+  );
+
+  group.appendChild(firstHalf);
+  group.appendChild(secondHalf);
+
+  return group;
+}
+
 function renderBands() {
   observedLayer.innerHTML = "";
   perceivedLayer.innerHTML = "";
 
   bands.observado
     .filter(matchesFilter)
-    .forEach(item => observedLayer.appendChild(createBand(item, "observado")));
+    .forEach((item, index) => observedLayer.appendChild(createBand(item, "observado", index)));
 
   bands.percibido
     .filter(matchesFilter)
-    .forEach(item => perceivedLayer.appendChild(createBand(item, "percibido")));
+    .forEach((item, index) => perceivedLayer.appendChild(createBand(item, "percibido", index)));
 
   observedLayer.setAttribute("class", "layer-observado");
   perceivedLayer.setAttribute("class", "layer-percibido");
