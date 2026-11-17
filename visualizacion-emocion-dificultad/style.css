@@ -15,11 +15,9 @@
   --map-label: rgba(230,238,239,.52);
   --map-landmark: rgba(244,237,223,.76);
 
-  --frustracion: #ff645b;
-  --preocupacion: #ffbd45;
-  --neutralidad: #9eafba;
-  --satisfaccion: #43d0b5;
-  --entusiasmo: #8bea62;
+  --entusiasmo: #00d6c8;
+  --preocupacion: #ff8a1f;
+  --frustracion: #9f2148;
 
   --red: #ff493f;
   --yellow: #ffd42c;
@@ -227,46 +225,46 @@ h1 span {
   pointer-events: none;
 }
 
-.emotion-point[data-intensity="1"]:hover .emotion-core {
+.emotion-point[data-emotion="entusiasmo"]:hover .emotion-core {
   transform: scale(1.35);
 }
 
-.emotion-point[data-intensity="2"]:hover .emotion-core {
-  transform: scale(1.75);
+.emotion-point[data-emotion="preocupacion"]:hover .emotion-core {
+  transform: scale(1.8);
 }
 
-.emotion-point[data-intensity="3"]:hover .emotion-core {
-  transform: scale(2.2);
+.emotion-point[data-emotion="frustracion"]:hover .emotion-core {
+  transform: scale(2.35);
 }
 
-.emotion-point[data-intensity="1"]:hover .emotion-halo {
-  opacity: .18;
-  animation: halo-low 1.35s ease-in-out infinite;
+.emotion-point[data-emotion="entusiasmo"]:hover .emotion-halo {
+  opacity: .20;
+  animation: halo-entusiasmo 1.55s ease-in-out infinite;
 }
 
-.emotion-point[data-intensity="2"]:hover .emotion-halo {
-  opacity: .24;
-  animation: halo-medium 1.05s ease-in-out infinite;
+.emotion-point[data-emotion="preocupacion"]:hover .emotion-halo {
+  opacity: .28;
+  animation: halo-preocupacion .95s ease-in-out infinite;
 }
 
-.emotion-point[data-intensity="3"]:hover .emotion-halo {
-  opacity: .32;
-  animation: halo-high .72s ease-in-out infinite;
+.emotion-point[data-emotion="frustracion"]:hover .emotion-halo {
+  opacity: .36;
+  animation: halo-frustracion .56s ease-in-out infinite;
 }
 
-@keyframes halo-low {
-  0%,100% { transform: scale(.94); opacity: .12; }
-  50% { transform: scale(1.08); opacity: .22; }
+@keyframes halo-entusiasmo {
+  0%,100% { transform: scale(.96); opacity: .12; }
+  50% { transform: scale(1.12); opacity: .24; }
 }
 
-@keyframes halo-medium {
-  0%,100% { transform: scale(.9); opacity: .14; }
-  50% { transform: scale(1.18); opacity: .30; }
+@keyframes halo-preocupacion {
+  0%,100% { transform: scale(.92); opacity: .16; }
+  50% { transform: scale(1.22); opacity: .34; }
 }
 
-@keyframes halo-high {
-  0%,100% { transform: scale(.86); opacity: .18; }
-  50% { transform: scale(1.28); opacity: .42; }
+@keyframes halo-frustracion {
+  0%,100% { transform: scale(.86); opacity: .20; }
+  50% { transform: scale(1.34); opacity: .46; }
 }
 
 .emotion-tooltip {
@@ -332,7 +330,6 @@ h1 span {
 }
 
 .emotion-legend,
-.intensity-legend,
 .difficulty-legend {
   display: flex;
   flex-wrap: wrap;
@@ -342,7 +339,6 @@ h1 span {
 }
 
 .emotion-legend span,
-.intensity-legend span,
 .difficulty-legend span {
   display: inline-flex;
   align-items: center;
@@ -350,7 +346,6 @@ h1 span {
 }
 
 .emotion-legend i,
-.intensity-legend i,
 .difficulty-legend i {
   display: inline-block;
 }
@@ -362,27 +357,23 @@ h1 span {
   border-radius: 50%;
 }
 
-.emotion-legend [data-emotion="frustracion"] i { background: var(--frustracion); }
-.emotion-legend [data-emotion="preocupacion"] i { background: var(--preocupacion); }
-.emotion-legend [data-emotion="neutralidad"] i { background: var(--neutralidad); }
-.emotion-legend [data-emotion="satisfaccion"] i { background: var(--satisfaccion); }
 .emotion-legend [data-emotion="entusiasmo"] i { background: var(--entusiasmo); }
+.emotion-legend [data-emotion="preocupacion"] i { background: var(--preocupacion); }
+.emotion-legend [data-emotion="frustracion"] i { background: var(--frustracion); }
 
-.intensity-legend > span:first-child {
+.emotion-behavior-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.emotion-behavior-note span:first-child {
   text-transform: uppercase;
   letter-spacing: .08em;
+  color: var(--ink);
 }
-
-.intensity-legend .i1,
-.intensity-legend .i2,
-.intensity-legend .i3 {
-  border: 1px solid var(--muted);
-  border-radius: 50%;
-}
-
-.intensity-legend .i1 { width: 7px; height: 7px; }
-.intensity-legend .i2 { width: 10px; height: 10px; }
-.intensity-legend .i3 { width: 13px; height: 13px; }
 
 .control-bar {
   display: flex;
@@ -426,6 +417,7 @@ h1 span {
 .difficulty-line {
   fill: none;
   stroke-width: 26;
+  opacity: .42;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
   stroke-dasharray: var(--segment-length);
@@ -541,4 +533,43 @@ h1 span {
   .argentina-section {
     padding-top: 72px;
   }
+}
+
+.difficulty-line:hover {
+  opacity: .84;
+  stroke-width: 32;
+}
+
+/* Shared tooltip used in the second map for both difficulty lines and emotion points */
+.map-tooltip {
+  position: absolute;
+  z-index: 30;
+  width: 250px;
+  padding: 14px 15px;
+  border: 1px solid rgba(244,237,223,.22);
+  border-radius: 12px;
+  background: rgba(4,17,28,.97);
+  box-shadow: 0 16px 38px rgba(0,0,0,.30);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(12px,12px);
+  transition: opacity .14s ease;
+}
+
+.map-tooltip.is-visible {
+  opacity: 1;
+}
+
+.map-tooltip p {
+  margin: 12px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.emotion-layer {
+  position: relative;
+  z-index: 2;
 }
