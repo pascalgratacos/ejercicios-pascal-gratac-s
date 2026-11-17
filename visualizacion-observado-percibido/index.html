@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lo observado vs. lo percibido</title>
   <meta name="description" content="Visualización interactiva sobre accesibilidad del tránsito de adultos mayores en Barrio Puerto, Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=20261117-2" />
+  <link rel="stylesheet" href="./style.css?v=20261117-3" />
 </head>
 <body>
   <main class="page-shell">
@@ -30,7 +30,7 @@
           <h2>Un mismo territorio, dos lecturas</h2>
         </div>
         <p class="section-copy">
-          Observa ambas capas al mismo tiempo. Pasa el mouse sobre una categoría para filtrar la información y sobre una franja para comparar ese mismo punto en las dos lecturas.
+          Ambas columnas muestran el mismo territorio desde dos lecturas distintas. Los filtros permiten aislar cada tipo de condición y observar cómo cambia su nivel de dificultad.
         </p>
       </div>
 
@@ -64,86 +64,34 @@
         </article>
       </div>
 
-      <div class="detail-card" id="detailCard" aria-live="polite">
-        <div>
-          <p class="detail-label">Pasa el mouse sobre una franja</p>
-          <h3 id="detailPlace">Compara un mismo punto del recorrido</h3>
-        </div>
-        <div class="detail-columns">
-          <div>
-            <span class="detail-side">Observado</span>
-            <p id="observedReason">Se mostrará el registro de terreno asociado a esa franja.</p>
-          </div>
-          <div>
-            <span class="detail-side">Percibido</span>
-            <p id="perceivedReason">Se mostrará el motivo o experiencia declarada por las personas.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="legend-inline" aria-label="Leyenda de dificultad">
         <div><span class="dot dot-green"></span><strong>Fácil</strong><small>facilita el tránsito</small></div>
         <div><span class="dot dot-yellow"></span><strong>Media</strong><small>exige mayor atención</small></div>
         <div><span class="dot dot-red"></span><strong>Alta</strong><small>dificulta el tránsito</small></div>
       </div>
     </section>
-
-    <section class="section-block compare-section">
+<section class="section-block overlay-section">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">02 · Comparar</p>
-          <h2>¿Dónde coinciden y dónde difieren?</h2>
-        </div>
-        <p class="section-copy">
-          Esta lectura no superpone las capas: compara directamente el nivel observado y el nivel percibido para cada punto.
-        </p>
-      </div>
-
-      <div class="compare-cards">
-        <div class="compare-card">
-          <span>Coinciden</span>
-          <strong id="sameCount">0</strong>
-          <p>Mismo nivel de dificultad.</p>
-        </div>
-        <div class="compare-card">
-          <span>Diferencia leve</span>
-          <strong id="nearCount">0</strong>
-          <p>Un nivel de diferencia.</p>
-        </div>
-        <div class="compare-card">
-          <span>Contraste fuerte</span>
-          <strong id="farCount">0</strong>
-          <p>Dos niveles de diferencia.</p>
-        </div>
-      </div>
-
-      <div class="comparison-list" id="comparisonList"></div>
-    </section>
-
-    <section class="section-block overlay-section">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">03 · Superponer</p>
+          <p class="section-kicker">02 · Superponer</p>
           <h2>Juntar las dos miradas</h2>
         </div>
         <p class="section-copy">
-          Desliza el control para pasar de lo observado a lo percibido. En el centro, ambas capas se mezclan.
+          En un único mapa, las dos lecturas ocupan el mismo lugar. La franja más ancha representa lo observado y la franja más angosta representa lo percibido.
         </p>
       </div>
 
-      <div class="overlay-control">
-        <span>Observado</span>
-        <input id="blendRange" type="range" min="0" max="100" value="50" aria-label="Mezclar observado y percibido" />
-        <span>Percibido</span>
+      <div class="overlay-legend">
+        <span><i class="overlay-swatch observed-swatch"></i>Observado</span>
+        <span><i class="overlay-swatch perceived-swatch"></i>Percibido</span>
       </div>
 
       <div class="overlay-frame">
-        <svg id="overlayObserved" viewBox="0 0 1000 620" aria-hidden="true"></svg>
-        <svg id="overlayPerceived" viewBox="0 0 1000 620" aria-hidden="true"></svg>
+        <svg id="overlaySvg" viewBox="0 0 1040 700" aria-label="Superposición de lo observado y lo percibido"></svg>
       </div>
     </section>
   </main>
 
-  <script src="./script.js?v=20261117-2"></script>
+  <script src="./script.js?v=20261117-3"></script>
 </body>
 </html>
