@@ -225,46 +225,55 @@ h1 span {
   pointer-events: none;
 }
 
+.emotion-point {
+  cursor: pointer;
+}
+
+.emotion-hit {
+  fill: transparent;
+  pointer-events: all;
+}
+
 .emotion-point[data-emotion="entusiasmo"]:hover .emotion-core {
   transform: scale(1.35);
 }
 
 .emotion-point[data-emotion="preocupacion"]:hover .emotion-core {
-  transform: scale(1.8);
+  transform: scale(1.9);
 }
 
 .emotion-point[data-emotion="frustracion"]:hover .emotion-core {
-  transform: scale(2.35);
+  transform: scale(2.55);
 }
 
 .emotion-point[data-emotion="entusiasmo"]:hover .emotion-halo {
-  opacity: .20;
-  animation: halo-entusiasmo 1.55s ease-in-out infinite;
+  opacity: .24;
+  animation: halo-entusiasmo 1.65s ease-in-out infinite;
 }
 
 .emotion-point[data-emotion="preocupacion"]:hover .emotion-halo {
-  opacity: .28;
-  animation: halo-preocupacion .95s ease-in-out infinite;
+  opacity: .34;
+  animation: halo-preocupacion .90s ease-in-out infinite;
 }
 
 .emotion-point[data-emotion="frustracion"]:hover .emotion-halo {
-  opacity: .36;
-  animation: halo-frustracion .56s ease-in-out infinite;
+  opacity: .48;
+  animation: halo-frustracion .48s ease-in-out infinite;
 }
 
 @keyframes halo-entusiasmo {
-  0%,100% { transform: scale(.96); opacity: .12; }
-  50% { transform: scale(1.12); opacity: .24; }
+  0%,100% { transform: scale(.92); opacity: .12; }
+  50% { transform: scale(1.16); opacity: .28; }
 }
 
 @keyframes halo-preocupacion {
-  0%,100% { transform: scale(.92); opacity: .16; }
-  50% { transform: scale(1.22); opacity: .34; }
+  0%,100% { transform: scale(.86); opacity: .16; }
+  50% { transform: scale(1.30); opacity: .40; }
 }
 
 @keyframes halo-frustracion {
-  0%,100% { transform: scale(.86); opacity: .20; }
-  50% { transform: scale(1.34); opacity: .46; }
+  0%,100% { transform: scale(.78); opacity: .20; }
+  50% { transform: scale(1.48); opacity: .56; }
 }
 
 .emotion-tooltip {
