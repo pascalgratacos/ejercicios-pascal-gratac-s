@@ -105,24 +105,24 @@ const DIFFICULTY_SEGMENTS = [
   { id:"pav-g1", category:"pavimento", level:"facil", x1:965,y1:615,x2:1080,y2:615 },
 
   // OBSTÁCULOS — 4 rojas en sector Plaza Sotomayor
-  { id:"obs-r1", category:"obstaculos", level:"alta", x1:315,y1:245,x2:315,y2:365 },
+  { id:"obs-r1", category:"obstaculos", level:"alta", x1:315,y1:365,x2:315,y2:245 },
   { id:"obs-r2", category:"obstaculos", level:"alta", x1:245,y1:365,x2:385,y2:365 },
-  { id:"obs-r3", category:"obstaculos", level:"alta", x1:315,y1:365,x2:315,y2:485 },
+  { id:"obs-r3", category:"obstaculos", level:"alta", x1:315,y1:485,x2:315,y2:365 },
   { id:"obs-r4", category:"obstaculos", level:"alta", x1:245,y1:485,x2:385,y2:485 },
   // 2 amarillas
-  { id:"obs-y1", category:"obstaculos", level:"media", x1:470,y1:365,x2:470,y2:485 },
-  { id:"obs-y2", category:"obstaculos", level:"media", x1:965,y1:245,x2:965,y2:365 },
+  { id:"obs-y1", category:"obstaculos", level:"media", x1:470,y1:485,x2:470,y2:365 },
+  { id:"obs-y2", category:"obstaculos", level:"media", x1:965,y1:365,x2:965,y2:245 },
   // 2 verdes ubicadas en calle Serrano
   { id:"obs-g1", category:"obstaculos", level:"facil", x1:640,y1:485,x2:760,y2:485 },
   { id:"obs-g2", category:"obstaculos", level:"facil", x1:820,y1:485,x2:950,y2:485 },
 
   // SEÑALIZACIÓN — 3 rojas, 3 amarillas, 2 verdes
-  { id:"sig-r1", category:"senalizacion", level:"alta", x1:640,y1:365,x2:640,y2:485 },
-  { id:"sig-r2", category:"senalizacion", level:"alta", x1:805,y1:245,x2:805,y2:365 },
-  { id:"sig-r3", category:"senalizacion", level:"alta", x1:965,y1:485,x2:965,y2:615 },
-  { id:"sig-y1", category:"senalizacion", level:"media", x1:145,y1:245,x2:145,y2:365 },
-  { id:"sig-y2", category:"senalizacion", level:"media", x1:470,y1:120,x2:470,y2:245 },
-  { id:"sig-y3", category:"senalizacion", level:"media", x1:805,y1:485,x2:805,y2:615 },
+  { id:"sig-r1", category:"senalizacion", level:"alta", x1:640,y1:485,x2:640,y2:365 },
+  { id:"sig-r2", category:"senalizacion", level:"alta", x1:805,y1:365,x2:805,y2:245 },
+  { id:"sig-r3", category:"senalizacion", level:"alta", x1:965,y1:615,x2:965,y2:485 },
+  { id:"sig-y1", category:"senalizacion", level:"media", x1:145,y1:365,x2:145,y2:245 },
+  { id:"sig-y2", category:"senalizacion", level:"media", x1:470,y1:245,x2:470,y2:120 },
+  { id:"sig-y3", category:"senalizacion", level:"media", x1:805,y1:615,x2:805,y2:485 },
   { id:"sig-g1", category:"senalizacion", level:"facil", x1:965,y1:120,x2:1080,y2:120 },
   { id:"sig-g2", category:"senalizacion", level:"facil", x1:470,y1:615,x2:640,y2:615 }
 ];
