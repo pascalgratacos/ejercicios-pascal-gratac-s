@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emoción vs dificultad</title>
+  <meta name="description" content="Visualización interactiva sobre emociones y dificultad percibida por adultos mayores en Barrio Puerto de Valparaíso." />
+  <link rel="stylesheet" href="./style.css?v=1" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Visualización de datos · Barrio Puerto</p>
+        <h1>EMOCIÓN <span>vs.</span><br>DIFICULTAD</h1>
+      </div>
+
+      <p class="intro">
+        Esta visualización explora <strong>cómo se siente caminar por el Barrio Puerto</strong> y cómo esas emociones se relacionan con la dificultad percibida de las calles. Cada punto reúne una emoción, un nivel de dificultad y una voz recogida durante el recorrido.
+      </p>
+    </header>
+
+    <section class="screen screen-one" id="emociones">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01</p>
+          <h2>Emociones del recorrido</h2>
+        </div>
+        <p>
+          El mapa muestra dónde aparecen distintas emociones. El <strong>color</strong> representa la emoción y el <strong>tamaño del pulso</strong> indica cuánto aumenta la dificultad percibida.
+        </p>
+      </div>
+
+      <div class="emotion-layout">
+        <div class="map-card">
+          <div class="map-topline">
+            <span>Mapa emocional</span>
+            <span>Posa el mouse sobre un punto</span>
+          </div>
+
+          <svg id="emotionMap" viewBox="0 0 1200 720" role="img" aria-label="Mapa emocional del Barrio Puerto"></svg>
+
+          <div class="map-caption">
+            <span>Menor dificultad</span>
+            <span class="difficulty-scale">
+              <i></i><i></i><i></i><i></i><i></i>
+            </span>
+            <span>Mayor dificultad</span>
+          </div>
+        </div>
+
+        <aside class="emotion-panel" id="emotionPanel">
+          <p class="panel-kicker">Lectura del punto</p>
+          <div class="emotion-face" id="emotionFace">—</div>
+          <h3 id="emotionName">Explora el mapa</h3>
+          <p class="location" id="emotionLocation">Selecciona un punto del recorrido.</p>
+
+          <div class="difficulty-read">
+            <span>Dificultad percibida</span>
+            <strong id="emotionDifficulty">— / 5</strong>
+          </div>
+
+          <blockquote id="emotionVoice">“Al pasar por un punto aparecerá aquí la voz de la persona.”</blockquote>
+        </aside>
+      </div>
+
+      <div class="emotion-legend" aria-label="Leyenda emocional">
+        <span data-emotion="frustracion"><i></i>Frustración</span>
+        <span data-emotion="preocupacion"><i></i>Preocupación</span>
+        <span data-emotion="neutralidad"><i></i>Neutralidad</span>
+        <span data-emotion="satisfaccion"><i></i>Satisfacción</span>
+        <span data-emotion="entusiasmo"><i></i>Entusiasmo</span>
+      </div>
+    </section>
+
+    <section class="screen screen-two" id="relacion">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">02</p>
+          <h2>Emoción y dificultad</h2>
+        </div>
+        <p>
+          Aquí la emoción se cruza con la dificultad de la calle. Las franjas muestran el nivel de dificultad y las voces explican <strong>por qué ese lugar se siente de esa manera</strong>.
+        </p>
+      </div>
+
+      <div class="street-layout">
+        <div class="street-map-card">
+          <div class="map-topline">
+            <span>Dificultad de las calles</span>
+            <span>Posa el mouse sobre una franja</span>
+          </div>
+          <svg id="difficultyMap" viewBox="0 0 1200 720" role="img" aria-label="Mapa de dificultad y voces"></svg>
+        </div>
+
+        <aside class="voice-panel">
+          <p class="panel-kicker">Voz del recorrido</p>
+
+          <div class="voice-emotion">
+            <span id="voiceEmotionDot"></span>
+            <span id="voiceEmotion">—</span>
+          </div>
+
+          <blockquote id="voiceQuote">“Las voces del recorrido aparecerán al explorar las calles.”</blockquote>
+
+          <div class="voice-meta">
+            <div>
+              <span>Lugar</span>
+              <strong id="voicePlace">—</strong>
+            </div>
+            <div>
+              <span>Dificultad</span>
+              <strong id="voiceDifficulty">—</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="difficulty-legend">
+        <span><i class="easy"></i>Fácil</span>
+        <span><i class="medium"></i>Media</span>
+        <span><i class="hard"></i>Alta</span>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="eyebrow">Lectura</p>
+      <h2>Una misma calle puede ser transitable<br>y aun así generar miedo.</h2>
+      <p>
+        La dificultad física no explica por sí sola la experiencia. Las emociones permiten reconocer cómo la seguridad, la iluminación, el conocimiento del lugar y la percepción del entorno también condicionan el recorrido.
+      </p>
+    </section>
+
+    <footer>
+      <span>Taller de Diseño de Servicios · 2026</span>
+      <span>Prototipo de visualización · Emoción vs dificultad</span>
+    </footer>
+  </main>
+
+  <script src="./script.js?v=1"></script>
+</body>
+</html>
