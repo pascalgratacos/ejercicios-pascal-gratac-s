@@ -113,8 +113,6 @@ const cases = [
 
 const observedSvg = document.querySelector("#observedSvg");
 const perceivedSvg = document.querySelector("#perceivedSvg");
-const overlayObserved = document.querySelector("#overlayObserved");
-const overlayPerceived = document.querySelector("#overlayPerceived");
 
 
 let activeFilter = "todos";
