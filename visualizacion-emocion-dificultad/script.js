@@ -211,6 +211,12 @@ function createEmotionPoint(item, context = "emotion") {
   group.dataset.emotion = item.emotion;
   group.dataset.id = item.id;
 
+  const hit = svgEl("circle");
+  hit.setAttribute("cx", item.x);
+  hit.setAttribute("cy", item.y);
+  hit.setAttribute("r", "24");
+  hit.setAttribute("class", "emotion-hit");
+
   const halo = svgEl("circle");
   halo.setAttribute("cx", item.x);
   halo.setAttribute("cy", item.y);
@@ -226,6 +232,7 @@ function createEmotionPoint(item, context = "emotion") {
   core.setAttribute("class", "emotion-core");
   core.setAttribute("fill", emotionFill(item.emotion));
 
+  group.appendChild(hit);
   group.appendChild(halo);
   group.appendChild(core);
 
