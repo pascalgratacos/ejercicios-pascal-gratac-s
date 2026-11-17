@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La ciudad te obliga a decidir</title>
+  <meta name="description" content="Visualización interactiva sobre decisiones forzadas durante el desplazamiento peatonal en Barrio Puerto." />
+  <link rel="stylesheet" href="./style.css?v=1" />
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Visualización de datos · Barrio Puerto</p>
+      <h1>LA CIUDAD<br>TE OBLIGA<br>A DECIDIR</h1>
+      <div class="hero-copy">
+        <p>
+          Un recorrido parece una línea simple. Pero cuando el espacio obliga a detenerse, desviarse,
+          bajar a la calle o buscar por dónde cruzar, caminar se transforma en una serie de decisiones.
+        </p>
+        <button id="startButton" class="start-button">Comenzar recorrido ↘</button>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="visual-stage">
+        <div class="visual-topline">
+          <span>RECORRIDO</span>
+          <span id="stepCounter">00 / 04</span>
+        </div>
+
+        <svg id="journeySvg" viewBox="0 0 1200 680" role="img" aria-label="Recorrido interactivo con decisiones">
+          <path id="idealPath" class="ideal-path" d="M120 340 H1080" />
+          <g id="decisionLayer"></g>
+
+          <circle cx="120" cy="340" r="7" class="endpoint"></circle>
+          <circle cx="1080" cy="340" r="7" class="endpoint"></circle>
+
+          <text x="120" y="390" class="endpoint-label">INICIO</text>
+          <text x="1015" y="390" class="endpoint-label">DESTINO</text>
+        </svg>
+
+        <div class="visual-footer">
+          <span id="routeMessage">Un recorrido debería ser esto.</span>
+          <span class="hint">Haz clic en “siguiente decisión”</span>
+        </div>
+      </div>
+
+      <aside class="story-panel">
+        <div class="story-index" id="storyIndex">00</div>
+        <div class="story-body">
+          <p class="story-kicker" id="storyKicker">ANTES DE COMENZAR</p>
+          <h2 id="storyTitle">Caminar no siempre es avanzar.</h2>
+          <p id="storyText">
+            A medida que aparecen condiciones del entorno, la trayectoria deja de ser directa y comienzan a sumarse decisiones.
+          </p>
+
+          <div class="data-block" id="dataBlock">
+            <span class="data-value" id="dataValue">—</span>
+            <span class="data-label" id="dataLabel">decisiones todavía</span>
+          </div>
+
+          <div class="story-actions">
+            <button id="prevButton" class="nav-button" disabled>← Anterior</button>
+            <button id="nextButton" class="nav-button primary">Siguiente decisión →</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="summary">
+      <div class="summary-heading">
+        <p class="eyebrow">Lectura final</p>
+        <h2>EL RECORRIDO<br>NO ERA UNA LÍNEA.</h2>
+      </div>
+
+      <div class="summary-copy">
+        <p>
+          Los obstáculos observados no solo dificultan el tránsito: agregan decisiones al acto de caminar.
+          Pausar, rodear, mirar, bajar a la calle o buscar otro cruce son respuestas que el entorno obliga a tomar.
+        </p>
+        <div class="summary-stat">
+          <strong id="totalDecisionCount">4</strong>
+          <span>situaciones observadas donde avanzar exigió una decisión adicional</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Proyecto de Visualización · Taller de Diseño de Servicios 2026</span>
+      <span>Datos: levantamiento grupal Barrio Puerto</span>
+    </footer>
+  </main>
+
+  <script src="./script.js?v=1"></script>
+</body>
+</html>
