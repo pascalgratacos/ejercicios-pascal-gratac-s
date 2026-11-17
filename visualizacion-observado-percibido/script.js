@@ -1,9 +1,3 @@
-const LEVELS = {
-  verde: { label: "Fácil", value: 1 },
-  amarillo: { label: "Media", value: 2 },
-  rojo: { label: "Alta", value: 3 }
-};
-
 /* =========================================================
    MAPA BASE · solo calles y referencias sutiles
    ========================================================= */
@@ -119,13 +113,7 @@ const cases = [
 
 const observedSvg = document.querySelector("#observedSvg");
 const perceivedSvg = document.querySelector("#perceivedSvg");
-const overlayObserved = document.querySelector("#overlayObserved");
-const overlayPerceived = document.querySelector("#overlayPerceived");
 
-const detailPlace = document.querySelector("#detailPlace");
-const observedReason = document.querySelector("#observedReason");
-const perceivedReason = document.querySelector("#perceivedReason");
-const blendRange = document.querySelector("#blendRange");
 
 let activeFilter = "todos";
 
@@ -271,9 +259,30 @@ function renderPanel(svg, side, interactive = true) {
 }
 
 function renderOverlay() {
-  renderPanel(overlayObserved, "observed", false);
-  renderPanel(overlayPerceived, "perceived", false);
-  updateBlend();
+  const overlaySvg = document.querySelector("#overlaySvg");
+  if (!overlaySvg) return;
+
+  overlaySvg.innerHTML = "";
+  setSvgBase(overlaySvg);
+  drawStreetMap(overlaySvg);
+  addAreaLabel(overlaySvg);
+
+  const observedGroup = createSvgElement("g");
+  observedGroup.setAttribute("class", "overlay-observed-group");
+
+  const perceivedGroup = createSvgElement("g");
+  perceivedGroup.setAttribute("class", "overlay-perceived-group");
+
+  cases.forEach(item => {
+    const observedLine = makeSvgLine(item, "observed", "band overlay-observed");
+    const perceivedLine = makeSvgLine(item, "perceived", "band overlay-perceived");
+
+    observedGroup.appendChild(observedLine);
+    perceivedGroup.appendChild(perceivedLine);
+  });
+
+  overlaySvg.appendChild(observedGroup);
+  overlaySvg.appendChild(perceivedGroup);
 }
 
 /* =========================================================
@@ -293,10 +302,6 @@ function highlightCase(id) {
       line.classList.remove("is-related");
     }
   });
-
-  if (detailPlace) detailPlace.textContent = item.place;
-  if (observedReason) observedReason.textContent = item.observedReason;
-  if (perceivedReason) perceivedReason.textContent = item.perceivedReason;
 }
 
 function clearHighlight() {
@@ -325,7 +330,6 @@ function setFilter(filter) {
   });
 
   applyFilter();
-  renderComparison();
 }
 
 document.querySelectorAll(".filter-link").forEach(link => {
@@ -335,95 +339,15 @@ document.querySelectorAll(".filter-link").forEach(link => {
 });
 
 /* =========================================================
-   COMPARACIÓN
-   ========================================================= */
-
-function comparisonType(item) {
-  const delta = Math.abs(LEVELS[item.observed].value - LEVELS[item.perceived].value);
-  if (delta === 0) return "same";
-  if (delta === 1) return "near";
-  return "far";
-}
-
-function renderComparison() {
-  const filtered = cases.filter(item => activeFilter === "todos" || item.category === activeFilter);
-  const counts = { same: 0, near: 0, far: 0 };
-
-  filtered.forEach(item => {
-    counts[comparisonType(item)] += 1;
-  });
-
-  const sameCount = document.querySelector("#sameCount");
-  const nearCount = document.querySelector("#nearCount");
-  const farCount = document.querySelector("#farCount");
-
-  if (sameCount) sameCount.textContent = counts.same;
-  if (nearCount) nearCount.textContent = counts.near;
-  if (farCount) farCount.textContent = counts.far;
-
-  const list = document.querySelector("#comparisonList");
-  if (!list) return;
-
-  list.innerHTML = "";
-
-  filtered.forEach(item => {
-    const row = document.createElement("div");
-    row.className = "comparison-row";
-
-    const delta = comparisonType(item);
-    const deltaText =
-      delta === "same"
-        ? "Coinciden"
-        : delta === "near"
-        ? "Diferencia leve"
-        : "Contraste fuerte";
-
-    row.innerHTML = `
-      <strong>${item.place}</strong>
-      <span class="level-pill level-${item.observed}">${LEVELS[item.observed].label}</span>
-      <span class="level-pill level-${item.perceived}">${LEVELS[item.perceived].label}</span>
-      <span class="delta-label">${deltaText}</span>
-    `;
-
-    row.addEventListener("mouseenter", () => highlightCase(item.id));
-    row.addEventListener("mouseleave", clearHighlight);
-
-    list.appendChild(row);
-  });
-}
-
-/* =========================================================
    SUPERPOSICIÓN
    ========================================================= */
 
-function updateBlend() {
-  if (!blendRange) return;
 
-  const value = Number(blendRange.value);
-  const observedOpacity = (100 - value) / 100;
-  const perceivedOpacity = value / 100;
-
-  overlayObserved.style.opacity = Math.max(0.12, observedOpacity);
-  overlayPerceived.style.opacity = Math.max(0.12, perceivedOpacity);
-}
-
-if (blendRange) {
-  blendRange.addEventListener("input", updateBlend);
-}
 
 /* =========================================================
    ESTADO INICIAL
    ========================================================= */
 
-function setDefaultDetail() {
-  if (detailPlace) detailPlace.textContent = "Pasa el cursor sobre una franja";
-  if (observedReason) observedReason.textContent = "Aquí aparecerá la observación del entorno.";
-  if (perceivedReason) perceivedReason.textContent = "Aquí aparecerá la percepción declarada por las personas.";
-}
-
-setDefaultDetail();
 renderPanel(observedSvg, "observed");
 renderPanel(perceivedSvg, "perceived");
 renderOverlay();
-renderComparison();
-updateBlend();
