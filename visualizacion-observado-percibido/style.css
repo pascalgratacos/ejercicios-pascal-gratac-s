@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap");
 
 :root {
-  --bg: #f4f1ea;
-  --paper: #fbfaf6;
-  --ink: #202321;
-  --muted: #747770;
-  --line: #d8d5cd;
+  --bg: #070707;
+  --paper: #0d0d0d;
+  --paper-soft: #111111;
+  --ink: #f2eadb;
+  --muted: #a79f92;
+  --line: #2a2926;
 
-  --map-line: #d7d5cf;
-  --map-line-soft: #e4e2dc;
-  --map-text: #a09d96;
-  --map-landmark: #8f8c85;
+  --map-line: #3a3935;
+  --map-line-soft: #24231f;
+  --map-text: #777168;
+  --map-landmark: #8d8578;
 
-  --green: #719a67;
-  --yellow: #e0bd46;
-  --red: #c94f45;
+  --green: #55e05a;
+  --yellow: #ffd42f;
+  --red: #ff4b3f;
 }
 
 * {
@@ -195,6 +196,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.015);
 }
 
 .panel-heading {
@@ -222,7 +224,7 @@ h2 {
   position: relative;
   min-height: 590px;
   padding: 18px;
-  background: #f8f7f2;
+  background: var(--paper-soft);
 }
 
 .viz-frame svg {
@@ -243,7 +245,7 @@ h2 {
 .street-base {
   fill: none;
   stroke: var(--map-line);
-  stroke-width: 9;
+  stroke-width: 8;
   stroke-linecap: butt;
   opacity: .72;
   vector-effect: non-scaling-stroke;
@@ -274,7 +276,7 @@ h2 {
 }
 
 .map-label {
-  fill: #8d8a83;
+  fill: #b8afa1;
   font-size: 13px;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
@@ -288,7 +290,7 @@ h2 {
 
 .band {
   fill: none;
-  stroke-width: 30;
+  stroke-width: 34;
   stroke-linecap: butt;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
@@ -344,58 +346,6 @@ h2 {
 }
 
 /* =========================================================
-   DETALLE DE HOVER
-   ========================================================= */
-
-.detail-card {
-  margin-top: 32px;
-  display: grid;
-  grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr);
-  gap: 56px;
-  padding: 34px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-}
-
-.detail-label {
-  margin: 0 0 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  color: var(--muted);
-}
-
-.detail-card h3 {
-  margin: 0;
-  font-family: "Jost", Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.12;
-}
-
-.detail-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 38px;
-}
-
-.detail-side {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--muted);
-}
-
-.detail-columns p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* =========================================================
    LEYENDA
    ========================================================= */
 
@@ -443,132 +393,63 @@ h2 {
 }
 
 /* =========================================================
-   02 · COMPARAR
+   02 · SUPERPOSICIÓN
    ========================================================= */
 
-.compare-section {
-  padding-top: 100px;
-}
-
-.compare-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.compare-card {
-  padding: 26px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-}
-
-.compare-card span {
-  display: block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--muted);
-}
-
-.compare-card strong {
-  display: block;
-  margin: 12px 0 3px;
-  font-family: "Jost", Arial, sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-}
-
-.compare-card p {
-  margin: 0;
+.overlay-legend {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 24px;
   color: var(--muted);
   font-size: 12px;
 }
 
-.comparison-list {
-  margin-top: 30px;
-  border-top: 1px solid var(--line);
-}
-
-.comparison-row {
-  display: grid;
-  grid-template-columns: minmax(180px, 1.1fr) .7fr .7fr 1fr;
-  gap: 24px;
-  align-items: center;
-  padding: 20px 4px;
-  border-bottom: 1px solid var(--line);
-}
-
-.comparison-row strong {
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.level-pill {
+.overlay-legend span {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 9px;
 }
 
-.level-pill::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: currentColor;
+.overlay-swatch {
+  display: inline-block;
+  width: 42px;
+  background: var(--ink);
 }
 
-.level-verde {
-  color: var(--green);
+.observed-swatch {
+  height: 12px;
+  opacity: .4;
 }
 
-.level-amarillo {
-  color: #b99828;
-}
-
-.level-rojo {
-  color: var(--red);
-}
-
-.delta-label {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* =========================================================
-   03 · SUPERPOSICIÓN
-   ========================================================= */
-
-.overlay-control {
-  display: grid;
-  grid-template-columns: auto minmax(220px, 600px) auto;
-  gap: 18px;
-  align-items: center;
-  margin-bottom: 28px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.overlay-control input {
-  width: 100%;
-  accent-color: var(--ink);
+.perceived-swatch {
+  height: 5px;
+  opacity: .95;
 }
 
 .overlay-frame {
   position: relative;
-  height: 620px;
+  height: 650px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: #f8f7f2;
+  background: var(--paper-soft);
 }
 
 .overlay-frame svg {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.overlay-observed {
+  opacity: .45;
+  stroke-width: 40;
+}
+
+.overlay-perceived {
+  opacity: 1;
+  stroke-width: 18;
 }
 
 .overlay-frame .street-base {
@@ -578,7 +459,7 @@ h2 {
 
 .overlay-frame .street-name,
 .overlay-frame .landmark-label {
-  opacity: .6;
+  opacity: .72;
 }
 
 /* =========================================================
@@ -609,15 +490,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .compare-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .comparison-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 18px;
-  }
-
   .viz-frame,
   .viz-frame svg {
     min-height: 560px;
@@ -642,14 +514,6 @@ h2 {
 
   .filter-rail {
     gap: 18px;
-  }
-
-  .detail-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .overlay-control {
-    grid-template-columns: 1fr;
   }
 
   .viz-frame,
