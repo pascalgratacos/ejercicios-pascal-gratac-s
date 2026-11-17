@@ -19,97 +19,128 @@
       </div>
 
       <p class="intro">
-        Esta visualización explora cómo se vive el tránsito de los adultos mayores en el Barrio Puerto de Valparaíso, comparando dos miradas sobre un mismo recorrido: <strong>lo observado en el entorno y lo percibido por quienes lo transitan</strong>. A través de franjas de colores y filtros de información, es posible revelar distintas capas del recorrido y ver cómo su superposición da lugar a nuevas lecturas del territorio.
+        Esta visualización explora cómo se vive el tránsito de los adultos mayores en el Barrio Puerto de Valparaíso, comparando dos miradas sobre un mismo recorrido: <strong>lo observado en el entorno y lo percibido por quienes lo transitan</strong>. A través de franjas de colores y filtros de información, es posible revelar distintas capas del recorrido y ver cómo su comparación genera nuevas lecturas del territorio.
       </p>
     </header>
 
-    <section class="controls-panel" aria-label="Controles de visualización">
-      <div class="view-switch" role="group" aria-label="Cambiar capa principal">
-        <button class="view-button is-active" data-view="observado">Observado</button>
-        <button class="view-button" data-view="percibido">Percibido</button>
-        <button class="view-button" data-view="superponer">Superponer</button>
-      </div>
-
-      <div class="filters-wrap">
-        <p class="control-label">Filtrar información</p>
-        <div class="filter-list" id="filterList">
-          <button class="filter-button" data-filter="pavimento">Pavimento</button>
-          <button class="filter-button" data-filter="obstaculos">Obstáculos</button>
-          <button class="filter-button" data-filter="cruces">Cruces</button>
-          <button class="filter-button" data-filter="senalizacion">Señalización</button>
-          <button class="filter-button is-active" data-filter="todos">Todas</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="visualization-card">
-      <div class="viz-heading">
+    <section class="section-block">
+      <div class="section-heading">
         <div>
-          <p class="section-kicker" id="modeKicker">Capa 01</p>
-          <h2 id="modeTitle">Condiciones observadas</h2>
+          <p class="section-kicker">01 · Dos miradas</p>
+          <h2>Un mismo territorio, dos lecturas</h2>
         </div>
-        <p class="mode-description" id="modeDescription">
-          Registros del entorno levantados durante el recorrido.
+        <p class="section-copy">
+          Observa ambas capas al mismo tiempo. Pasa el mouse sobre una categoría para filtrar la información y sobre una franja para comparar ese mismo punto en las dos lecturas.
         </p>
       </div>
 
-      <div class="map-layout">
-        <div class="map-frame" id="mapFrame">
-          <svg id="mapSvg" viewBox="0 0 1000 620" role="img" aria-label="Mapa abstracto del área de estudio">
-<g id="observedLayer"></g>
-            <g id="perceivedLayer"></g>
+      <div class="filter-rail" aria-label="Filtros por categoría">
+        <span class="filter-link is-active" data-filter="todos" tabindex="0">Todas</span>
+        <span class="filter-link" data-filter="pavimento" tabindex="0">Pavimento</span>
+        <span class="filter-link" data-filter="obstaculos" tabindex="0">Obstáculos</span>
+        <span class="filter-link" data-filter="cruces" tabindex="0">Cruces</span>
+        <span class="filter-link" data-filter="senalizacion" tabindex="0">Señalización</span>
+      </div>
 
-            <g class="map-labels" aria-hidden="true">
-              <text x="88" y="88">Barrio Puerto</text>
-              <text x="695" y="592">Área de estudio</text>
-            </g>
-          </svg>
+      <div class="comparison-grid">
+        <article class="comparison-panel">
+          <div class="panel-heading">
+            <p>LO OBSERVADO</p>
+            <span>Condiciones registradas en terreno</span>
+          </div>
+          <div class="viz-frame">
+            <svg id="observedSvg" viewBox="0 0 1000 620" role="img" aria-label="Condiciones observadas"></svg>
+          </div>
+        </article>
 
-          <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+        <article class="comparison-panel">
+          <div class="panel-heading">
+            <p>LO PERCIBIDO</p>
+            <span>Experiencia expresada por quienes transitan</span>
+          </div>
+          <div class="viz-frame">
+            <svg id="perceivedSvg" viewBox="0 0 1000 620" role="img" aria-label="Condiciones percibidas"></svg>
+          </div>
+        </article>
+      </div>
+
+      <div class="detail-card" id="detailCard" aria-live="polite">
+        <div>
+          <p class="detail-label">Pasa el mouse sobre una franja</p>
+          <h3 id="detailPlace">Compara un mismo punto del recorrido</h3>
         </div>
-
-        <aside class="legend">
-          <p class="control-label">Nivel de dificultad</p>
-
-          <div class="legend-item">
-            <span class="legend-line is-green"></span>
-            <div>
-              <strong>Fácil</strong>
-              <small>Tránsito continuo</small>
-            </div>
+        <div class="detail-columns">
+          <div>
+            <span class="detail-side">Observado</span>
+            <p id="observedReason">Se mostrará el registro de terreno asociado a esa franja.</p>
           </div>
-
-          <div class="legend-item">
-            <span class="legend-line is-yellow"></span>
-            <div>
-              <strong>Media</strong>
-              <small>Requiere atención</small>
-            </div>
+          <div>
+            <span class="detail-side">Percibido</span>
+            <p id="perceivedReason">Se mostrará el motivo o experiencia declarada por las personas.</p>
           </div>
+        </div>
+      </div>
 
-          <div class="legend-item">
-            <span class="legend-line is-red"></span>
-            <div>
-              <strong>Alta</strong>
-              <small>Dificulta el tránsito</small>
-            </div>
-          </div>
-
-          <div class="legend-note">
-            <span class="note-marker"></span>
-            <p>
-              Al superponer capas aparecen zonas de coincidencia y diferencia entre lo registrado y lo vivido.
-            </p>
-          </div>
-        </aside>
+      <div class="legend-inline" aria-label="Leyenda de dificultad">
+        <div><span class="dot dot-green"></span><strong>Fácil</strong><small>facilita el tránsito</small></div>
+        <div><span class="dot dot-yellow"></span><strong>Media</strong><small>exige mayor atención</small></div>
+        <div><span class="dot dot-red"></span><strong>Alta</strong><small>dificulta el tránsito</small></div>
       </div>
     </section>
 
-    <section class="reading-block">
-      <p class="section-kicker">Lectura</p>
-      <p id="readingText">
-        Lo observado muestra condiciones visibles del entorno. Cambia de capa para comparar cómo esas mismas calles fueron percibidas.
-      </p>
+    <section class="section-block compare-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">02 · Comparar</p>
+          <h2>¿Dónde coinciden y dónde difieren?</h2>
+        </div>
+        <p class="section-copy">
+          Esta lectura no superpone las capas: compara directamente el nivel observado y el nivel percibido para cada punto.
+        </p>
+      </div>
+
+      <div class="compare-cards">
+        <div class="compare-card">
+          <span>Coinciden</span>
+          <strong id="sameCount">0</strong>
+          <p>Mismo nivel de dificultad.</p>
+        </div>
+        <div class="compare-card">
+          <span>Diferencia leve</span>
+          <strong id="nearCount">0</strong>
+          <p>Un nivel de diferencia.</p>
+        </div>
+        <div class="compare-card">
+          <span>Contraste fuerte</span>
+          <strong id="farCount">0</strong>
+          <p>Dos niveles de diferencia.</p>
+        </div>
+      </div>
+
+      <div class="comparison-list" id="comparisonList"></div>
+    </section>
+
+    <section class="section-block overlay-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">03 · Superponer</p>
+          <h2>Juntar las dos miradas</h2>
+        </div>
+        <p class="section-copy">
+          Desliza el control para pasar de lo observado a lo percibido. En el centro, ambas capas se mezclan.
+        </p>
+      </div>
+
+      <div class="overlay-control">
+        <span>Observado</span>
+        <input id="blendRange" type="range" min="0" max="100" value="50" aria-label="Mezclar observado y percibido" />
+        <span>Percibido</span>
+      </div>
+
+      <div class="overlay-frame">
+        <svg id="overlayObserved" viewBox="0 0 1000 620" aria-hidden="true"></svg>
+        <svg id="overlayPerceived" viewBox="0 0 1000 620" aria-hidden="true"></svg>
+      </div>
     </section>
   </main>
 
