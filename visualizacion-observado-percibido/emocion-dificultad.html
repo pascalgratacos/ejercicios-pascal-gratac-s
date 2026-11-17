@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=20261117-5" />
+  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=20261117-6" />
 </head>
 <body>
   <main class="page-shell">
@@ -56,18 +56,16 @@
 
         <div class="map-bottom">
           <div class="emotion-legend">
-            <span data-emotion="frustracion"><i></i>Frustración</span>
-            <span data-emotion="preocupacion"><i></i>Preocupación</span>
-            <span data-emotion="neutralidad"><i></i>Neutralidad</span>
-            <span data-emotion="satisfaccion"><i></i>Satisfacción</span>
             <span data-emotion="entusiasmo"><i></i>Entusiasmo</span>
+            <span data-emotion="preocupacion"><i></i>Preocupación</span>
+            <span data-emotion="frustracion"><i></i>Frustración</span>
           </div>
 
-          <div class="intensity-legend">
-            <span>Intensidad emocional</span>
-            <span><i class="i1"></i>Baja</span>
-            <span><i class="i2"></i>Media</span>
-            <span><i class="i3"></i>Alta</span>
+          <div class="emotion-behavior-note">
+            <span>Hover</span>
+            <span>Entusiasmo · expansión leve</span>
+            <span>Preocupación · expansión media</span>
+            <span>Frustración · expansión alta</span>
           </div>
         </div>
       </div>
@@ -106,8 +104,21 @@
           <span>Las líneas se dibujan según el sentido del recorrido</span>
         </div>
 
-        <div class="map-stage">
+        <div class="map-stage" id="difficultyStage">
           <svg id="difficultyMap" viewBox="0 0 1200 760" role="img" aria-label="Mapa detallado de dificultad física del Barrio Puerto"></svg>
+
+          <div class="map-tooltip" id="mapTooltip" role="status" aria-live="polite">
+            <div class="tooltip-head">
+              <span class="tooltip-dot" id="mapTooltipDot"></span>
+              <strong id="mapTooltipTitle">Información</strong>
+              <span id="mapTooltipType">Capa</span>
+            </div>
+            <div class="tooltip-meta">
+              <span id="mapTooltipPlace">Lugar</span>
+              <span id="mapTooltipLevel">Nivel</span>
+            </div>
+            <p id="mapTooltipText"></p>
+          </div>
         </div>
 
         <div class="map-bottom difficulty-bottom">
@@ -128,6 +139,6 @@
     </section>
   </main>
 
-  <script src="../visualizacion-emocion-dificultad/script.js?v=20261117-5"></script>
+  <script src="../visualizacion-emocion-dificultad/script.js?v=20261117-6"></script>
 </body>
 </html>
