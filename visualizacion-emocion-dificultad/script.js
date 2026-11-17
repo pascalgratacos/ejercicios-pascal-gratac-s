@@ -60,6 +60,24 @@ const LANDMARKS = [
 
 const EMOTIONS = [
   {
+    id: "e4-entusiasmo",
+    x: 470, y: 120,
+    emotion: "entusiasmo",
+    label: "Entusiasmo",
+    difficulty: 1,
+    place: "Prat / Urriola",
+    quote: "Cita de entusiasmo por incorporar."
+  },
+  {
+    id: "e5-entusiasmo",
+    x: 965, y: 365,
+    emotion: "entusiasmo",
+    label: "Entusiasmo",
+    difficulty: 2,
+    place: "Blanco / Almte. Goñi",
+    quote: "Cita de entusiasmo por incorporar."
+  },
+  {
     id: "e1",
     x: 315, y: 245,
     emotion: "preocupacion",
