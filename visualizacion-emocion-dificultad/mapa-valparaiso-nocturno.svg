@@ -7,10 +7,9 @@
  .road{fill:none;stroke:#b8c1cd;stroke-opacity:.47;stroke-linejoin:round;stroke-linecap:round}
  .minor{stroke-width:10}.major{stroke-width:14}
  text{font-family:Arial,Helvetica,sans-serif;fill:#e2e6ec}
- .street{font-size:28px;font-weight:700;fill:#dce1e8;paint-order:stroke;stroke:#0d1b2d;stroke-width:7;stroke-linejoin:round}
- .side{font-size:20px;font-weight:600}
- .land{font-size:20px;font-weight:300;fill:#d3d8e0}
- .tag{fill:#0d1b2d;stroke:#aab6c4;stroke-opacity:.65;stroke-width:1.2}
+ .street{font-size:25.333px;font-weight:700;fill:#dce1e8;}
+ .side{font-size:17.333px;font-weight:600;fill:#dce1e8;}
+ .land{font-size:17.333px;font-weight:300;fill:#c4cedb;opacity:.59;} .land text{fill:#c4cedb;opacity:.85;font-weight:300;} .land use{opacity:.82;}
  .guide{fill:none;stroke:#c9d1da;stroke-opacity:.65;stroke-width:1.3}
  .symbol{fill:#c8d0da;stroke:none}
  </style>
@@ -21,7 +20,7 @@
  <g id="train" fill="none" stroke="#c8d0da" stroke-width="3.5" stroke-linejoin="round"><rect x="8" y="2" width="34" height="35" rx="5"/><path d="M13 8H37V23H13zM15 37L5 48M35 37L45 48M12 42H38"/><circle cx="16" cy="30" r="1.8" fill="#c8d0da"/><circle cx="34" cy="30" r="1.8" fill="#c8d0da"/></g>
  <g id="boat" fill="#c8d0da"><path d="M3 26L25 20 48 26 42 41 25 49 9 41zM9 24l4-16h25l5 16-18-5zM17 4h16v5H17z"/><path fill="#0d1b2d" d="M16 12h7v9h-7zM28 12h7v9h-7z"/></g>
 </defs>
-<rect width="1408" height="1056" fill="url(#bg)"/>
+<rect width="1408" height="1056" fill="#0d1b2d"/>
 <g class="road major"><path d="M0 132H1408 M0 376H1408 M0 633H1408 M0 871H1408"/></g>
 <g class="road minor"><path d="M186 40V132V376 M518 40V376 M1184 132V376 M202 376V871 M440 376V871 M766 376V871 M910 376V633 M1058 376V633 M1172 376V871 M1327 376V871 M896 633V871 M1072 633V871"/></g>
 <path fill="url(#sea)" d="M0 930H86V957H112V930H303V957H330V930H548V957H575V930H912V957H940V930H1166V957H1195V930H1408V1056H0Z"/>
@@ -29,23 +28,25 @@
 <path fill="#829bb2" opacity=".13" d="M0 998Q85 976 163 1004T330 1002T500 1000T670 1006T840 1000T1010 1002T1180 1003T1408 993V1056H0Z"/>
 <path fill="#9aafc2" opacity=".12" d="M0 1026Q87 1005 170 1029T340 1025T510 1025T680 1031T850 1024T1020 1025T1190 1024T1408 1020V1056H0Z"/>
 <path fill="#b0bfcd" opacity=".09" d="M0 1046Q95 1030 190 1045T380 1044T570 1043T760 1046T950 1044T1140 1044T1408 1038V1056H0Z"/>
-<g class="street" text-anchor="middle"><text x="108" y="163">Prat</text><text x="352" y="163">Sotomayor</text><text x="710" y="163">Serrano</text><text x="665" y="365">Cochrane</text><text x="608" y="622">Blanco</text><text x="685" y="904">Errázuriz</text></g>
-<g class="side" text-anchor="middle">
- <g><path class="guide" d="M202 575v-21h-20"/><rect class="tag" x="104" y="529" width="143" height="31" rx="15"/><text x="175" y="550">Sotomayor</text></g>
- <g><path class="guide" d="M440 570v-17h-14"/><rect class="tag" x="369" y="521" width="142" height="31" rx="15"/><text x="440" y="542">Sotomayor</text></g>
- <g><path class="guide" d="M910 571v-18"/><rect class="tag" x="829" y="523" width="162" height="31" rx="15"/><text x="910" y="544">Almte. Goñi</text></g>
- <g><path class="guide" d="M1058 404v-14"/><rect class="tag" x="976" y="396" width="165" height="31" rx="15"/><text x="1058" y="417">Almte. Pérez</text></g>
- <g><path class="guide" d="M766 681v-18"/><rect class="tag" x="686" y="656" width="160" height="31" rx="15"/><text x="766" y="677">Almte. Muñoz</text></g>
- <g><path class="guide" d="M1172 574v-21"/><rect class="tag" x="1131" y="529" width="82" height="31" rx="15"/><text x="1172" y="550">Clave</text></g>
- <g><path class="guide" d="M1327 574v-21"/><rect class="tag" x="1263" y="529" width="128" height="31" rx="15"/><text x="1327" y="550">San Martín</text></g>
+<g class="street" text-anchor="middle">
+  <text x="710" y="166">Serrano</text>
+</g>
+<g class="side" text-anchor="middle" dominant-baseline="middle">
+  <text x="202" y="504.5">Sotomayor</text>
+  <text x="440" y="504.5">Sotomayor</text>
+  <text x="910" y="504.5">Almirante Goñi</text>
+  <text x="1058" y="504.5">Almirante Pérez</text>
+  <text x="766" y="752">Almirante Muñoz</text>
+  <text x="1172" y="504.5">Clave</text>
+  <text x="1327" y="504.5">San Martín</text>
 </g>
 <g class="land">
- <rect class="tag" x="263" y="27" width="174" height="63" rx="12"/><use href="#anchor" x="276" y="32"/><text x="340" y="53">Armada</text><text x="340" y="75">de Chile</text><path class="guide" d="M364 90V118"/><circle cx="364" cy="120" r="4" fill="#c8d0da"/>
- <use href="#lift" x="866" y="34"/><rect class="tag" x="929" y="28" width="145" height="62" rx="12"/><text x="950" y="53">Ascensor</text><text x="950" y="75">Cordillera</text><path class="guide" d="M930 89L913 115"/><circle cx="913" cy="115" r="4" fill="#c8d0da"/>
- <use href="#fountain" x="1249" y="206"/><rect class="tag" x="1212" y="269" width="126" height="62" rx="12"/><text x="1275" y="293" text-anchor="middle">Plaza</text><text x="1275" y="317" text-anchor="middle">Echaurren</text>
- <rect class="tag" x="266" y="477" width="146" height="71" rx="12"/><text x="339" y="506" text-anchor="middle">Plaza</text><text x="339" y="532" text-anchor="middle">Sotomayor</text>
- <use href="#monument" x="315" y="684"/><rect class="tag" x="268" y="767" width="144" height="63" rx="12"/><text x="340" y="792" text-anchor="middle">Monumento</text><text x="340" y="816" text-anchor="middle">Los Héroes</text>
- <path class="guide" d="M166 915V955"/><circle cx="166" cy="915" r="4" fill="#c8d0da"/><rect class="tag" x="122" y="955" width="154" height="54" rx="12"/><use href="#train" transform="translate(143 960) scale(.8)"/><text x="191" y="977">Estación</text><text x="191" y="999">Puerto</text>
- <path class="guide" d="M738 915V955"/><circle cx="738" cy="915" r="4" fill="#c8d0da"/><rect class="tag" x="685" y="955" width="158" height="54" rx="12"/><use href="#boat" transform="translate(704 959) scale(.9)"/><text x="762" y="988">Puerto</text>
+ <use href="#anchor" x="276" y="32"/><text x="340" y="53">Armada</text><text x="340" y="75">de Chile</text><path class="guide" d="M364 90V118"/><circle cx="364" cy="120" r="4" fill="#c8d0da"/>
+ <use href="#lift" x="866" y="34"/><text x="950" y="53">Ascensor</text><text x="950" y="75">Cordillera</text><path class="guide" d="M930 89L913 115"/><circle cx="913" cy="115" r="4" fill="#c8d0da"/>
+ <use href="#fountain" x="1249" y="206"/><text x="1275" y="293" text-anchor="middle">Plaza</text><text x="1275" y="317" text-anchor="middle">Echaurren</text>
+ <text x="339" y="506" text-anchor="middle">Plaza</text><text x="339" y="532" text-anchor="middle">Sotomayor</text>
+ <use href="#monument" x="315" y="684"/><text x="340" y="792" text-anchor="middle">Monumento</text><text x="340" y="816" text-anchor="middle">Los Héroes</text>
+ <path class="guide" d="M166 915V955"/><circle cx="166" cy="915" r="4" fill="#c8d0da"/><use href="#train" transform="translate(143 960) scale(.8)"/><text x="191" y="977">Estación</text><text x="191" y="999">Puerto</text>
+ <path class="guide" d="M738 915V955"/><circle cx="738" cy="915" r="4" fill="#c8d0da"/><use href="#boat" transform="translate(704 959) scale(.9)"/><text x="762" y="988">Puerto</text>
 </g>
 </svg>
