@@ -68,9 +68,15 @@ const EMOTIONS = [
     "level": 1,
     "label": "Comodidad",
     "difficulty": 5,
-    "place": "Serrano y Prat",
-    "kind": "sin punto único",
-    "quote": "Prefiere caminar desde Serrano a Prat, incluso pasando por Sotomayor, antes que hacer un viaje corto por Cochrane o Blanco."
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "Prefiere caminar desde Serrano a Prat, incluso pasando por Sotomayor, antes que hacer un viaje corto por Cochrane o Blanco.",
+    "originalPlace": "Serrano y Prat",
+    "anchor": [
+      210,
+      485
+    ],
+    "locationNote": "Prefiere Serrano y Prat; posición representativa en Serrano."
   },
   {
     "id": "cl-5-1",
@@ -78,9 +84,15 @@ const EMOTIONS = [
     "level": 1,
     "label": "Confianza",
     "difficulty": 4,
-    "place": "Sin calle única",
-    "kind": "sin punto único",
-    "quote": "Prefiere cruces declarados que adivinar por dónde cruzar."
+    "place": "Sotomayor",
+    "kind": "referencial",
+    "quote": "Prefiere cruces declarados que adivinar por dónde cruzar.",
+    "originalPlace": "Sin calle única",
+    "anchor": [
+      315,
+      155
+    ],
+    "locationNote": "Sotomayor figura como lugar de mayor dificultad; el comentario habla de cruces, sin asociar la confianza a un cruce exacto."
   },
   {
     "id": "cl-6-2",
@@ -116,19 +128,32 @@ const EMOTIONS = [
     "level": 3,
     "label": "Inseguridad",
     "difficulty": 4,
-    "place": "Blanco, Clave, Cochrane y Echaurren",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalPlace": "Blanco, Clave, Cochrane y Echaurren",
+    "anchor": [
+      185,
+      365
+    ],
+    "locationNote": "También menciona Clave, Cochrane y Echaurren."
   },
   {
     "id": "cl-9-2",
     "sourceRow": 9,
     "level": 2,
-    "label": "Molestia y cansancio",
+    "label": "Molestia",
     "difficulty": 3,
-    "place": "Almte. Goñi y Clave",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Clave",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalLabel": "Molestia y cansancio",
+    "originalPlace": "Almte. Goñi y Clave",
+    "anchor": [
+      640,
+      185
+    ],
+    "locationNote": "También indica Almte. Goñi."
   },
   {
     "id": "cl-10-2",
@@ -136,9 +161,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Cansancio",
     "difficulty": 4,
-    "place": "Almte. Goñi, Clave, Blanco y Cochrane",
-    "kind": "sin punto único",
-    "quote": "Menciona pocos lugares para descansar"
+    "place": "Almte. Goñi",
+    "kind": "referencial",
+    "quote": "Menciona pocos lugares para descansar",
+    "originalPlace": "Almte. Goñi, Clave, Blanco y Cochrane",
+    "anchor": [
+      965,
+      285
+    ],
+    "locationNote": "También indica Clave, Blanco y Cochrane."
   },
   {
     "id": "cl-11-3",
@@ -146,9 +177,15 @@ const EMOTIONS = [
     "level": 3,
     "label": "Inseguridad",
     "difficulty": 2,
-    "place": "Cruces de Sotomayor con Cochrane, Blanco y Serrano",
-    "kind": "sin punto único",
-    "quote": "Sobre todo se siente insegura al cruzar las calles"
+    "place": "Cruces de Sotomayor",
+    "kind": "referencial",
+    "quote": "Sobre todo se siente insegura al cruzar las calles",
+    "originalPlace": "Cruces de Sotomayor con Cochrane, Blanco y Serrano",
+    "anchor": [
+      315,
+      485
+    ],
+    "locationNote": "Menciona los cruces con Cochrane, Blanco y Serrano; punto representativo en el cruce esquemático con Serrano."
   },
   {
     "id": "cl-12-3",
@@ -156,15 +193,21 @@ const EMOTIONS = [
     "level": 3,
     "label": "Inseguridad",
     "difficulty": 3,
-    "place": "Almte. Goñi, Clave, Blanco y Cochrane",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Almte. Goñi",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalPlace": "Almte. Goñi, Clave, Blanco y Cochrane",
+    "anchor": [
+      965,
+      435
+    ],
+    "locationNote": "También indica Clave, Blanco y Cochrane."
   },
   {
     "id": "cl-13-3",
     "sourceRow": 13,
     "level": 3,
-    "label": "Pena por su estado",
+    "label": "Pena",
     "difficulty": 1,
     "place": "Cochrane",
     "kind": "referencial",
@@ -172,13 +215,14 @@ const EMOTIONS = [
     "anchor": [
       400,
       245
-    ]
+    ],
+    "originalLabel": "Pena por su estado"
   },
   {
     "id": "cl-14-3",
     "sourceRow": 14,
     "level": 3,
-    "label": "Pena por su estado",
+    "label": "Pena",
     "difficulty": 2,
     "place": "Blanco",
     "kind": "referencial",
@@ -186,7 +230,8 @@ const EMOTIONS = [
     "anchor": [
       400,
       365
-    ]
+    ],
+    "originalLabel": "Pena por su estado"
   },
   {
     "id": "cl-15-1",
@@ -237,39 +282,66 @@ const EMOTIONS = [
     "label": "Encanto",
     "difficulty": 1,
     "place": "Barrio Puerto",
-    "kind": "sin punto único",
-    "quote": "Salgo todos los días, me encanta, camino por todas las calles, conozco a los malandrines."
+    "kind": "general",
+    "quote": "Salgo todos los días, me encanta, camino por todas las calles, conozco a los malandrines.",
+    "originalPlace": "Barrio Puerto",
+    "anchor": [
+      220,
+      300
+    ],
+    "locationNote": "Experiencia del barrio completo; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-19-2",
     "sourceRow": 19,
     "level": 2,
-    "label": "Nostalgia y ambivalencia",
+    "label": "Nostalgia",
     "difficulty": 1,
-    "place": "Barrio Puerto · día y noche",
-    "kind": "sin punto único",
+    "place": "Barrio Puerto",
+    "kind": "general",
     "quote": "Me es cómodo, yo bajo del cerro y voy caminando al centro, me voy tranquilo.",
-    "interpretation": true
+    "interpretation": true,
+    "originalLabel": "Nostalgia y ambivalencia",
+    "originalPlace": "Barrio Puerto · día y noche",
+    "anchor": [
+      425,
+      300
+    ],
+    "locationNote": "Experiencia general de día y noche; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-20-3",
     "sourceRow": 20,
     "level": 3,
-    "label": "Disconformidad y decepción",
+    "label": "Disconformidad",
     "difficulty": 5,
     "place": "Barrio Puerto",
-    "kind": "sin punto único",
-    "quote": "Soy un argentino que viene de turista, está todo mal señalizado, las calles están sucias y dejan mucho que desear."
+    "kind": "general",
+    "quote": "Soy un argentino que viene de turista, está todo mal señalizado, las calles están sucias y dejan mucho que desear.",
+    "originalLabel": "Disconformidad y decepción",
+    "originalPlace": "Barrio Puerto",
+    "anchor": [
+      780,
+      300
+    ],
+    "locationNote": "Se refiere a todas las calles; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-21-1",
     "sourceRow": 21,
     "level": 1,
-    "label": "Interés por conversar",
+    "label": "Interés",
     "difficulty": 3,
-    "place": "Contexto de entrevista",
+    "place": "Barrio Puerto",
     "kind": "contexto",
-    "quote": "“En las calles no caben las sillas de rueda.” “Hace falta lugar adecuado para la gente mayor.”"
+    "quote": "“En las calles no caben las sillas de rueda.” “Hace falta lugar adecuado para la gente mayor.”",
+    "originalLabel": "Interés por conversar",
+    "originalPlace": "Contexto de entrevista",
+    "anchor": [
+      570,
+      555
+    ],
+    "locationNote": "Actitud durante la entrevista; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-27-2",
@@ -303,21 +375,35 @@ const EMOTIONS = [
     "id": "cl-30-1",
     "sourceRow": 30,
     "level": 1,
-    "label": "Confianza al conversar",
+    "label": "Confianza",
     "difficulty": 1,
-    "place": "Contexto de entrevista",
-    "kind": "contexto",
-    "quote": "“Serrano es la más fácil de caminar.”"
+    "place": "Serrano",
+    "kind": "inferida",
+    "quote": "“Serrano es la más fácil de caminar.”",
+    "originalLabel": "Confianza al conversar",
+    "originalPlace": "Contexto de entrevista",
+    "anchor": [
+      585,
+      485
+    ],
+    "locationNote": "El comentario menciona Serrano como la calle más fácil; la confianza se observó durante la conversación."
   },
   {
     "id": "cl-32-3",
     "sourceRow": 32,
     "level": 3,
-    "label": "Enojo con el mundo",
+    "label": "Enojo",
     "difficulty": 2,
-    "place": "Contexto de entrevista · Plaza Echaurren",
+    "place": "Plaza Echaurren",
     "kind": "contexto",
-    "quote": "“Me da nostalgia el barrio puerto, yo soy de toda la vida de aquí.” “No te confíes de nadie.”"
+    "quote": "“Me da nostalgia el barrio puerto, yo soy de toda la vida de aquí.” “No te confíes de nadie.”",
+    "originalLabel": "Enojo con el mundo",
+    "originalPlace": "Contexto de entrevista · Plaza Echaurren",
+    "anchor": [
+      900,
+      165
+    ],
+    "locationNote": "Lugar de la entrevista; el enojo no se atribuye a una calle concreta."
   },
   {
     "id": "cl-33-2",
@@ -325,10 +411,16 @@ const EMOTIONS = [
     "level": 2,
     "label": "Nostalgia",
     "difficulty": 1,
-    "place": "Barrio Puerto · plaza no identificada",
-    "kind": "sin punto único",
+    "place": "Barrio Puerto",
+    "kind": "general",
     "quote": "“Muy lindo el recuerdo, siempre te encuentras con la misma gente, aquí en la plaza nos cuidamos.” “Es pacífico, nos conocemos.”",
-    "contextNote": "La disposición a conversar se registra como actitud durante la entrevista."
+    "contextNote": "La disposición a conversar se registra como actitud durante la entrevista.",
+    "originalPlace": "Barrio Puerto · plaza no identificada",
+    "anchor": [
+      760,
+      175
+    ],
+    "locationNote": "Menciona una plaza sin identificarla; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-35-1",
@@ -350,9 +442,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Costumbre",
     "difficulty": 2,
-    "place": "Barrio Puerto · mercado y Cochrane",
-    "kind": "sin punto único",
-    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”"
+    "place": "Cochrane",
+    "kind": "inferida",
+    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”",
+    "originalPlace": "Barrio Puerto · mercado y Cochrane",
+    "anchor": [
+      840,
+      245
+    ],
+    "locationNote": "El comentario menciona Cochrane y la visita habitual al mercado; la emoción no tiene coordenada exacta."
   },
   {
     "id": "cl-37-1",
@@ -360,9 +458,15 @@ const EMOTIONS = [
     "level": 1,
     "label": "Cariño",
     "difficulty": 2,
-    "place": "Barrio Puerto · mercado y Cochrane",
-    "kind": "sin punto único",
-    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”"
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”",
+    "originalPlace": "Barrio Puerto · mercado y Cochrane",
+    "anchor": [
+      950,
+      485
+    ],
+    "locationNote": "Serrano y Prat son lugares de menor dificultad; el comentario sobre Cochrane describe el tránsito de micros."
   },
   {
     "id": "cl-38-3",
@@ -370,9 +474,15 @@ const EMOTIONS = [
     "level": 3,
     "label": "Inseguridad",
     "difficulty": 4,
-    "place": "Blanco y Clave",
-    "kind": "sin punto único",
-    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”"
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”",
+    "originalPlace": "Blanco y Clave",
+    "anchor": [
+      665,
+      365
+    ],
+    "locationNote": "También indica Clave; no identifica la baldosa exacta."
   },
   {
     "id": "cl-38-2",
@@ -380,29 +490,49 @@ const EMOTIONS = [
     "level": 2,
     "label": "Cansancio",
     "difficulty": 4,
-    "place": "Blanco y Clave",
-    "kind": "sin punto único",
-    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”"
+    "place": "Clave",
+    "kind": "referencial",
+    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”",
+    "originalPlace": "Blanco y Clave",
+    "anchor": [
+      640,
+      420
+    ],
+    "locationNote": "También indica Blanco; no identifica un punto exacto de descanso."
   },
   {
     "id": "cl-39-2",
     "sourceRow": 39,
     "level": 2,
-    "label": "Preocupación por las caídas",
+    "label": "Preocupación",
     "difficulty": 4,
-    "place": "Cochrane y Almte. Goñi",
-    "kind": "sin punto único",
-    "quote": "“Por Sotomayor se puede ir más tranquila porque es ancha, pero para cruzar hay que esperar harto.”"
+    "place": "Sotomayor",
+    "kind": "inferida",
+    "quote": "“Por Sotomayor se puede ir más tranquila porque es ancha, pero para cruzar hay que esperar harto.”",
+    "originalLabel": "Preocupación por las caídas",
+    "originalPlace": "Cochrane y Almte. Goñi",
+    "anchor": [
+      315,
+      295
+    ],
+    "locationNote": "El comentario menciona Sotomayor y la espera al cruzar; también señala Cochrane y Almte. Goñi como difíciles."
   },
   {
     "id": "cl-40-3",
     "sourceRow": 40,
     "level": 3,
-    "label": "Miedo y rabia",
+    "label": "Miedo",
     "difficulty": 5,
-    "place": "Barrio Puerto · especialmente Cochrane y Blanco",
-    "kind": "sin punto único",
-    "quote": "“Me operaron hace tres meses y salir al centro es una pesadilla, el semáforo dura nada y con la muleta no alcanzo a cruzar.”"
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "“Me operaron hace tres meses y salir al centro es una pesadilla, el semáforo dura nada y con la muleta no alcanzo a cruzar.”",
+    "originalLabel": "Miedo y rabia",
+    "originalPlace": "Barrio Puerto · especialmente Cochrane y Blanco",
+    "anchor": [
+      500,
+      245
+    ],
+    "locationNote": "Señala todas las calles, en especial Cochrane y Blanco."
   },
   {
     "id": "cl-41-2",
@@ -410,9 +540,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Desorientación",
     "difficulty": 3,
-    "place": "Cochrane y Almte. Muñoz",
-    "kind": "sin punto único",
-    "quote": "“Hace años que no venía, el barrio es lindo pero está muy descuidado.”"
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "“Hace años que no venía, el barrio es lindo pero está muy descuidado.”",
+    "originalPlace": "Cochrane y Almte. Muñoz",
+    "anchor": [
+      950,
+      245
+    ],
+    "locationNote": "También señala Almte. Muñoz."
   },
   {
     "id": "cl-42-2",
@@ -432,7 +568,7 @@ const EMOTIONS = [
     "id": "cl-43-1",
     "sourceRow": 43,
     "level": 1,
-    "label": "Tranquilidad, me siento en casa",
+    "label": "Tranquilidad",
     "difficulty": 1,
     "place": "Plaza Echaurren",
     "kind": "mencionada",
@@ -440,27 +576,42 @@ const EMOTIONS = [
     "anchor": [
       900,
       190
-    ]
+    ],
+    "originalLabel": "Tranquilidad, me siento en casa"
   },
   {
     "id": "cl-44-3",
     "sourceRow": 44,
     "level": 3,
-    "label": "Miedo e impotencia",
+    "label": "Miedo",
     "difficulty": 5,
-    "place": "Barrio Puerto",
-    "kind": "sin punto único",
-    "quote": "“Antes caminaba solo hasta el puerto, ahora ni a la esquina me atrevo.”"
+    "place": "Puerto",
+    "kind": "inferida",
+    "quote": "“Antes caminaba solo hasta el puerto, ahora ni a la esquina me atrevo.”",
+    "originalLabel": "Miedo e impotencia",
+    "originalPlace": "Barrio Puerto",
+    "anchor": [
+      565,
+      700
+    ],
+    "locationNote": "El puerto aparece como destino anterior; no se conoce dónde se experimentó el miedo."
   },
   {
     "id": "cl-45-2",
     "sourceRow": 45,
     "level": 2,
-    "label": "Cansancio y calor",
+    "label": "Cansancio",
     "difficulty": 3,
-    "place": "Clave y Almte. Goñi",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Almte. Goñi",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalLabel": "Cansancio y calor",
+    "originalPlace": "Clave y Almte. Goñi",
+    "anchor": [
+      965,
+      550
+    ],
+    "locationNote": "También señala Clave."
   },
   {
     "id": "cl-46-2",
@@ -468,9 +619,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Molestia",
     "difficulty": 4,
-    "place": "Cruce Cochrane con Sotomayor y Blanco",
-    "kind": "sin punto único",
-    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”"
+    "place": "Cruce Cochrane con Sotomayor",
+    "kind": "referencial",
+    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”",
+    "originalPlace": "Cruce Cochrane con Sotomayor y Blanco",
+    "anchor": [
+      291,
+      245
+    ],
+    "locationNote": "También indica Blanco; el comentario habla del transporte y la falta de descanso."
   },
   {
     "id": "cl-46-3",
@@ -478,9 +635,15 @@ const EMOTIONS = [
     "level": 3,
     "label": "Ansiedad",
     "difficulty": 4,
-    "place": "Cruce Cochrane con Sotomayor y Blanco",
-    "kind": "sin punto único",
-    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”"
+    "place": "Cruce Cochrane con Sotomayor",
+    "kind": "referencial",
+    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”",
+    "originalPlace": "Cruce Cochrane con Sotomayor y Blanco",
+    "anchor": [
+      339,
+      245
+    ],
+    "locationNote": "También indica Blanco; el comentario habla del transporte y la falta de descanso."
   },
   {
     "id": "cl-47-2",
@@ -488,9 +651,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Preocupación",
     "difficulty": 3,
-    "place": "Cochrane y Errázuriz",
-    "kind": "sin punto único",
-    "quote": "“En Serrano por lo menos se puede andar.”"
+    "place": "Serrano",
+    "kind": "inferida",
+    "quote": "“En Serrano por lo menos se puede andar.”",
+    "originalPlace": "Cochrane y Errázuriz",
+    "anchor": [
+      1050,
+      485
+    ],
+    "locationNote": "Menciona Serrano como alternativa transitable; las calles difíciles señaladas son Cochrane y Errázuriz."
   },
   {
     "id": "cl-48-2",
@@ -498,9 +667,15 @@ const EMOTIONS = [
     "level": 2,
     "label": "Nostalgia",
     "difficulty": 1,
-    "place": "Barrio Puerto · menciona Blanco de noche",
-    "kind": "sin punto único",
-    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”"
+    "place": "Blanco",
+    "kind": "inferida",
+    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”",
+    "originalPlace": "Barrio Puerto · menciona Blanco de noche",
+    "anchor": [
+      480,
+      365
+    ],
+    "locationNote": "El testimonio menciona Blanco de noche y el deterioro general del barrio."
   },
   {
     "id": "cl-48-3",
@@ -508,15 +683,21 @@ const EMOTIONS = [
     "level": 3,
     "label": "Pena",
     "difficulty": 1,
-    "place": "Barrio Puerto · menciona Blanco de noche",
-    "kind": "sin punto único",
-    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”"
+    "place": "Blanco",
+    "kind": "inferida",
+    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”",
+    "originalPlace": "Barrio Puerto · menciona Blanco de noche",
+    "anchor": [
+      525,
+      365
+    ],
+    "locationNote": "El testimonio menciona Blanco de noche y el deterioro general del barrio."
   },
   {
     "id": "cl-49-3",
     "sourceRow": 49,
     "level": 3,
-    "label": "Frustración e impotencia",
+    "label": "Frustración",
     "difficulty": 5,
     "place": "Sotomayor",
     "kind": "mencionada",
@@ -524,27 +705,42 @@ const EMOTIONS = [
     "anchor": [
       315,
       430
-    ]
+    ],
+    "originalLabel": "Frustración e impotencia"
   },
   {
     "id": "cl-50-2",
     "sourceRow": 50,
     "level": 2,
-    "label": "Sorpresa y atención",
+    "label": "Sorpresa",
     "difficulty": 4,
-    "place": "Prat, Sotomayor y Serrano",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Prat",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalLabel": "Sorpresa y atención",
+    "originalPlace": "Prat, Sotomayor y Serrano",
+    "anchor": [
+      540,
+      120
+    ],
+    "locationNote": "También indica Sotomayor y Serrano."
   },
   {
     "id": "cl-51-2",
     "sourceRow": 51,
     "level": 2,
-    "label": "Desorientación y atención",
+    "label": "Desorientación",
     "difficulty": 3,
-    "place": "Cochrane y Sotomayor",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalLabel": "Desorientación y atención",
+    "originalPlace": "Cochrane y Sotomayor",
+    "anchor": [
+      240,
+      245
+    ],
+    "locationNote": "También indica Sotomayor."
   },
   {
     "id": "cl-52-3",
@@ -552,9 +748,15 @@ const EMOTIONS = [
     "level": 3,
     "label": "Miedo",
     "difficulty": 2,
-    "place": "Prat, Errázuriz y Blanco",
-    "kind": "sin punto único",
-    "quote": "En general, busca comodidad"
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "En general, busca comodidad",
+    "originalPlace": "Prat, Errázuriz y Blanco",
+    "anchor": [
+      1015,
+      365
+    ],
+    "locationNote": "También indica Prat y Errázuriz."
   },
   {
     "id": "cl-53-2",
@@ -574,7 +776,7 @@ const EMOTIONS = [
     "id": "cl-54-3",
     "sourceRow": 54,
     "level": 3,
-    "label": "Inseguridad al cruzar",
+    "label": "Inseguridad",
     "difficulty": 4,
     "place": "Cruce Cochrane con Sotomayor",
     "kind": "mencionada",
@@ -582,7 +784,8 @@ const EMOTIONS = [
     "anchor": [
       315,
       245
-    ]
+    ],
+    "originalLabel": "Inseguridad al cruzar"
   },
   {
     "id": "cl-55-3",
@@ -590,19 +793,32 @@ const EMOTIONS = [
     "level": 3,
     "label": "Agobio",
     "difficulty": 3,
-    "place": "Almte. Goñi y Clave",
-    "kind": "sin punto único",
-    "quote": "Sin comentario extra registrado."
+    "place": "Clave",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "originalPlace": "Almte. Goñi y Clave",
+    "anchor": [
+      640,
+      560
+    ],
+    "locationNote": "También indica Almte. Goñi."
   },
   {
     "id": "cl-56-1",
     "sourceRow": 56,
     "level": 1,
-    "label": "Orgullo de poder salir solo",
+    "label": "Orgullo",
     "difficulty": 2,
-    "place": "Barrio Puerto · Sotomayor, Serrano y Prat",
-    "kind": "sin punto único",
-    "quote": "Dice que claramente sería más fácil si las calles estuvieran mejor cuidadas."
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "Dice que claramente sería más fácil si las calles estuvieran mejor cuidadas.",
+    "originalLabel": "Orgullo de poder salir solo",
+    "originalPlace": "Barrio Puerto · Sotomayor, Serrano y Prat",
+    "anchor": [
+      775,
+      485
+    ],
+    "locationNote": "También indica Sotomayor y Prat como lugares de menor dificultad."
   },
   {
     "id": "cl-57-3",
@@ -611,19 +827,32 @@ const EMOTIONS = [
     "label": "Temor",
     "difficulty": 5,
     "place": "Barrio Puerto",
-    "kind": "sin punto único",
-    "quote": "Sin su hijo, no sale a la calle, dice que los autos pasan muy rápido"
+    "kind": "general",
+    "quote": "Sin su hijo, no sale a la calle, dice que los autos pasan muy rápido",
+    "originalPlace": "Barrio Puerto",
+    "anchor": [
+      1010,
+      565
+    ],
+    "locationNote": "Se refiere a todas las calles y a la velocidad de los autos; posición gráfica sin calle atribuida."
   },
   {
     "id": "cl-58-1",
     "sourceRow": 58,
     "level": 1,
-    "label": "Pertenencia y orgullo",
+    "label": "Pertenencia",
     "difficulty": 1,
-    "place": "Barrio Puerto · Plaza Echaurren, Sotomayor y Cochrane",
-    "kind": "sin punto único",
+    "place": "Plaza Echaurren",
+    "kind": "referencial",
     "quote": "Siempre ha vivido aquí, entonces no se le hace difícil movilizarse",
-    "agePending": true
+    "agePending": true,
+    "originalLabel": "Pertenencia y orgullo",
+    "originalPlace": "Barrio Puerto · Plaza Echaurren, Sotomayor y Cochrane",
+    "anchor": [
+      930,
+      190
+    ],
+    "locationNote": "También indica Sotomayor y Cochrane; edad pendiente de confirmar."
   },
   {
     "id": "cl-59-3",
@@ -631,41 +860,38 @@ const EMOTIONS = [
     "level": 3,
     "label": "Miedo",
     "difficulty": 3,
-    "place": "Almte. Goñi, Almte. Pérez y Almte. Muñoz",
-    "kind": "sin punto único",
-    "quote": "Evita lo más posible, los pasajes pequeños, sobre todo después de las cinco de la tarde"
+    "place": "Almte. Goñi",
+    "kind": "referencial",
+    "quote": "Evita lo más posible, los pasajes pequeños, sobre todo después de las cinco de la tarde",
+    "originalPlace": "Almte. Goñi, Almte. Pérez y Almte. Muñoz",
+    "anchor": [
+      965,
+      165
+    ],
+    "locationNote": "También indica Almte. Pérez y Almte. Muñoz; menciona pasajes pequeños sin identificarlos."
   }
 ];
 const LEVEL_COLORS = {1:"#00D6C8",2:"#FF8A1F",3:"#9F2148"};
 const LEVEL_LABELS = {1:"Sensaciones positivas",2:"Sensaciones intermedias",3:"Emociones intensas"};
-const MAP_VIEWBOX = "0 0 1200 950";
-// Preserve source locations: exact street or reference; never assign an arbitrary street.
+const MAP_VIEWBOX = "0 0 1200 760";
+// Positions are schematic. General experiences remain inside the map without a street attribution.
 function layoutEmotions() {
   const occupied=[];
-  const unlocated={1:0,2:0,3:0};
   EMOTIONS.forEach(item=>{
-    if(item.anchor){
-      const [ax,ay]=item.anchor;
-      const candidates=[[0,0],[24,0],[-24,0],[0,-24],[0,24],[24,-24],[-24,-24],[24,24],[-24,24],[48,0],[-48,0]];
-      const off=candidates.find(([dx,dy])=>occupied.every(([x,y])=>Math.hypot(ax+dx-x,ay+dy-y)>=23))||[0,48];
-      item.x=ax+off[0];item.y=ay+off[1];occupied.push([item.x,item.y]);
-    }else{
-      const i=unlocated[item.level]++;
-      item.x=60+(item.level-1)*390+(i%9)*40;
-      item.y=815+Math.floor(i/9)*39;
+    const [ax,ay]=item.anchor;
+    const street=STREETS.find(s=>s.x1===s.x2 ? ax===s.x1&&ay>=s.y1&&ay<=s.y2 : ay===s.y1&&ax>=s.x1&&ax<=s.x2);
+    const candidates=[[0,0]];
+    for(let n=1;n<=8;n++){
+      const delta=24*n;
+      if(street&&street.x1===street.x2)candidates.push([0,delta],[0,-delta]);
+      else if(street)candidates.push([delta,0],[-delta,0]);
+      else candidates.push([delta,0],[-delta,0],[0,delta],[0,-delta],[delta,delta],[-delta,-delta]);
     }
+    const off=candidates.find(([dx,dy])=>ax+dx>=55&&ax+dx<=1140&&ay+dy>=55&&ay+dy<=720&&occupied.every(([x,y])=>Math.hypot(ax+dx-x,ay+dy-y)>=23))||[0,0];
+    item.x=ax+off[0];item.y=ay+off[1];occupied.push([item.x,item.y]);
   });
 }
 layoutEmotions();
-function drawUnlocatedPanel(svg){
-  const g=svgEl("g");g.setAttribute("class","unlocated-panel");
-  const rect=svgEl("rect");Object.entries({x:22,y:750,width:1156,height:185,rx:12,fill:"#0a2234",stroke:"#294253"}).forEach(([k,v])=>rect.setAttribute(k,v));g.append(rect);
-  const label=(x,y,txt,cls)=>{const t=svgEl("text");t.setAttribute("x",x);t.setAttribute("y",y);t.setAttribute("class",cls);t.textContent=txt;g.append(t);};
-  label(43,775,"REGISTROS SIN UBICACIÓN ÚNICA · BARRIO PUERTO / VARIAS CALLES / CONTEXTO DE ENTREVISTA","unlocated-title");
-  [1,2,3].forEach(l=>label(43+(l-1)*390,797,"Nivel "+l+" · "+LEVEL_LABELS[l],"unlocated-label"));
-  svg.append(g);
-}
-
 
 /* =========================================================
    PARTE 2 — DIFICULTAD FÍSICA
@@ -790,14 +1016,10 @@ function createEmotionPoint(item, context = "emotion") {
   group.setAttribute("tabindex","0");
   group.setAttribute("role","button");
   group.setAttribute("aria-label",item.label+", "+item.place+", nivel "+item.level);
-  if(item.anchor && (item.x!==item.anchor[0]||item.y!==item.anchor[1])){
-    const leader=svgEl("line");
-    Object.entries({x1:item.anchor[0],y1:item.anchor[1],x2:item.x,y2:item.y,class:"emotion-leader"}).forEach(([k,v])=>leader.setAttribute(k,v));group.append(leader);
-  }
   for(const [cls,r] of [["emotion-hit",11],["emotion-halo",[0,19,30,43][item.level]],["emotion-core",9]]){
     const circle=svgEl("circle");
     Object.entries({cx:item.x,cy:item.y,r,class:cls,fill:cls==="emotion-hit"?"transparent":emotionFill(item.level)}).forEach(([k,v])=>circle.setAttribute(k,v));
-    if(cls==="emotion-core"&&item.kind==="referencial")circle.classList.add("is-reference");
+    if(cls==="emotion-core"||cls==="emotion-halo")circle.setAttribute("stroke","none");
     group.append(circle);
   }
   const stage=context==="emotion"?emotionStage:difficultyStage;
@@ -821,7 +1043,7 @@ function showPointTooltip(event,item,stage,tip){
   tip.querySelector(".point-meta").textContent="Nivel "+item.level+" · Dificultad percibida: "+item.difficulty+"/5";
   tip.querySelector(".point-comment").textContent=item.quote;
   const note=tip.querySelector(".point-note");
-  note.textContent=[item.kind==="referencial"?"Ubicación referencial (según dificultad indicada)":item.kind==="sin punto único"?"Sin ubicación emocional única":item.kind==="contexto"?"Actitud registrada durante la entrevista, no emoción atribuida a la calle":"Lugar mencionado en la ficha; posición esquemática",item.agePending?"Edad pendiente de confirmar":"",item.interpretation?"Etiqueta interpretativa de una respuesta ambivalente":"",item.contextNote||""].filter(Boolean).join(" · ");
+  note.textContent=[item.locationNote||(item.kind==="referencial"?"Ubicación referencial (según dificultad indicada)":"Lugar mencionado en la ficha; posición esquemática"),item.agePending?"Edad pendiente de confirmar":"",item.interpretation?"Etiqueta interpretativa de una respuesta ambivalente":"",item.contextNote||""].filter(Boolean).join(" · ");
   tip.classList.add("is-visible");
   moveTooltip(stage,tip,event);
 }
@@ -830,7 +1052,7 @@ function renderEmotionMap() {
   emotionMap.innerHTML = "";
   emotionMap.setAttribute("viewBox", MAP_VIEWBOX);
   drawBaseMap(emotionMap);
-  drawUnlocatedPanel(emotionMap);
+
 
   const pointsLayer = svgEl("g");
   pointsLayer.setAttribute("class", "emotion-layer");
@@ -922,7 +1144,7 @@ function renderDifficultyMap() {
 
   // Capa 2: emociones. Siempre se agrega al final para quedar por encima.
   if (showEmotions) {
-    drawUnlocatedPanel(difficultyMap);
+
     const emotionLayer = svgEl("g");
     emotionLayer.setAttribute("class", "emotion-layer");
 
