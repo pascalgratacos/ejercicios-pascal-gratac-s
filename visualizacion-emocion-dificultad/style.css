@@ -582,3 +582,34 @@ h1 span {
   position: relative;
   z-index: 2;
 }
+
+/* Proyecto final: niveles emocionales, mismos puntos en las dos lecturas. */
+.map-stage{min-height:0;}
+#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/950;}
+.emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-leader{pointer-events:none;}
+.emotion-hit{pointer-events:all;}
+.emotion-core{stroke:#f4eddf;stroke-width:1.4;transition:transform .2s ease;}
+.emotion-core.is-reference{stroke-dasharray:2 2;}
+.emotion-leader{stroke:#9eacb1;stroke-width:1;opacity:.55;}
+.emotion-point[data-level="1"].is-engaged .emotion-core{transform:scale(1.35);}
+.emotion-point[data-level="2"].is-engaged .emotion-core{transform:scale(2.1);}
+.emotion-point[data-level="3"].is-engaged .emotion-core{transform:scale(3);}
+.emotion-point[data-level="1"].is-engaged .emotion-halo{animation:pulse-1 1.8s ease-in-out infinite;}
+.emotion-point[data-level="2"].is-engaged .emotion-halo{animation:pulse-2 1.05s ease-in-out infinite;}
+.emotion-point[data-level="3"].is-engaged .emotion-halo{animation:pulse-3 .55s ease-in-out infinite;}
+@keyframes pulse-1{0%,100%{transform:scale(.85);opacity:.13}50%{transform:scale(1.2);opacity:.4}}
+@keyframes pulse-2{0%,100%{transform:scale(.7);opacity:.13}50%{transform:scale(1.3);opacity:.48}}
+@keyframes pulse-3{0%,100%{transform:scale(.65);opacity:.18}50%{transform:scale(1.5);opacity:.56}}
+@media(prefers-reduced-motion:reduce){.emotion-point.is-engaged .emotion-halo{animation:none!important;opacity:.25!important;}.emotion-core{transition:none;}}
+.unlocated-title{fill:#f4eddf;font-family:"Manrope",Arial,sans-serif;font-size:11px;letter-spacing:.07em;}
+.unlocated-label{fill:#9eacb1;font-family:"Manrope",Arial,sans-serif;font-size:11px;}
+.emotion-tooltip,.map-tooltip{width:min(310px,calc(100% - 16px));padding:15px;transform:none;visibility:hidden;}
+.emotion-tooltip.is-visible,.map-tooltip.is-visible{visibility:visible;}
+.point-location{font-size:10px;color:var(--muted);letter-spacing:.06em;line-height:1.5;margin-bottom:8px;}
+.point-heading{display:flex;align-items:flex-start;gap:8px;}
+.point-heading .tooltip-dot{flex:none;margin-top:6px;width:11px;height:11px;}
+.point-title{font-family:"Jost",Arial,sans-serif;font-size:20px;line-height:1.1;font-weight:400;overflow-wrap:anywhere;}
+.point-meta{font-size:11px;color:var(--muted);margin-top:8px;}
+.emotion-tooltip .point-comment,.map-tooltip .point-comment{border-top:1px solid var(--line);font-family:"Manrope",Arial,sans-serif;font-size:12px;line-height:1.6;margin:12px 0 0;padding-top:10px;}
+.point-note{font-size:10px;color:var(--muted);line-height:1.45;margin-top:8px;}
+.data-note{font-size:11px;line-height:1.6;color:var(--muted);margin:14px 0 0;}
