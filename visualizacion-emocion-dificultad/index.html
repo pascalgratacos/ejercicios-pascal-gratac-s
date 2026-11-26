@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=20261117-8" />
+  <link rel="stylesheet" href="./style.css?v=final-cl-01" />
 </head>
 <body>
   <main class="page-shell">
@@ -27,7 +27,7 @@
           <h2>Emociones del recorrido</h2>
         </div>
         <p>
-          Cada círculo representa una emoción identificada durante el recorrido. Por defecto permanece quieto; al posar el mouse se expande según la intensidad emocional y revela la voz asociada.
+          Cada círculo representa una emoción o un conjunto de emociones del mismo nivel en una ficha. Al pasar el cursor, se expande y palpita según su clasificación y revela el comentario de la persona.
         </p>
       </div>
 
@@ -41,34 +41,24 @@
           <svg id="emotionMap" viewBox="0 0 1200 760" role="img" aria-label="Mapa emocional detallado del Barrio Puerto"></svg>
 
           <div class="emotion-tooltip" id="emotionTooltip" role="status" aria-live="polite">
-            <div class="tooltip-head">
-              <span class="tooltip-dot" id="tooltipDot"></span>
-              <strong id="tooltipEmotion">Emoción</strong>
-              <span id="tooltipLevel">Nivel —</span>
-            </div>
-            <div class="tooltip-meta">
-              <span id="tooltipPlace">Lugar</span>
-              <span id="tooltipDifficulty">Dificultad — / 5</span>
-            </div>
-            <blockquote id="tooltipQuote">“”</blockquote>
+            <div class="point-location"></div>
+            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
+            <div class="point-meta"></div>
+            <div class="point-comment"></div>
+            <div class="point-note"></div>
           </div>
         </div>
 
         <div class="map-bottom">
           <div class="emotion-legend">
-            <span data-emotion="entusiasmo"><i></i>Entusiasmo</span>
-            <span data-emotion="preocupacion"><i></i>Preocupación</span>
-            <span data-emotion="frustracion"><i></i>Frustración</span>
+            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Sensaciones positivas</span>
+            <span data-emotion="preocupacion"><i></i>Nivel 2 · Sensaciones intermedias</span>
+            <span data-emotion="frustracion"><i></i>Nivel 3 · Emociones intensas</span>
           </div>
-
-          <div class="emotion-behavior-note">
-            <span>Hover</span>
-            <span>Entusiasmo · expansión leve</span>
-            <span>Preocupación · expansión media</span>
-            <span>Frustración · expansión alta</span>
-          </div>
+          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
         </div>
       </div>
+      <p class="data-note">47 fichas con emociones o actitudes clasificables (51 puntos por nivel; una ficha puede aparecer en más de un nivel). Se excluyen dos fichas de menores de 60 años, seis sin emoción registrada y una descripción de conversación sin emoción identificable. Una edad queda pendiente de confirmar. Las ubicaciones son esquemáticas; borde discontinuo = calle referencial. Los puntos sin ubicación única están agrupados fuera del mapa. Los niveles son una clasificación interpretativa, no una escala de intensidad medida.</p>
     </section>
 
     <section class="screen" id="dificultad">
@@ -94,7 +84,7 @@
         <div class="layer-group">
           <span class="control-label">Capas</span>
           <button class="layer-toggle is-active" data-layer="difficulty">Dificultad</button>
-          <button class="layer-toggle" data-layer="emotion">Emociones</button>
+          <button class="layer-toggle is-active" data-layer="emotion">Emociones</button>
         </div>
       </div>
 
@@ -108,16 +98,11 @@
           <svg id="difficultyMap" viewBox="0 0 1200 760" role="img" aria-label="Mapa detallado de dificultad física del Barrio Puerto"></svg>
 
           <div class="map-tooltip" id="mapTooltip" role="status" aria-live="polite">
-            <div class="tooltip-head">
-              <span class="tooltip-dot" id="mapTooltipDot"></span>
-              <strong id="mapTooltipTitle">Información</strong>
-              <span id="mapTooltipType">Capa</span>
-            </div>
-            <div class="tooltip-meta">
-              <span id="mapTooltipPlace">Lugar</span>
-              <span id="mapTooltipLevel">Nivel</span>
-            </div>
-            <p id="mapTooltipText"></p>
+            <div class="point-location"></div>
+            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
+            <div class="point-meta"></div>
+            <div class="point-comment"></div>
+            <div class="point-note"></div>
           </div>
         </div>
 
@@ -127,7 +112,7 @@
             <span><i class="medium"></i>Amarillo · Dificultad media</span>
             <span><i class="easy"></i>Verde · Sin dificultad</span>
           </div>
-          <span class="layer-note">Al activar emociones, los puntos siempre aparecen sobre las líneas.</span>
+          <span class="layer-note">Emociones por encima de las líneas. Capa física del prototipo, pendiente de validar.</span>
         </div>
       </div>
     </section>
@@ -139,6 +124,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=20261117-8"></script>
+  <script src="./script.js?v=final-cl-01"></script>
 </body>
 </html>
