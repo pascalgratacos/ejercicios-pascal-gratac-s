@@ -1002,9 +1002,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Desnivel de 10 cm en una fosa séptica fuera del mall. Las personas evitan el lugar y suelen cruzar al frente.",
     "source": "Condiciones físicas y sensoriales, fila 4",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 138.1,
+    "x1": 112.8,
     "y1": 742.3,
-    "x2": 197.7,
+    "x2": 223,
     "y2": 742.3
   },
   {
@@ -1015,9 +1015,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Bache de 1 × 2 m y vereda rota con terreno irregular. Se observa que las personas modifican el paso para sortearlo.",
     "source": "Condiciones físicas y sensoriales, filas 6 y 29",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 653.7,
+    "x1": 626.5,
     "y1": 539.5,
-    "x2": 717.6,
+    "x2": 744.8,
     "y2": 539.5
   },
   {
@@ -1028,9 +1028,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Sector de vereda destrozada, con irregularidades y una profundidad de entre 10 y 15 cm.",
     "source": "Condiciones físicas y sensoriales, fila 28",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 888.9,
+    "x1": 861.7,
     "y1": 320.5,
-    "x2": 952.8,
+    "x2": 980,
     "y2": 320.5
   },
   {
@@ -1041,9 +1041,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Veredas en mal estado, desniveles y hoyos. Se observa dificultad para caminar con muleta y falta de apoyo en el borde de la vereda.",
     "source": "Condiciones físicas y sensoriales, filas 16 y 21",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 147.4,
+    "x1": 126,
     "y1": 112.5,
-    "x2": 197.7,
+    "x2": 219.1,
     "y2": 112.5
   },
   {
@@ -1054,9 +1054,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Baldosas sueltas y desnivel de 5 cm entre superficie peatonal y calzada. Se observa reducción de velocidad y tropiezos.",
     "source": "Condiciones físicas y sensoriales, filas 5 y 9",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 197.7,
+    "x1": 169.4,
     "y1": 539.5,
-    "x2": 264.2,
+    "x2": 292.5,
     "y2": 539.5
   },
   {
@@ -1067,9 +1067,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "El cruce desequilibra a una persona con muleta, que reduce su velocidad para evitar caerse.",
     "source": "Recorrido usuario, fila 21",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 778.1,
+    "x1": 754.6,
     "y1": 112.5,
-    "x2": 833.5,
+    "x2": 857,
     "y2": 112.5
   },
   {
@@ -1080,9 +1080,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Cambios de textura y desniveles en el pavimento. Los usuarios observan el suelo y reducen la velocidad durante el recorrido.",
     "source": "Recorrido usuario, filas 9 y 11",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 427.8,
+    "x1": 402.4,
     "y1": 112.5,
-    "x2": 487.5,
+    "x2": 512.9,
     "y2": 112.5
   },
   {
@@ -1093,9 +1093,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Subidas y bajadas que requieren mayor esfuerzo al caminar con bastón cerca de la parada de taxis.",
     "source": "Condiciones físicas y sensoriales, fila 15",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
-    "x1": 1082.4,
+    "x1": 1053.4,
     "y1": 320.5,
-    "x2": 1150.6,
+    "x2": 1179.6,
     "y2": 320.5
   },
   {
@@ -1106,9 +1106,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Falta de sombra y de un espacio de espera protegido del sol. Se observa cansancio, agobio, sudoración e hidratación constante.",
     "source": "Recorrido usuario, fila 5",
     "locationNote": "Paradero sin intersección exacta registrada; posición referencial en Errázuriz.",
-    "x1": 219,
+    "x1": 190,
     "y1": 742.3,
-    "x2": 287.2,
+    "x2": 316.2,
     "y2": 742.3
   },
   {
@@ -1119,9 +1119,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Se observa a adultos mayores descansando en una banca bajo la sombra, conversando y compartiendo con tranquilidad.",
     "source": "Recorrido usuario, fila 19; Condiciones físicas y sensoriales, fila 25",
     "locationNote": "Espacio de descanso observado; no representa toda la plaza. Posición referencial dentro de ella.",
-    "x1": 1029.5,
+    "x1": 1017.3,
     "y1": 223.3,
-    "x2": 1055.1,
+    "x2": 1067.3,
     "y2": 223.3
   },
   {
@@ -1133,9 +1133,9 @@ const DIFFICULTY_SEGMENTS = [
     "source": "Recorrido usuario, filas 8 y 10; Encuestas, fila 54",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
     "x1": 427.8,
-    "y1": 320.5,
+    "y1": 295.9,
     "x2": 427.8,
-    "y2": 378.4
+    "y2": 403
   },
   {
     "id": "ori-r2",
@@ -1146,7 +1146,7 @@ const DIFFICULTY_SEGMENTS = [
     "source": "Recorrido usuario, fila 7",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
     "x1": 197.7,
-    "y1": 682.7,
+    "y1": 657.4,
     "x2": 197.7,
     "y2": 742.3
   },
@@ -1161,7 +1161,7 @@ const DIFFICULTY_SEGMENTS = [
     "x1": 427.8,
     "y1": 112.5,
     "x2": 427.8,
-    "y2": 173.9
+    "y2": 200
   },
   {
     "id": "ori-y1",
@@ -1171,9 +1171,9 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Ausencia de vereda demarcada en un tramo de 70 m. Los peatones se mantienen atentos al tránsito y un usuario con carrito presenta dificultad.",
     "source": "Condiciones físicas y sensoriales, fila 11",
     "locationNote": "Tramo esquemático próximo a la Armada; longitud gráfica no equivale a 70 m.",
-    "x1": 202.8,
+    "x1": 191.2,
     "y1": 112.5,
-    "x2": 230.1,
+    "x2": 241.7,
     "y2": 112.5
   },
   {
@@ -1185,9 +1185,9 @@ const DIFFICULTY_SEGMENTS = [
     "source": "Recorrido usuario, fila 13; Condiciones físicas y sensoriales, fila 15",
     "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
     "x1": 1150.6,
-    "y1": 320.5,
+    "y1": 295.2,
     "x2": 1150.6,
-    "y2": 380.1
+    "y2": 405.4
   },
   {
     "id": "ori-y3",
@@ -1197,10 +1197,580 @@ const DIFFICULTY_SEGMENTS = [
     "detail": "Se registra ligera dificultad para identificar qué micro viene debido a la concentración de personas y al movimiento de los vehículos.",
     "source": "Condiciones físicas y sensoriales, fila 20",
     "locationNote": "Paradero sin intersección exacta registrada; posición referencial en Blanco.",
-    "x1": 332.4,
+    "x1": 305.2,
     "y1": 539.5,
-    "x2": 396.3,
+    "x2": 423.5,
     "y2": 539.5
+  }
+];
+
+const ARG_EMOTIONS = [
+  {
+    "id": "arg-4-1",
+    "sourceRow": 4,
+    "level": 1,
+    "label": "Alegría",
+    "difficulty": 2,
+    "place": "Talcahuano",
+    "quote": "Me encanta.",
+    "x": 390,
+    "y": 115,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-5-1",
+    "sourceRow": 5,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 3,
+    "place": "Plaza Lavalle",
+    "quote": "Vivo a tres cuadras de aquí, me encanta el sector.",
+    "x": 520,
+    "y": 175,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-6-1",
+    "sourceRow": 6,
+    "level": 1,
+    "label": "Paz",
+    "difficulty": 1,
+    "place": "Uruguay",
+    "quote": "Me encanta. Me siento segura. Practica taichí.",
+    "x": 130,
+    "y": 150,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-7-1",
+    "sourceRow": 7,
+    "level": 1,
+    "label": "Felicidad, emoción y tranquilidad",
+    "difficulty": 1,
+    "place": "Talcahuano",
+    "quote": "Vivo a 25 cuadras de aquí y tengo una librería.",
+    "x": 390,
+    "y": 175,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-8-1",
+    "sourceRow": 8,
+    "level": 1,
+    "label": "Comodidad",
+    "difficulty": 1,
+    "place": "Talcahuano",
+    "quote": "Me gusta, se siente cómodo.",
+    "x": 390,
+    "y": 225,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-9-1",
+    "sourceRow": 9,
+    "level": 1,
+    "label": "Alegría",
+    "difficulty": 1,
+    "place": "Talcahuano, Tucumán, Viamonte y Libertad",
+    "quote": "Tengo momentos muy lindos, muchos recuerdos.",
+    "x": 650,
+    "y": 155,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-9-2",
+    "sourceRow": 9,
+    "level": 2,
+    "label": "Melancolía",
+    "difficulty": 1,
+    "place": "Talcahuano, Tucumán, Viamonte y Libertad",
+    "quote": "Tengo momentos muy lindos, muchos recuerdos.",
+    "x": 650,
+    "y": 205,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-10-1",
+    "sourceRow": 10,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Lavalle y Tucumán",
+    "quote": "Está todo bien cuidado. Tomo el Obelisco como punto de referencia cada vez que vengo.",
+    "x": 480,
+    "y": 600,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-11-1",
+    "sourceRow": 11,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 2,
+    "place": "Talcahuano",
+    "quote": "Me gusta venir los días soleados los fines de semana.",
+    "x": 390,
+    "y": 310,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-12-2",
+    "sourceRow": 12,
+    "level": 2,
+    "label": "Nostalgia",
+    "difficulty": 2,
+    "place": "Talcahuano",
+    "quote": "Siempre venía aquí con mi familia de pequeño.",
+    "x": 390,
+    "y": 370,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-13-1",
+    "sourceRow": 13,
+    "level": 1,
+    "label": "Emoción",
+    "difficulty": 1,
+    "place": "Tucumán",
+    "quote": "Me emociona ver lo lindo que está.",
+    "x": 396,
+    "y": 430,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-14-1",
+    "sourceRow": 14,
+    "level": 1,
+    "label": "Alivio",
+    "difficulty": 3,
+    "place": "Tucumán, Lavalle y Viamonte",
+    "quote": "Siento que aquí puedo respirar.",
+    "x": 642,
+    "y": 430,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-15-1",
+    "sourceRow": 15,
+    "level": 1,
+    "label": "Paz",
+    "difficulty": 2,
+    "place": "Av. Córdoba",
+    "quote": "Me encanta venir y tirarme al pasto con sol.",
+    "x": 490,
+    "y": 90,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-16-1",
+    "sourceRow": 16,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Talcahuano",
+    "quote": "Siempre que puedo, vengo.",
+    "x": 390,
+    "y": 480,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-17-1",
+    "sourceRow": 17,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Viamonte",
+    "quote": "Cuando hay tribunales se me hace complicado transitar.",
+    "x": 485,
+    "y": 260,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-18-1",
+    "sourceRow": 18,
+    "level": 1,
+    "label": "Entretención",
+    "difficulty": 3,
+    "place": "Viamonte",
+    "quote": "Sin comentario extra registrado.",
+    "x": 575,
+    "y": 260,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-19-1",
+    "sourceRow": 19,
+    "level": 1,
+    "label": "Gusto",
+    "difficulty": 2,
+    "place": "Av. Córdoba",
+    "quote": "Le gusta Av. Córdoba. Volvió cuatro veces a continuar la conversación.",
+    "x": 750,
+    "y": 90,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-20-1",
+    "sourceRow": 20,
+    "level": 1,
+    "label": "Paz y tranquilidad",
+    "difficulty": 2,
+    "place": "Tucumán",
+    "quote": "Me gusta lo que he visto hasta ahora.",
+    "x": 700,
+    "y": 430,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-21-1",
+    "sourceRow": 21,
+    "level": 1,
+    "label": "Seguridad",
+    "difficulty": 1,
+    "place": "Tucumán",
+    "quote": "Es lindo pasar aquí, está todo pastizado, está el Teatro Colón y las plazas.",
+    "x": 825,
+    "y": 430,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-22-1",
+    "sourceRow": 22,
+    "level": 1,
+    "label": "Familiaridad",
+    "difficulty": 1,
+    "place": "Talcahuano",
+    "quote": "Vivo aquí hace años. En auto es difícil de transitar por la plaza, pero en general es muy tranquilo.",
+    "x": 390,
+    "y": 550,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-23-1",
+    "sourceRow": 23,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Sector general",
+    "quote": "No vivo acá, me queda a dos horas, pero está todo muy lindo y bien cuidado.",
+    "x": 80,
+    "y": 820,
+    "city": "BUENOS AIRES",
+    "locationNote": "Sin calle concreta registrada; posición esquemática general."
+  },
+  {
+    "id": "arg-25-1",
+    "sourceRow": 25,
+    "level": 1,
+    "label": "Familiaridad",
+    "difficulty": 1,
+    "place": "Talcahuano",
+    "quote": "Si no conoces y preguntas, la gente te ayuda, son todos muy solidarios.",
+    "x": 390,
+    "y": 625,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-27-3",
+    "sourceRow": 27,
+    "level": 3,
+    "label": "Inseguridad",
+    "difficulty": 2,
+    "place": "Viamonte",
+    "quote": "He vivido aquí toda mi vida, nada especial, de muy chico mis papás trabajaban en el sector. Menciona las manifestaciones.",
+    "x": 735,
+    "y": 260,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-28-1",
+    "sourceRow": 28,
+    "level": 1,
+    "label": "Frescura, alivio y contento",
+    "difficulty": 2,
+    "place": "Lavalle",
+    "quote": "Sin comentario extra registrado.",
+    "x": 565,
+    "y": 600,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-30-1",
+    "sourceRow": 30,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 2,
+    "place": "Talcahuano",
+    "quote": "Menciona que hay sectores donde percibe cierta inseguridad.",
+    "x": 390,
+    "y": 800,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-31-2",
+    "sourceRow": 31,
+    "level": 2,
+    "label": "Algo inseguro",
+    "difficulty": 2,
+    "place": "Lavalle",
+    "quote": "Es lindo, está fresco, de noche, después de las siete, se pone peligroso.",
+    "x": 730,
+    "y": 600,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-32-2",
+    "sourceRow": 32,
+    "level": 2,
+    "label": "Nostalgia",
+    "difficulty": 3,
+    "place": "Av. Corrientes",
+    "quote": "Menciona que durante la noche aumenta la inseguridad y se apagan las luces.",
+    "x": 740,
+    "y": 770,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-33-1",
+    "sourceRow": 33,
+    "level": 1,
+    "label": "Satisfacción",
+    "difficulty": 1,
+    "place": "Lavalle",
+    "quote": "Turista que lleva dos noches en la ciudad.",
+    "x": 820,
+    "y": 600,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-34-1",
+    "sourceRow": 34,
+    "level": 1,
+    "label": "Relajo",
+    "difficulty": 1,
+    "place": "Talcahuano, Tucumán, Viamonte y Libertad",
+    "quote": "Yo me relajo mucho, me siento bien, hay una sombra espectacular. Vengo 2-3 veces a la semana unas 3-5 horas.",
+    "x": 650,
+    "y": 480,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-35-1",
+    "sourceRow": 35,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Talcahuano, Tucumán, Viamonte y Libertad",
+    "quote": "Vengo a tomar aire, como 10 veces a la semana. Tomaba mate sentado.",
+    "x": 650,
+    "y": 550,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-36-3",
+    "sourceRow": 36,
+    "level": 3,
+    "label": "Adrenalina",
+    "difficulty": 4,
+    "place": "Av. Corrientes y Cerrito",
+    "quote": "Yo crecí acá, te producen adrenalina los cambios, hay más tránsito de autos que antes.",
+    "x": 910,
+    "y": 770,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-37-2",
+    "sourceRow": 37,
+    "level": 2,
+    "label": "Naturalidad",
+    "difficulty": 2,
+    "place": "Av. Córdoba",
+    "quote": "No me gustan los espacios con mucha gente.",
+    "x": 850,
+    "y": 90,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-38-1",
+    "sourceRow": 38,
+    "level": 1,
+    "label": "Amor",
+    "difficulty": 1,
+    "place": "Corrientes, Libertad y Lavalle",
+    "quote": "Yo conozco aquí de chiquita, yo jugaba acá, ahora vivo, hago taichí y salgo a caminar, es re lindo.",
+    "x": 650,
+    "y": 810,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-40-1",
+    "sourceRow": 40,
+    "level": 1,
+    "label": "Seguridad",
+    "difficulty": 2,
+    "place": "Uruguay",
+    "quote": "Hay mucha gente, hay policías, la gente se ve amable, es lindo. Cruzar no es seguro, los autos no paran.",
+    "x": 130,
+    "y": 510,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-41-1",
+    "sourceRow": 41,
+    "level": 1,
+    "label": "Relajo",
+    "difficulty": 1,
+    "place": "Sector Plaza Lavalle",
+    "quote": "Aquí es como un pulmón verde, a veces vengo una vez por semana.",
+    "x": 520,
+    "y": 530,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-42-2",
+    "sourceRow": 42,
+    "level": 2,
+    "label": "Curiosidad",
+    "difficulty": 2,
+    "place": "Cerrito",
+    "quote": "Cerrito parece una calle ancha. Depende de la hora, de noche es muy oscuro, de día está bien.",
+    "x": 910,
+    "y": 530,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; no localización exacta de la emoción."
+  },
+  {
+    "id": "arg-43-3",
+    "sourceRow": 43,
+    "level": 3,
+    "label": "Placer enorme",
+    "difficulty": 1,
+    "place": "Sector general",
+    "quote": "Turista por dos noches. Encuentra hermosa la ciudad, ya que viene de una ciudad más pequeña.",
+    "x": 1120,
+    "y": 825,
+    "city": "BUENOS AIRES",
+    "locationNote": "Sin calle concreta registrada; posición esquemática general."
+  }
+];
+const ARG_DIFFICULTY_SEGMENTS = [
+  {
+    "id": "arg-sup-g1",
+    "category": "superficie",
+    "level": "facil",
+    "place": "Libertad",
+    "detail": "Calles amplias; las personas observadas caminan con calma y sin dificultad visible.",
+    "source": "Recorrido de usuarios ARG, fila 5",
+    "x1": 650,
+    "y1": 110,
+    "x2": 650,
+    "y2": 235,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación y extensión esquemáticas; no representan una medición continua."
+  },
+  {
+    "id": "arg-sup-g2",
+    "category": "superficie",
+    "level": "facil",
+    "place": "Viamonte con Talcahuano",
+    "detail": "Calles planas permiten el desplazamiento de una persona en silla de ruedas acompañada por su familia.",
+    "source": "Recorrido de usuarios ARG, fila 6",
+    "x1": 390,
+    "y1": 260,
+    "x2": 535,
+    "y2": 260,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación y extensión esquemáticas; no representan una medición continua."
+  },
+  {
+    "id": "arg-des-g1",
+    "category": "descanso",
+    "level": "facil",
+    "place": "Plaza Lavalle · sector Libertad",
+    "detail": "Una persona se sienta a descansar a la sombra de un árbol, conversa y disfruta del entorno.",
+    "source": "Recorrido de usuarios ARG, fila 4",
+    "x1": 650,
+    "y1": 295,
+    "x2": 650,
+    "y2": 415,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación y extensión esquemáticas; no representan una medición continua."
+  },
+  {
+    "id": "arg-ori-r1",
+    "category": "orientacion",
+    "level": "alta",
+    "place": "Av. Corrientes y Cerrito",
+    "detail": "Cambios en el sentido de las calles y aumento del tránsito vehicular. Dificultad general declarada: 4/5.",
+    "source": "Encuestas ARG, fila 36",
+    "x1": 910,
+    "y1": 770,
+    "x2": 1070,
+    "y2": 770,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; extensión gráfica, no medida."
+  },
+  {
+    "id": "arg-ori-y1",
+    "category": "orientacion",
+    "level": "media",
+    "place": "Uruguay",
+    "detail": "Dificultad para cruzar por el tránsito vehicular y conductores que no se detienen.",
+    "source": "Encuestas ARG, fila 40",
+    "x1": 130,
+    "y1": 460,
+    "x2": 130,
+    "y2": 610,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación referencial según encuesta; extensión gráfica, no medida."
+  },
+  {
+    "id": "arg-ori-g1",
+    "category": "orientacion",
+    "level": "facil",
+    "place": "Viamonte con Talcahuano",
+    "detail": "Una persona en silla de ruedas acompañada espera para cruzar con precaución y continúa con normalidad.",
+    "source": "Recorrido de usuarios ARG, fila 6",
+    "x1": 390,
+    "y1": 120,
+    "x2": 390,
+    "y2": 260,
+    "city": "BUENOS AIRES",
+    "locationNote": "Ubicación y extensión esquemáticas; no representan una medición continua."
   }
 ];
 
@@ -1225,9 +1795,9 @@ function svgEl(tag) {
   return document.createElementNS(NS, tag);
 }
 
-function drawBaseMap(svg) {
+function drawBaseMap(svg, city="cl") {
   const image=svgEl("image");
-  image.setAttribute("href", new URL("./mapa-valparaiso-nocturno.svg?v=05",document.currentScript?.src || MAP_SCRIPT_URL).href);
+  image.setAttribute("href", new URL(city==="arg"?"./mapa-buenos-aires-provisional.svg?v=01":"./mapa-valparaiso-nocturno.svg?v=05",document.currentScript?.src || MAP_SCRIPT_URL).href);
   image.setAttribute("x",0);image.setAttribute("y",0);
   image.setAttribute("width",1200);image.setAttribute("height",900);
   image.setAttribute("preserveAspectRatio","xMidYMid meet");
@@ -1244,7 +1814,7 @@ function difficultyLabel(level) {
   return "Sin dificultad observable";
 }
 
-function createEmotionPoint(item, context = "emotion") {
+function createEmotionPoint(item, context = "emotion", city="cl") {
   const group=svgEl("g");
   group.setAttribute("class","emotion-point");
   group.dataset.level=item.level;
@@ -1258,8 +1828,8 @@ function createEmotionPoint(item, context = "emotion") {
     if(cls==="emotion-core"||cls==="emotion-halo")circle.setAttribute("stroke","none");
     group.append(circle);
   }
-  const stage=context==="emotion"?emotionStage:difficultyStage;
-  const tip=context==="emotion"?emotionTooltip:mapTooltip;
+  const stage=city==="arg"?document.querySelector(context==="emotion"?"#argEmotionStage":"#argDifficultyStage"):(context==="emotion"?emotionStage:difficultyStage);
+  const tip=city==="arg"?document.querySelector(context==="emotion"?"#argEmotionTooltip":"#argMapTooltip"):(context==="emotion"?emotionTooltip:mapTooltip);
   const show=e=>{group.classList.add("is-engaged"); showPointTooltip(e,item,stage,tip);};
   const hide=()=>{group.classList.remove("is-engaged");tip.classList.remove("is-visible");};
   group.addEventListener("mouseenter",show);
@@ -1273,7 +1843,7 @@ function createEmotionPoint(item, context = "emotion") {
 function showPointTooltip(event,item,stage,tip){
   tip.classList.add("point-detail");
   const place=tip.querySelector(".point-location");
-  place.textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
+  place.textContent=(item.city||"VALPARAÍSO")+" · "+item.place.toLocaleUpperCase("es");
   tip.querySelector(".tooltip-dot").style.background=emotionFill(item.level);
   tip.querySelector(".point-title").textContent=item.label.toLocaleUpperCase("es");
   tip.querySelector(".point-meta").textContent="Nivel "+item.level+" · Dificultad percibida: "+item.difficulty+"/5";
@@ -1284,20 +1854,13 @@ function showPointTooltip(event,item,stage,tip){
   moveTooltip(stage,tip,event);
 }
 
-function renderEmotionMap() {
-  emotionMap.innerHTML = "";
-  emotionMap.setAttribute("viewBox", MAP_VIEWBOX);
-  drawBaseMap(emotionMap);
-
-
-  const pointsLayer = svgEl("g");
-  pointsLayer.setAttribute("class", "emotion-layer");
-
-  EMOTIONS.forEach(item => {
-    pointsLayer.appendChild(createEmotionPoint(item, "emotion"));
-  });
-
-  emotionMap.appendChild(pointsLayer);
+function renderEmotionMap(city="cl") {
+ const svg=city==="arg"?document.querySelector("#argEmotionMap"):emotionMap;
+ const items=city==="arg"?ARG_EMOTIONS:EMOTIONS;
+ svg.innerHTML="";svg.setAttribute("viewBox",MAP_VIEWBOX);drawBaseMap(svg,city);
+ const layer=svgEl("g");layer.setAttribute("class","emotion-layer");
+ items.forEach(item=>layer.appendChild(createEmotionPoint(item,"emotion",city)));
+ svg.appendChild(layer);
 }
 
 function moveTooltip(stage, tip, event) {
@@ -1317,7 +1880,7 @@ function segmentLength(segment) {
   return Math.hypot(segment.x2 - segment.x1, segment.y2 - segment.y1);
 }
 
-function createDifficultyLine(item, index) {
+function createDifficultyLine(item, index, stage=difficultyStage, tip=mapTooltip) {
   const group = svgEl("g");
   group.setAttribute("class", "difficulty-line-group");
   group.dataset.category = item.category;
@@ -1338,87 +1901,56 @@ function createDifficultyLine(item, index) {
   line.style.setProperty("--segment-length", length);
   line.style.animationDelay = `${Math.min(index * 55, 480)}ms`;
 
-  line.addEventListener("mouseenter", event => showDifficultyTooltip(event, item));
-  line.addEventListener("mousemove", event => moveTooltip(difficultyStage, mapTooltip, event, 250, 150));
-  line.addEventListener("mouseleave", hideMapTooltip);
-  line.addEventListener("focus", event => showDifficultyTooltip(event,item));
-  line.addEventListener("blur", hideMapTooltip);
-  line.addEventListener("click", event => showDifficultyTooltip(event,item));
-  line.addEventListener("keydown", event => { if(event.key==="Escape"){hideMapTooltip();line.blur();} });
+  line.addEventListener("mouseenter", event => showDifficultyTooltip(event, item,stage,tip));
+  line.addEventListener("mousemove", event => moveTooltip(stage,tip,event));
+  line.addEventListener("mouseleave", ()=>hideMapTooltip(tip));
+  line.addEventListener("focus", event => showDifficultyTooltip(event,item,stage,tip));
+  line.addEventListener("blur", ()=>hideMapTooltip(tip));
+  line.addEventListener("click", event => showDifficultyTooltip(event,item,stage,tip));
+  line.addEventListener("keydown", event => { if(event.key==="Escape"){hideMapTooltip(tip);line.blur();} });
 
   group.appendChild(line);
   return group;
 }
 
-function showDifficultyTooltip(event,item){
-  mapTooltip.classList.remove("point-detail");
-  mapTooltip.querySelector(".point-location").textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
-  mapTooltip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
-  mapTooltip.querySelector(".point-title").textContent=(FILTER_LABELS[item.category] || item.category).toLocaleUpperCase("es");
-  mapTooltip.querySelector(".point-meta").textContent=difficultyLabel(item.level);
-  mapTooltip.querySelector(".point-comment").textContent=item.detail;
-  mapTooltip.querySelector(".point-note").textContent="Fuente: "+item.source+". "+item.locationNote+" Nivel interpretativo." ;
-  mapTooltip.classList.add("is-visible");
-  moveTooltip(difficultyStage,mapTooltip,event);
+function showDifficultyTooltip(event,item,stage=difficultyStage,tip=mapTooltip){
+  tip.classList.remove("point-detail");
+  tip.querySelector(".point-location").textContent=(item.city||"VALPARAÍSO")+" · "+item.place.toLocaleUpperCase("es");
+  tip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
+  tip.querySelector(".point-title").textContent=(FILTER_LABELS[item.category] || item.category).toLocaleUpperCase("es");
+  tip.querySelector(".point-meta").textContent=difficultyLabel(item.level);
+  tip.querySelector(".point-comment").textContent=item.detail;
+  tip.querySelector(".point-note").textContent="Fuente: "+item.source+". "+item.locationNote+" Nivel interpretativo." ;
+  tip.classList.add("is-visible");
+  moveTooltip(stage,tip,event);
 }
 
-function hideMapTooltip() {
-  mapTooltip.classList.remove("is-visible");
+function hideMapTooltip(tip=mapTooltip) {
+  tip.classList.remove("is-visible");
 }
 
-function renderDifficultyMap() {
-  difficultyMap.innerHTML = "";
-  difficultyMap.setAttribute("viewBox", MAP_VIEWBOX);
-  drawBaseMap(difficultyMap);
-
-  // Capa 1: dificultad física.
-  const difficultyLayer = svgEl("g");
-  difficultyLayer.setAttribute("class", "difficulty-layer");
-
-  const filtered = DIFFICULTY_SEGMENTS.filter(item => {
-    const category = FILTER_CATEGORY[item.category];
-    return !item.offMap && !!category && (activeFilter === "todas" || category === activeFilter);
-  });
-
-  filtered.forEach((item, index) => {
-    difficultyLayer.appendChild(createDifficultyLine(item, index));
-  });
-
-  difficultyMap.appendChild(difficultyLayer);
-
-  // Capa 2: emociones. Siempre se agrega al final para quedar por encima.
-  {
-
-    const emotionLayer = svgEl("g");
-    emotionLayer.setAttribute("class", "emotion-layer");
-
-    EMOTIONS.forEach(item => {
-      emotionLayer.appendChild(createEmotionPoint(item, "combined"));
-    });
-
-    difficultyMap.appendChild(emotionLayer);
-  }
+const cityFilters={cl:"todas",arg:"todas"};
+function renderDifficultyMap(city="cl") {
+ const isArg=city==="arg",svg=isArg?document.querySelector("#argDifficultyMap"):difficultyMap;
+ const stage=isArg?document.querySelector("#argDifficultyStage"):difficultyStage;
+ const tip=isArg?document.querySelector("#argMapTooltip"):mapTooltip;
+ const items=isArg?ARG_DIFFICULTY_SEGMENTS:DIFFICULTY_SEGMENTS;
+ const emotions=isArg?ARG_EMOTIONS:EMOTIONS;
+ svg.innerHTML="";svg.setAttribute("viewBox",MAP_VIEWBOX);drawBaseMap(svg,city);
+ const layer=svgEl("g");layer.setAttribute("class","difficulty-layer");
+ items.filter(item=>cityFilters[city]==="todas"||item.category===cityFilters[city]).forEach((item,index)=>layer.appendChild(createDifficultyLine(item,index,stage,tip)));
+ svg.appendChild(layer);
+ const emotionLayer=svgEl("g");emotionLayer.setAttribute("class","emotion-layer");
+ emotions.forEach(item=>emotionLayer.appendChild(createEmotionPoint(item,"combined",city)));
+ svg.appendChild(emotionLayer);
 }
-
-function setFilter(filter) {
-  if (!Object.hasOwn(FILTER_DEFINITIONS, filter)) return;
-  activeFilter = filter;
-  const definition = document.querySelector("#filterDefinition");
-  if (definition) definition.textContent = FILTER_DEFINITIONS[filter];
-
-  document.querySelectorAll(".filter-link").forEach(button => {
-    const selected = button.dataset.filter === filter;
-    button.classList.toggle("is-active", selected);
-    button.setAttribute("aria-pressed", String(selected));
-  });
-
-  hideMapTooltip();
-  renderDifficultyMap();
+function setFilter(filter,city="cl"){
+ if(!Object.prototype.hasOwnProperty.call(FILTER_DEFINITIONS,filter))return;
+ cityFilters[city]=filter;
+ const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");
+ const definition=section.querySelector(".filter-definition");definition.textContent=FILTER_DEFINITIONS[filter];
+ section.querySelectorAll(".filter-link").forEach(button=>{const selected=button.dataset.filter===filter;button.classList.toggle("is-active",selected);button.setAttribute("aria-pressed",String(selected));});
+ hideMapTooltip(city==="arg"?document.querySelector("#argMapTooltip"):mapTooltip);
+ renderDifficultyMap(city);
 }
-
-document.querySelectorAll(".filter-link").forEach(button => {
-  button.addEventListener("click", () => setFilter(button.dataset.filter));
-});
-
-renderEmotionMap();
-renderDifficultyMap();
+for(const city of ["cl","arg"]){const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");section.querySelectorAll(".filter-link").forEach(button=>button.addEventListener("click",()=>setFilter(button.dataset.filter,city)));renderEmotionMap(city);renderDifficultyMap(city);}
