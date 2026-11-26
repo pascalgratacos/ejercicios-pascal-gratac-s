@@ -1163,6 +1163,7 @@ function hideMapTooltip(tip=mapTooltip) {
 }
 
 const cityFilters={cl:"todas",arg:"todas"};
+const cityEmotions={cl:false,arg:false};
 function renderDifficultyMap(city="cl") {
  const isArg=city==="arg",svg=isArg?document.querySelector("#argDifficultyMap"):difficultyMap;
  const stage=isArg?document.querySelector("#argDifficultyStage"):difficultyStage;
@@ -1175,9 +1176,11 @@ function renderDifficultyMap(city="cl") {
  items.filter(item=>cityFilters[city]==="todas"||item.category===cityFilters[city]).forEach(item=>{if(!stacks.has(item.stack))stacks.set(item.stack,[]);stacks.get(item.stack).push(mapDisplaySegment(item));});
  [...stacks.values()].forEach((items,index)=>layer.appendChild(createDifficultyStack(items,index,stage,tip)));
  svg.appendChild(layer);
- const emotionLayer=svgEl("g");emotionLayer.setAttribute("class","emotion-layer");
- emotions.forEach(item=>emotionLayer.appendChild(createEmotionPoint(item,"combined",city)));
- svg.appendChild(emotionLayer);
+ if(cityEmotions[city]){
+   const emotionLayer=svgEl("g");emotionLayer.setAttribute("class","emotion-layer");
+   emotions.forEach(item=>emotionLayer.appendChild(createEmotionPoint(item,"combined",city)));
+   svg.appendChild(emotionLayer);
+ }
 }
 function setFilter(filter,city="cl"){
  if(!Object.prototype.hasOwnProperty.call(FILTER_DEFINITIONS,filter))return;
@@ -1188,4 +1191,26 @@ function setFilter(filter,city="cl"){
  hideMapTooltip(city==="arg"?document.querySelector("#argMapTooltip"):mapTooltip);
  renderDifficultyMap(city);
 }
-for(const city of ["cl","arg"]){const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");section.querySelectorAll(".filter-link").forEach(button=>button.addEventListener("click",()=>setFilter(button.dataset.filter,city)));renderEmotionMap(city);renderDifficultyMap(city);}
+function toggleEmotion(city="cl"){
+ cityEmotions[city]=!cityEmotions[city];
+ const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");
+ const button=section.querySelector(".emotion-toggle");
+ button.setAttribute("aria-pressed",String(cityEmotions[city]));
+ button.classList.toggle("is-active",cityEmotions[city]);
+ hideMapTooltip(city==="arg"?document.querySelector("#argMapTooltip"):mapTooltip);
+ // Only replace the emotion layer; avoid replaying the difficulty animation.
+ const svg=city==="arg"?document.querySelector("#argDifficultyMap"):difficultyMap;
+ svg.querySelector(".emotion-layer")?.remove();
+ if(cityEmotions[city]){
+   const layer=svgEl("g");layer.setAttribute("class","emotion-layer");
+   const items=city==="arg"?ARG_EMOTIONS:EMOTIONS;
+   items.forEach(item=>layer.appendChild(createEmotionPoint(item,"combined",city)));
+   svg.appendChild(layer);
+ }
+}
+for(const city of ["cl","arg"]){
+ const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");
+ section.querySelectorAll(".filter-link").forEach(button=>button.addEventListener("click",()=>setFilter(button.dataset.filter,city)));
+ section.querySelector(".emotion-toggle").addEventListener("click",()=>toggleEmotion(city));
+ renderEmotionMap(city);renderDifficultyMap(city);
+}
