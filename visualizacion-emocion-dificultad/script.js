@@ -1027,9 +1027,6 @@ const NIGHT_SEGMENTS = {"pav-r1":[90,871,232,871],"pav-r2":[502,633,640,633],"pa
 DIFFICULTY_SEGMENTS.forEach(item=>{const coords=NIGHT_SEGMENTS[item.id];if(!coords){item.offMap=true;return;}[item.x1,item.y1,item.x2,item.y2]=coords.map(v=>v*1200/1408);});
 
 let activeFilter = "todas";
-let showDifficulty = true;
-let showEmotions = true;
-
 const emotionMap = document.querySelector("#emotionMap");
 const difficultyMap = document.querySelector("#difficultyMap");
 const emotionStage = document.querySelector("#emotionStage");
@@ -1183,7 +1180,6 @@ function renderDifficultyMap() {
   // Capa 1: dificultad física.
   const difficultyLayer = svgEl("g");
   difficultyLayer.setAttribute("class", "difficulty-layer");
-  difficultyLayer.style.display = showDifficulty ? "" : "none";
 
   const filtered = DIFFICULTY_SEGMENTS.filter(item => {
     return !item.offMap && (activeFilter === "todas" || item.category === activeFilter);
@@ -1196,7 +1192,7 @@ function renderDifficultyMap() {
   difficultyMap.appendChild(difficultyLayer);
 
   // Capa 2: emociones. Siempre se agrega al final para quedar por encima.
-  if (showEmotions) {
+  {
 
     const emotionLayer = svgEl("g");
     emotionLayer.setAttribute("class", "emotion-layer");
@@ -1213,7 +1209,9 @@ function setFilter(filter) {
   activeFilter = filter;
 
   document.querySelectorAll(".filter-link").forEach(button => {
-    button.classList.toggle("is-active", button.dataset.filter === filter);
+    const selected = button.dataset.filter === filter;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-pressed", String(selected));
   });
 
   hideMapTooltip();
@@ -1222,25 +1220,6 @@ function setFilter(filter) {
 
 document.querySelectorAll(".filter-link").forEach(button => {
   button.addEventListener("click", () => setFilter(button.dataset.filter));
-});
-
-document.querySelectorAll(".layer-toggle").forEach(button => {
-  button.addEventListener("click", () => {
-    const layer = button.dataset.layer;
-
-    if (layer === "difficulty") {
-      showDifficulty = !showDifficulty;
-      button.classList.toggle("is-active", showDifficulty);
-    }
-
-    if (layer === "emotion") {
-      showEmotions = !showEmotions;
-      button.classList.toggle("is-active", showEmotions);
-    }
-
-    hideMapTooltip();
-    renderDifficultyMap();
-  });
 });
 
 renderEmotionMap();
