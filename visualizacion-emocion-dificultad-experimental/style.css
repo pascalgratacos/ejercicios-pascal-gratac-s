@@ -802,3 +802,22 @@ h1 span {
 .emotion-reveal-ready .emotion-point:focus{visibility:visible;opacity:1;animation:none;}
 @keyframes emotion-scroll-in{from{opacity:0;visibility:hidden;}to{opacity:1;visibility:visible;}}
 @media(prefers-reduced-motion:reduce){.cover-scroll-arrow{animation:none;transition:none;}.emotion-reveal-ready .emotion-point,.emotion-reveal-ready.emotion-reveal-visible .emotion-point{opacity:1;visibility:visible;animation:none;}}
+
+/* Copia experimental — controles de cámara y base urbana neutra. */
+.map-camera-controls{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:5px;padding:8px 10px;background:#24272b;border-bottom:1px solid #44484d;color:#d4d4d4;min-height:45px;}
+.map-camera-controls button,.map-camera-controls select{font:500 11px "Manrope",Arial,sans-serif;color:#dedede;border:1px solid #51555a;border-radius:5px;background:#303338;min-height:28px;cursor:pointer;padding:4px 8px;}
+.map-camera-controls button{min-width:28px;}
+.map-camera-controls button:hover,.map-camera-controls select:hover{background:#45494f;color:white;}
+.map-camera-controls button:focus-visible,.map-camera-controls select:focus-visible{outline:2px solid #c4c4c4;outline-offset:2px;}
+.map-camera-controls .map-camera-mode[aria-pressed="true"]{background:#c4c6c8;color:#202225;border-color:#c4c6c8;}
+.map-zoom-readout{min-width:34px;text-align:center;font-size:10px;font-variant-numeric:tabular-nums;}
+.map-camera-controls select{margin-left:auto;max-width:100%;min-width:90px;}
+.comparison-grid .map-stage>svg.map-3d-active{background:radial-gradient(ellipse at 50% 48%,#3a3d40,#202225 75%);}
+.map-3d-active .night-map-base{filter:grayscale(1) brightness(1.65);}
+.map-3d-volumes{pointer-events:none;}
+.comparison-grid .map-stage>svg[tabindex="0"]{cursor:grab;touch-action:none;}
+.comparison-grid .map-stage>svg.map-camera-dragging{cursor:grabbing;}
+.map-camera-dragging .emotion-point,.map-camera-dragging .difficulty-stack{pointer-events:none!important;}
+.comparison-grid .map-stage>svg:focus-visible{outline:2px solid #a2a4a7;outline-offset:-2px;}
+.map-camera-note{max-width:780px;}
+@media(max-width:1100px){.map-camera-controls select{margin-left:0;flex:1;}.map-camera-controls{gap:4px;}}
