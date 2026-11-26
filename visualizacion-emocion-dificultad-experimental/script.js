@@ -1102,6 +1102,7 @@ function renderEmotionMap(city="cl") {
    layer.appendChild(point);
  });
  svg.appendChild(layer);
+ if(typeof window.refreshMap3D==="function")window.refreshMap3D(svg,city);
 }
 
 function moveTooltip(stage, tip, event) {
@@ -1193,6 +1194,7 @@ function renderDifficultyMap(city="cl") {
    emotions.forEach(item=>emotionLayer.appendChild(createEmotionPoint(item,"combined",city)));
    svg.appendChild(emotionLayer);
  }
+ if(typeof window.refreshMap3D==="function")window.refreshMap3D(svg,city);
 }
 function setFilter(filter,city="cl"){
  if(!Object.prototype.hasOwnProperty.call(FILTER_DEFINITIONS,filter))return;
@@ -1219,6 +1221,7 @@ function toggleEmotion(city="cl"){
    items.forEach(item=>layer.appendChild(createEmotionPoint(item,"combined",city)));
    svg.appendChild(layer);
  }
+ if(typeof window.refreshMap3D==="function")window.refreshMap3D(svg,city);
 }
 for(const city of ["cl","arg"]){
  const section=document.querySelector(city==="arg"?"#dificultad-arg":"#dificultad");
