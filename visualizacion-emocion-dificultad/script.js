@@ -951,7 +951,17 @@ const EMOTIONS = [
 ];
 const LEVEL_COLORS = {1:"#00D6C8",2:"#FF8A1F",3:"#9F2148"};
 const LEVEL_LABELS = {1:"Sensaciones positivas",2:"Sensaciones intermedias",3:"Emociones intensas"};
-const MAP_VIEWBOX = "-150 -65 1500 1030";
+// Fill the same comparison frame with 25% more map width; compact the schematic vertically.
+const MAP_VIEWBOX = "0 0 1200 824";
+const MAP_Y_SCALE = .89;
+const MAP_Y_OFFSET = 11.5;
+function mapDisplayY(y){return y*MAP_Y_SCALE+MAP_Y_OFFSET;}
+function mapDisplaySegment(item){
+ const y=mapDisplayY((item.y1+item.y2)/2);
+ const vertical=item.x1===item.x2;
+ const half=Math.hypot(item.x2-item.x1,item.y2-item.y1)/2;
+ return {...item,y1:vertical?y-half:y,y2:vertical?y+half:y};
+}
 // Positions are schematic. General experiences remain inside the map without a street attribution.
 const LABEL_ZONES = [{"name":"Prat","x":95.45454545454545,"y":138.92045454545456,"w":35.79545454545455,"h":13.352130681818181},{"name":"Sotomayor","x":312.78409090909093,"y":138.92045454545456,"w":68.60795454545455,"h":13.352130681818181},{"name":"Serrano","x":586.3636363636364,"y":138.92045454545456,"w":49.43181818181818,"h":13.352130681818181},{"name":"Cochrane","x":576.1363636363636,"y":346.875,"w":58.38068181818182,"h":13.352130681818181},{"name":"Blanco","x":576.1363636363636,"y":565.9090909090909,"w":45.17045454545455,"h":13.352130681818181},{"name":"Errázuriz","x":576.1363636363636,"y":768.75,"w":60.51136363636364,"h":13.352130681818181},{"name":"Sotomayor","x":197.72727272727272,"y":429.97159090909093,"w":40.90909090909091,"h":9.161931818181818},{"name":"Sotomayor","x":427.8409090909091,"y":429.97159090909093,"w":40.90909090909091,"h":9.161931818181818},{"name":"Almirante Muñoz","x":653.6931818181819,"y":429.97159090909093,"w":59.23295454545455,"h":9.161931818181818},{"name":"Almirante Goñi","x":778.125,"y":429.97159090909093,"w":54.971590909090914,"h":9.161931818181818},{"name":"Almirante Pérez","x":888.9204545454546,"y":429.97159090909093,"w":57.52840909090909,"h":9.161931818181818},{"name":"Clave","x":1003.125,"y":429.97159090909093,"w":24.71590909090909,"h":9.161931818181818},{"name":"San Martín","x":1150.5681818181818,"y":429.97159090909093,"w":39.63068181818182,"h":9.161931818181818}];
 function layoutEmotions() {
@@ -1021,10 +1031,10 @@ function svgEl(tag) {
 
 function drawBaseMap(svg, city="cl") {
   const image=svgEl("image");
-  image.setAttribute("href", new URL(city==="arg"?"./mapa-buenos-aires-provisional.svg?v=02":"./mapa-valparaiso-nocturno.svg?v=06",document.currentScript?.src || MAP_SCRIPT_URL).href);
-  image.setAttribute("x",0);image.setAttribute("y",0);
-  image.setAttribute("width",1200);image.setAttribute("height",900);
-  image.setAttribute("preserveAspectRatio","xMidYMid meet");
+  image.setAttribute("href", new URL(city==="arg"?"./mapa-buenos-aires-provisional.svg?v=02":"./mapa-valparaiso-nocturno.svg?v=07",document.currentScript?.src || MAP_SCRIPT_URL).href);
+  image.setAttribute("x",0);image.setAttribute("y",MAP_Y_OFFSET);
+  image.setAttribute("width",1200);image.setAttribute("height",900*MAP_Y_SCALE);
+  image.setAttribute("preserveAspectRatio","none");
   image.setAttribute("pointer-events","none");
   image.setAttribute("class","night-map-base");
   svg.append(image);
@@ -1046,9 +1056,9 @@ function createEmotionPoint(item, context = "emotion", city="cl") {
   group.setAttribute("tabindex","0");
   group.setAttribute("role","button");
   group.setAttribute("aria-label",item.label+", "+item.place+", nivel "+item.level);
-  for(const [cls,r] of [["emotion-hit",11],["emotion-halo",[0,19,30,43][item.level]],["emotion-core",9]]){
+  for(const [cls,r] of [["emotion-hit",14],["emotion-halo",[0,23,36,51][item.level]],["emotion-core",12]]){
     const circle=svgEl("circle");
-    Object.entries({cx:item.x,cy:item.y,r,class:cls,fill:cls==="emotion-hit"?"transparent":emotionFill(item.level)}).forEach(([k,v])=>circle.setAttribute(k,v));
+    Object.entries({cx:item.x,cy:mapDisplayY(item.y),r,class:cls,fill:cls==="emotion-hit"?"transparent":emotionFill(item.level)}).forEach(([k,v])=>circle.setAttribute(k,v));
     if(cls==="emotion-core"||cls==="emotion-halo")circle.setAttribute("stroke","none");
     group.append(circle);
   }
@@ -1162,7 +1172,7 @@ function renderDifficultyMap(city="cl") {
  svg.innerHTML="";svg.setAttribute("viewBox",MAP_VIEWBOX);drawBaseMap(svg,city);
  const layer=svgEl("g");layer.setAttribute("class","difficulty-layer");
  const stacks=new Map();
- items.filter(item=>cityFilters[city]==="todas"||item.category===cityFilters[city]).forEach(item=>{if(!stacks.has(item.stack))stacks.set(item.stack,[]);stacks.get(item.stack).push(item);});
+ items.filter(item=>cityFilters[city]==="todas"||item.category===cityFilters[city]).forEach(item=>{if(!stacks.has(item.stack))stacks.set(item.stack,[]);stacks.get(item.stack).push(mapDisplaySegment(item));});
  [...stacks.values()].forEach((items,index)=>layer.appendChild(createDifficultyStack(items,index,stage,tip)));
  svg.appendChild(layer);
  const emotionLayer=svgEl("g");emotionLayer.setAttribute("class","emotion-layer");
