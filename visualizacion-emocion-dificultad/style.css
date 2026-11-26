@@ -650,7 +650,18 @@ h1 span {
 #dificultad-arg .map-topline{align-items:flex-start;justify-content:flex-start;}
 #dificultad-arg .filter-definition{max-width:100%;text-align:left;line-height:1.5;}
 
-/* Codificación CL: franjas individuales más finas para distinguir las 162 observaciones. */
-#difficultyMap .coded-franja .difficulty-line{stroke-width:5.5;opacity:.74;vector-effect:none;}
-#difficultyMap .coded-franja .difficulty-line:hover,#difficultyMap .coded-franja .difficulty-line:focus-visible{stroke-width:9;opacity:1;outline:none;}
 .coding-note{font-size:11px;line-height:1.6;color:var(--muted);margin:12px 0 0;}
+
+/* Franjas: 76 unidades de longitud y 7 de grosor en ambas ciudades. */
+.difficulty-stack .stacked-line{stroke-width:7;opacity:.30;vector-effect:none;transform:translate(0,0);transition:transform .20s ease,opacity .16s ease;pointer-events:stroke;cursor:pointer;}
+.difficulty-stack .stacked-line:hover,.difficulty-stack .stacked-line:focus-visible{stroke-width:7;opacity:1;outline:none;}
+.difficulty-stack.is-expanded .stacked-line{transform:translate(var(--stack-x),var(--stack-y));opacity:.86;}
+.difficulty-stack.is-expanded .stacked-line:hover,.difficulty-stack.is-expanded .stacked-line:focus-visible{opacity:1;}
+.difficulty-stack:not(.is-expanded) .stacked-line{transition:opacity .12s ease;}
+.difficulty-stack .stack-hit{pointer-events:all;cursor:pointer;}
+.difficulty-layer:has(.difficulty-stack.is-expanded) .difficulty-stack:not(.is-expanded){opacity:.35;pointer-events:none;}
+.difficulty-layer:has(.difficulty-stack.is-expanded) .difficulty-stack:not(.is-expanded) *{pointer-events:none;}
+.map-tooltip.difficulty-detail .point-note{display:none;}
+.map-tooltip.difficulty-detail .point-comment{border:0;margin:6px 0 0;padding:0;}
+.map-tooltip.difficulty-detail .point-meta{margin-top:7px;}
+@media(prefers-reduced-motion:reduce){.difficulty-stack .stacked-line{animation:none;stroke-dashoffset:0;transition:none;}}
