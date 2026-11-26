@@ -766,3 +766,10 @@ h1 span {
   .comparison-grid .map-topline,.comparison-difficulty .map-topline{min-height:0;}
   .comparison-grid .control-bar{min-height:0;}
 }
+
+/* Mapas ampliados dentro del marco comparativo existente. */
+.comparison-grid .map-stage > svg {overflow:hidden;aspect-ratio:1500/1030;}
+.difficulty-stack .stacked-line {stroke-width:8;opacity:.60;}
+.difficulty-stack .stacked-line:hover,.difficulty-stack .stacked-line:focus-visible {stroke-width:8;opacity:1;}
+.difficulty-stack.is-expanded .stacked-line {opacity:.90;}
+.difficulty-stack.is-expanded .stacked-line:hover,.difficulty-stack.is-expanded .stacked-line:focus-visible {opacity:1;}
