@@ -137,7 +137,7 @@ const STREETS = [
    ========================================================= */
 
 /* Encuestas CL, columna P y Q. Una ficha puede aportar a más de un nivel.
-   Los tramos de dificultad son del prototipo previo; no son datos validados.
+   Los tramos de dificultad se basan en observaciones CL con clasificación interpretativa.
    Las coordenadas son diagramáticas, no geográficas. */
 const EMOTIONS = [
   {
@@ -992,48 +992,225 @@ layoutEmotions();
    Cantidades exactas por filtro.
    ========================================================= */
 
+// Clasificación interpretativa de observaciones CL. Cada franja representa una condición localizada; no una medición continua de la calle.
 const DIFFICULTY_SEGMENTS = [
-  // PAVIMENTO — 3 rojas, 2 amarillas, 1 verde
-  { id:"pav-r1", category:"pavimento", categoryLabel:"Pavimento", level:"alta", place:"Errázuriz · Bustamante–Sotomayor", detail:"Superficie deteriorada que obliga a aumentar la atención al avanzar.", x1:145,y1:615,x2:315,y2:615 },
-  { id:"pav-r2", category:"pavimento", categoryLabel:"Pavimento", level:"alta", place:"Blanco · Sotomayor–Urriola", detail:"Pavimento irregular con dificultad alta para mantener un desplazamiento continuo.", x1:315,y1:365,x2:470,y2:365 },
-  { id:"pav-r3", category:"pavimento", categoryLabel:"Pavimento", level:"alta", place:"Serrano · Clave–San Martín", detail:"Superficie deteriorada que exige modificar o ralentizar el paso.", x1:640,y1:485,x2:805,y2:485 },
-  { id:"pav-y1", category:"pavimento", categoryLabel:"Pavimento", level:"media", place:"Cochrane · Urriola–Clave", detail:"Irregularidades moderadas: el tramo sigue siendo transitable, pero exige atención.", x1:470,y1:245,x2:640,y2:245 },
-  { id:"pav-y2", category:"pavimento", categoryLabel:"Pavimento", level:"media", place:"Blanco · San Martín–Almte. Goñi", detail:"Condición intermedia del pavimento, con pequeñas interrupciones en el avance.", x1:805,y1:365,x2:965,y2:365 },
-  { id:"pav-g1", category:"pavimento", categoryLabel:"Pavimento", level:"facil", place:"Errázuriz · Almte. Goñi–Almte. Pérez", detail:"Superficie continua y sin dificultad física relevante para el tránsito.", x1:965,y1:615,x2:1080,y2:615 },
-
-  // OBSTÁCULOS — 4 rojas en sector Plaza Sotomayor
-  { id:"obs-r1", category:"obstaculos", categoryLabel:"Obstáculos", level:"alta", place:"Plaza Sotomayor · eje norte", detail:"Obstáculos reducen el espacio útil de paso y obligan a ajustar la trayectoria.", x1:315,y1:365,x2:315,y2:245 },
-  { id:"obs-r2", category:"obstaculos", categoryLabel:"Obstáculos", level:"alta", place:"Plaza Sotomayor · borde Blanco", detail:"Interferencia alta en el recorrido peatonal dentro del sector de Plaza Sotomayor.", x1:245,y1:365,x2:385,y2:365 },
-  { id:"obs-r3", category:"obstaculos", categoryLabel:"Obstáculos", level:"alta", place:"Plaza Sotomayor · eje sur", detail:"Obstáculos obligan a desviarse o reducir significativamente el espacio de circulación.", x1:315,y1:485,x2:315,y2:365 },
-  { id:"obs-r4", category:"obstaculos", categoryLabel:"Obstáculos", level:"alta", place:"Plaza Sotomayor · borde Serrano", detail:"Alta presencia de elementos que interrumpen la continuidad del trayecto.", x1:245,y1:485,x2:385,y2:485 },
-  { id:"obs-y1", category:"obstaculos", categoryLabel:"Obstáculos", level:"media", place:"Urriola · Blanco–Serrano", detail:"Interferencia parcial: el paso se mantiene, aunque con menor continuidad.", x1:470,y1:485,x2:470,y2:365 },
-  { id:"obs-y2", category:"obstaculos", categoryLabel:"Obstáculos", level:"media", place:"Almte. Goñi · Cochrane–Blanco", detail:"Presencia moderada de obstáculos en el espacio de circulación.", x1:965,y1:365,x2:965,y2:245 },
-  { id:"obs-g1", category:"obstaculos", categoryLabel:"Obstáculos", level:"facil", place:"Serrano · Clave hacia San Martín", detail:"Tramo despejado, sin obstáculos relevantes para el desplazamiento.", x1:640,y1:485,x2:760,y2:485 },
-  { id:"obs-g2", category:"obstaculos", categoryLabel:"Obstáculos", level:"facil", place:"Serrano · San Martín hacia Almte. Goñi", detail:"Paso continuo y despejado en este tramo de calle Serrano.", x1:820,y1:485,x2:950,y2:485 },
-
-  // SEÑALIZACIÓN — 3 rojas, 3 amarillas, 2 verdes
-  { id:"sig-r1", category:"senalizacion", categoryLabel:"Señalización", level:"alta", place:"Clave · Blanco–Serrano", detail:"Señalización insuficiente o poco legible para anticipar el recorrido.", x1:640,y1:485,x2:640,y2:365 },
-  { id:"sig-r2", category:"senalizacion", categoryLabel:"Señalización", level:"alta", place:"San Martín · Cochrane–Blanco", detail:"Falta de referencias claras para orientar el desplazamiento.", x1:805,y1:365,x2:805,y2:245 },
-  { id:"sig-r3", category:"senalizacion", categoryLabel:"Señalización", level:"alta", place:"Almte. Goñi · Serrano–Errázuriz", detail:"Baja legibilidad de la información del entorno en este tramo.", x1:965,y1:615,x2:965,y2:485 },
-  { id:"sig-y1", category:"senalizacion", categoryLabel:"Señalización", level:"media", place:"Bustamante · Cochrane–Blanco", detail:"La orientación es posible, aunque requiere mayor atención.", x1:145,y1:365,x2:145,y2:245 },
-  { id:"sig-y2", category:"senalizacion", categoryLabel:"Señalización", level:"media", place:"Urriola · Prat–Cochrane", detail:"Referencias parciales: la información existe, pero no es completamente clara.", x1:470,y1:245,x2:470,y2:120 },
-  { id:"sig-y3", category:"senalizacion", categoryLabel:"Señalización", level:"media", place:"San Martín · Serrano–Errázuriz", detail:"Señalización intermedia que permite continuar con atención adicional.", x1:805,y1:615,x2:805,y2:485 },
-  { id:"sig-g1", category:"senalizacion", categoryLabel:"Señalización", level:"facil", place:"Prat · Almte. Goñi–Almte. Pérez", detail:"Información clara y legible para orientar el tránsito.", x1:965,y1:120,x2:1080,y2:120 },
-  { id:"sig-g2", category:"senalizacion", categoryLabel:"Señalización", level:"facil", place:"Errázuriz · Urriola–Clave", detail:"Referencias suficientes para comprender y continuar el recorrido.", x1:470,y1:615,x2:640,y2:615 }
+  {
+    "id": "sup-r1",
+    "category": "superficie",
+    "level": "alta",
+    "place": "Sotomayor con Errázuriz",
+    "detail": "Desnivel de 10 cm en una fosa séptica fuera del mall. Las personas evitan el lugar y suelen cruzar al frente.",
+    "source": "Condiciones físicas y sensoriales, fila 4",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 138.1,
+    "y1": 742.3,
+    "x2": 197.7,
+    "y2": 742.3
+  },
+  {
+    "id": "sup-r2",
+    "category": "superficie",
+    "level": "alta",
+    "place": "Blanco con Almirante Muñoz",
+    "detail": "Bache de 1 × 2 m y vereda rota con terreno irregular. Se observa que las personas modifican el paso para sortearlo.",
+    "source": "Condiciones físicas y sensoriales, filas 6 y 29",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 653.7,
+    "y1": 539.5,
+    "x2": 717.6,
+    "y2": 539.5
+  },
+  {
+    "id": "sup-r3",
+    "category": "superficie",
+    "level": "alta",
+    "place": "Cochrane con Almirante Pérez",
+    "detail": "Sector de vereda destrozada, con irregularidades y una profundidad de entre 10 y 15 cm.",
+    "source": "Condiciones físicas y sensoriales, fila 28",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 888.9,
+    "y1": 320.5,
+    "x2": 952.8,
+    "y2": 320.5
+  },
+  {
+    "id": "sup-r4",
+    "category": "superficie",
+    "level": "alta",
+    "place": "Sotomayor hacia Prat",
+    "detail": "Veredas en mal estado, desniveles y hoyos. Se observa dificultad para caminar con muleta y falta de apoyo en el borde de la vereda.",
+    "source": "Condiciones físicas y sensoriales, filas 16 y 21",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 147.4,
+    "y1": 112.5,
+    "x2": 197.7,
+    "y2": 112.5
+  },
+  {
+    "id": "sup-y1",
+    "category": "superficie",
+    "level": "media",
+    "place": "Blanco con Sotomayor",
+    "detail": "Baldosas sueltas y desnivel de 5 cm entre superficie peatonal y calzada. Se observa reducción de velocidad y tropiezos.",
+    "source": "Condiciones físicas y sensoriales, filas 5 y 9",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 197.7,
+    "y1": 539.5,
+    "x2": 264.2,
+    "y2": 539.5
+  },
+  {
+    "id": "sup-y2",
+    "category": "superficie",
+    "level": "media",
+    "place": "Serrano · frente al Ascensor Cordillera",
+    "detail": "El cruce desequilibra a una persona con muleta, que reduce su velocidad para evitar caerse.",
+    "source": "Recorrido usuario, fila 21",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 778.1,
+    "y1": 112.5,
+    "x2": 833.5,
+    "y2": 112.5
+  },
+  {
+    "id": "sup-y3",
+    "category": "superficie",
+    "level": "media",
+    "place": "Serrano con Sotomayor",
+    "detail": "Cambios de textura y desniveles en el pavimento. Los usuarios observan el suelo y reducen la velocidad durante el recorrido.",
+    "source": "Recorrido usuario, filas 9 y 11",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 427.8,
+    "y1": 112.5,
+    "x2": 487.5,
+    "y2": 112.5
+  },
+  {
+    "id": "sup-y4",
+    "category": "superficie",
+    "level": "media",
+    "place": "Plaza Echaurren · hacia San Martín",
+    "detail": "Subidas y bajadas que requieren mayor esfuerzo al caminar con bastón cerca de la parada de taxis.",
+    "source": "Condiciones físicas y sensoriales, fila 15",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 1082.4,
+    "y1": 320.5,
+    "x2": 1150.6,
+    "y2": 320.5
+  },
+  {
+    "id": "des-r1",
+    "category": "descanso",
+    "level": "alta",
+    "place": "Errázuriz · sector paradero de micros",
+    "detail": "Falta de sombra y de un espacio de espera protegido del sol. Se observa cansancio, agobio, sudoración e hidratación constante.",
+    "source": "Recorrido usuario, fila 5",
+    "locationNote": "Paradero sin intersección exacta registrada; posición referencial en Errázuriz.",
+    "x1": 219,
+    "y1": 742.3,
+    "x2": 287.2,
+    "y2": 742.3
+  },
+  {
+    "id": "des-g1",
+    "category": "descanso",
+    "level": "facil",
+    "place": "Plaza Echaurren",
+    "detail": "Se observa a adultos mayores descansando en una banca bajo la sombra, conversando y compartiendo con tranquilidad.",
+    "source": "Recorrido usuario, fila 19; Condiciones físicas y sensoriales, fila 25",
+    "locationNote": "Espacio de descanso observado; no representa toda la plaza. Posición referencial dentro de ella.",
+    "x1": 1029.5,
+    "y1": 223.3,
+    "x2": 1055.1,
+    "y2": 223.3
+  },
+  {
+    "id": "ori-r1",
+    "category": "orientacion",
+    "level": "alta",
+    "place": "Cochrane con Sotomayor",
+    "detail": "Ausencia de señalética y demarcación. Una persona queda entre una micro y una pared, y se observa un paradero informal. Una encuestada señala inseguridad al distinguir el semáforo.",
+    "source": "Recorrido usuario, filas 8 y 10; Encuestas, fila 54",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 427.8,
+    "y1": 320.5,
+    "x2": 427.8,
+    "y2": 378.4
+  },
+  {
+    "id": "ori-r2",
+    "category": "orientacion",
+    "level": "alta",
+    "place": "Errázuriz con Sotomayor",
+    "detail": "Un usuario con discapacidad visual no identifica el punto donde debe girar; se observa tropiezo y sorpresa.",
+    "source": "Recorrido usuario, fila 7",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 197.7,
+    "y1": 682.7,
+    "x2": 197.7,
+    "y2": 742.3
+  },
+  {
+    "id": "ori-r3",
+    "category": "orientacion",
+    "level": "alta",
+    "place": "Serrano con Sotomayor",
+    "detail": "Cruce sin semáforo y sin demarcación clara. Un adulto mayor recibe ayuda de su acompañante para orientarse.",
+    "source": "Recorrido usuario, filas 9 y 11",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 427.8,
+    "y1": 112.5,
+    "x2": 427.8,
+    "y2": 173.9
+  },
+  {
+    "id": "ori-y1",
+    "category": "orientacion",
+    "level": "media",
+    "place": "Sotomayor · frente a Armada de Chile",
+    "detail": "Ausencia de vereda demarcada en un tramo de 70 m. Los peatones se mantienen atentos al tránsito y un usuario con carrito presenta dificultad.",
+    "source": "Condiciones físicas y sensoriales, fila 11",
+    "locationNote": "Tramo esquemático próximo a la Armada; longitud gráfica no equivale a 70 m.",
+    "x1": 202.8,
+    "y1": 112.5,
+    "x2": 230.1,
+    "y2": 112.5
+  },
+  {
+    "id": "ori-y2",
+    "category": "orientacion",
+    "level": "media",
+    "place": "Plaza Echaurren · hacia San Martín",
+    "detail": "Cruces poco definidos, pasos peatonales borrosos y ausencia de semáforos. Se observa desorientación al identificar las calles.",
+    "source": "Recorrido usuario, fila 13; Condiciones físicas y sensoriales, fila 15",
+    "locationNote": "Ubicación y extensión de la franja esquemáticas; no representan un tramo medido.",
+    "x1": 1150.6,
+    "y1": 320.5,
+    "x2": 1150.6,
+    "y2": 380.1
+  },
+  {
+    "id": "ori-y3",
+    "category": "orientacion",
+    "level": "media",
+    "place": "Blanco · sector paradero",
+    "detail": "Se registra ligera dificultad para identificar qué micro viene debido a la concentración de personas y al movimiento de los vehículos.",
+    "source": "Condiciones físicas y sensoriales, fila 20",
+    "locationNote": "Paradero sin intersección exacta registrada; posición referencial en Blanco.",
+    "x1": 332.4,
+    "y1": 539.5,
+    "x2": 396.3,
+    "y2": 539.5
+  }
 ];
 
-// Remap legacy schematic physical segments onto the new drawing; unavailable street geometry is not fabricated.
-const NIGHT_SEGMENTS = {"pav-r1":[90,871,232,871],"pav-r2":[502,633,640,633],"pav-r3":[1177,132,1350,132],"pav-y1":[640,376,1177,376],"pav-y2":[913,633,1350,633],"pav-g1":[913,871,1043,871],"obs-r1":[232,633,232,376],"obs-r2":[232,633,502,633],"obs-r3":[502,871,502,633],"obs-r4":[215,132,565,132],"obs-y1":null,"obs-y2":[913,633,913,376],"obs-g1":[1177,132,1258,132],"obs-g2":[1258,132,1350,132],"sig-r1":[1177,633,1177,376],"sig-r2":[1350,633,1350,376],"sig-r3":[913,633,913,376],"sig-y1":null,"sig-y2":null,"sig-y3":[1350,871,1350,633],"sig-g1":[27,132,204,132],"sig-g2":[640,871,1177,871]};
-DIFFICULTY_SEGMENTS.forEach(item=>{const coords=NIGHT_SEGMENTS[item.id];if(!coords){item.offMap=true;return;}[item.x1,item.y1,item.x2,item.y2]=coords.map(v=>v*1200/1408);});
-
-// New categories. Old obstacle records are retained in the source but not displayed as rest-space evidence.
 const FILTER_DEFINITIONS = {
   "superficie": "Abarca el estado del suelo, las irregularidades, los desniveles y el deterioro.",
   "descanso": "Contempla las bancas, la sombra y los espacios para detenerse.",
   "orientacion": "Contempla los cruces, la señalética y la comprensión del entorno.",
   "todas": "Reúne las condiciones de superficie, descanso y orientación que influyen en el recorrido."
 };
-const FILTER_CATEGORY = {pavimento:"superficie", senalizacion:"orientacion", descanso:"descanso", superficie:"superficie", orientacion:"orientacion"};
+const FILTER_CATEGORY = {descanso:"descanso", superficie:"superficie", orientacion:"orientacion"};
 const FILTER_LABELS = {superficie:"Superficie", descanso:"Descanso", orientacion:"Orientación"};
 let activeFilter = "todas";
 const emotionMap = document.querySelector("#emotionMap");
@@ -1064,7 +1241,7 @@ function emotionFill(level) { return LEVEL_COLORS[level]; }
 function difficultyLabel(level) {
   if (level === "alta") return "Dificultad alta";
   if (level === "media") return "Dificultad media";
-  return "Sin dificultad";
+  return "Sin dificultad observable";
 }
 
 function createEmotionPoint(item, context = "emotion") {
@@ -1143,7 +1320,8 @@ function segmentLength(segment) {
 function createDifficultyLine(item, index) {
   const group = svgEl("g");
   group.setAttribute("class", "difficulty-line-group");
-  group.dataset.category = FILTER_CATEGORY[item.category] || item.category;
+  group.dataset.category = item.category;
+  group.dataset.id = item.id;
 
   const line = svgEl("line");
   line.setAttribute("x1", item.x1);
@@ -1152,6 +1330,9 @@ function createDifficultyLine(item, index) {
   line.setAttribute("y2", item.y2);
   line.setAttribute("class", "difficulty-line");
   line.dataset.level = item.level;
+  line.setAttribute("tabindex","0");
+  line.setAttribute("role","button");
+  line.setAttribute("aria-label",FILTER_LABELS[item.category]+", "+item.place+", "+difficultyLabel(item.level));
 
   const length = segmentLength(item);
   line.style.setProperty("--segment-length", length);
@@ -1160,6 +1341,10 @@ function createDifficultyLine(item, index) {
   line.addEventListener("mouseenter", event => showDifficultyTooltip(event, item));
   line.addEventListener("mousemove", event => moveTooltip(difficultyStage, mapTooltip, event, 250, 150));
   line.addEventListener("mouseleave", hideMapTooltip);
+  line.addEventListener("focus", event => showDifficultyTooltip(event,item));
+  line.addEventListener("blur", hideMapTooltip);
+  line.addEventListener("click", event => showDifficultyTooltip(event,item));
+  line.addEventListener("keydown", event => { if(event.key==="Escape"){hideMapTooltip();line.blur();} });
 
   group.appendChild(line);
   return group;
@@ -1169,10 +1354,10 @@ function showDifficultyTooltip(event,item){
   mapTooltip.classList.remove("point-detail");
   mapTooltip.querySelector(".point-location").textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
   mapTooltip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
-  mapTooltip.querySelector(".point-title").textContent=FILTER_LABELS[FILTER_CATEGORY[item.category]] || item.categoryLabel;
+  mapTooltip.querySelector(".point-title").textContent=(FILTER_LABELS[item.category] || item.category).toLocaleUpperCase("es");
   mapTooltip.querySelector(".point-meta").textContent=difficultyLabel(item.level);
   mapTooltip.querySelector(".point-comment").textContent=item.detail;
-  mapTooltip.querySelector(".point-note").textContent="Tramo ilustrativo del prototipo; pendiente de validación.";
+  mapTooltip.querySelector(".point-note").textContent="Fuente: "+item.source+". "+item.locationNote+" Nivel interpretativo." ;
   mapTooltip.classList.add("is-visible");
   moveTooltip(difficultyStage,mapTooltip,event);
 }
