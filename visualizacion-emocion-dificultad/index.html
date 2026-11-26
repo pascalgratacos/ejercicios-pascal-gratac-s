@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-cl-06" />
+  <link rel="stylesheet" href="./style.css?v=final-cl-07" />
 </head>
 <body>
   <main class="page-shell">
@@ -69,16 +69,16 @@
           <h2>Dificultad física del entorno</h2>
         </div>
         <p>
-          El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por pavimento, obstáculos o señalización para comparar la dificultad física con las emociones del recorrido en el mismo territorio.
+          El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.
         </p>
       </div>
 
       <div class="control-bar">
         <div class="filter-group">
           <span class="control-label">Filtrar</span>
-          <button type="button" class="filter-link" data-filter="pavimento" aria-pressed="false">Pavimento</button>
-          <button type="button" class="filter-link" data-filter="obstaculos" aria-pressed="false">Obstáculos</button>
-          <button type="button" class="filter-link" data-filter="senalizacion" aria-pressed="false">Señalización</button>
+          <button type="button" class="filter-link" data-filter="superficie" aria-pressed="false">Superficie</button>
+          <button type="button" class="filter-link" data-filter="descanso" aria-pressed="false">Descanso</button>
+          <button type="button" class="filter-link" data-filter="orientacion" aria-pressed="false">Orientación</button>
           <button type="button" class="filter-link is-active" data-filter="todas" aria-pressed="true">Todas</button>
         </div>
 
@@ -88,7 +88,7 @@
       <div class="map-shell">
         <div class="map-topline">
           <span>Dificultad de las calles</span>
-          <span>Las líneas se dibujan según el sentido del recorrido</span>
+          <span id="filterDefinition" class="filter-definition" aria-live="polite">Reúne las condiciones de superficie, descanso y orientación que influyen en el recorrido.</span>
         </div>
 
         <div class="map-stage" id="difficultyStage">
@@ -121,6 +121,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=final-cl-06"></script>
+  <script src="./script.js?v=final-cl-07"></script>
 </body>
 </html>
