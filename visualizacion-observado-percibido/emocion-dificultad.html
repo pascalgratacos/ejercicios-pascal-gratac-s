@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-cl-08" />
+  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-arg-01" />
 </head>
 <body>
   <main class="page-shell">
@@ -113,13 +113,101 @@
       </div>
     </section>
 
-    <section class="argentina-section">
-      <p class="section-index">03</p>
-      <h2>Información Argentina</h2>
-      <div class="argentina-space" aria-hidden="true"></div>
+    <section class="screen" id="emocionalidad-arg">
+      <div class="section-heading">
+        <div>
+          
+          <h2>Emociones del recorrido</h2>
+          <p class="country-subtitle">ARGENTINA</p>
+        </div>
+        <p>
+          Cada círculo representa una emoción, clasificada en tres niveles de intensidad: baja, media y alta. Al pasar el cursor sobre él, se expande y palpita según su intensidad, revelando el testimonio de la persona.
+        </p>
+      </div>
+
+      <div class="map-shell">
+        <div class="map-topline">
+          <span>Mapa emocional · Buenos Aires (base esquemática provisional)</span>
+          
+        </div>
+
+        <div class="map-stage" id="argEmotionStage">
+          <svg id="argEmotionMap" viewBox="-150 -65 1500 1030" role="img" aria-label="Mapa emocional detallado del Buenos Aires"></svg>
+
+          <div class="emotion-tooltip" id="argEmotionTooltip" role="status" aria-live="polite">
+            <div class="point-location"></div>
+            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
+            <div class="point-meta"></div>
+            <div class="point-comment"></div>
+            <div class="point-note"></div>
+          </div>
+        </div>
+
+        <div class="map-bottom">
+          <div class="emotion-legend">
+            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
+            <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
+            <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
+          </div>
+          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="screen" id="dificultad-arg">
+      <div class="section-heading">
+        <div>
+          
+          <h2>Dificultad física del entorno</h2>
+          <p class="country-subtitle">ARGENTINA</p>
+        </div>
+        <p>
+          El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.
+        </p>
+      </div>
+
+      <div class="control-bar">
+        <div class="filter-group">
+          <span class="control-label">Filtrar</span>
+          <button type="button" class="filter-link" data-filter="superficie" aria-pressed="false">Superficie</button>
+          <button type="button" class="filter-link" data-filter="descanso" aria-pressed="false">Descanso</button>
+          <button type="button" class="filter-link" data-filter="orientacion" aria-pressed="false">Orientación</button>
+          <button type="button" class="filter-link is-active" data-filter="todas" aria-pressed="true">Todas</button>
+        </div>
+
+        
+      </div>
+
+      <div class="map-shell">
+        <div class="map-topline">
+          <span id="argFilterDefinition" class="filter-definition" aria-live="polite">Reúne las condiciones de superficie, descanso y orientación que influyen en el recorrido.</span>
+        </div>
+
+        <div class="map-stage" id="argDifficultyStage">
+          <svg id="argDifficultyMap" viewBox="-150 -65 1500 1030" role="img" aria-label="Mapa detallado de dificultad física del Buenos Aires"></svg>
+
+          <div class="map-tooltip" id="argMapTooltip" role="status" aria-live="polite">
+            <div class="point-location"></div>
+            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
+            <div class="point-meta"></div>
+            <div class="point-comment"></div>
+            <div class="point-note"></div>
+          </div>
+        </div>
+
+        <div class="map-bottom difficulty-bottom">
+          <div class="difficulty-legend">
+            <span><i class="hard"></i>Rojo · Dificultad alta</span>
+            <span><i class="medium"></i>Amarillo · Dificultad media</span>
+            <span><i class="easy"></i>Verde · Sin dificultad observable</span>
+          </div>
+          
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="../visualizacion-emocion-dificultad/script.js?v=final-cl-09"></script>
+  <script src="../visualizacion-emocion-dificultad/script.js?v=final-arg-01"></script>
 </body>
 </html>
