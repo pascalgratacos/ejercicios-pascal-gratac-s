@@ -643,3 +643,9 @@ h1 span {
 /* Definición dinámica alineada a la izquierda. */
 #dificultad .map-topline{align-items:flex-start;justify-content:flex-start;}
 #dificultad .filter-definition{max-width:100%;text-align:left;line-height:1.5;}
+
+/* Argentina: misma escala, interacción y jerarquía que Valparaíso. */
+.country-subtitle{font-family:"Jost",Arial,sans-serif;color:var(--muted);font-size:15px;letter-spacing:.14em;font-weight:400;margin:18px 0 0;}
+#argEmotionMap,#argDifficultyMap{display:block;width:100%;height:auto;min-height:0;aspect-ratio:1500/1030;}
+#dificultad-arg .map-topline{align-items:flex-start;justify-content:flex-start;}
+#dificultad-arg .filter-definition{max-width:100%;text-align:left;line-height:1.5;}
