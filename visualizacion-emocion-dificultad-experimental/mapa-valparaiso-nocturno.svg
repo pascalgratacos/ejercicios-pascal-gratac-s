@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 1056" width="1408" height="1056">
+<title>Mapa esquemático nocturno del Barrio Puerto</title>
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#0d1b2d"/><stop offset="1" stop-color="#0b192b"/></linearGradient>
+ <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#142a40"/><stop offset="1" stop-color="#263f53"/></linearGradient>
+ <style>
+ .road{fill:none;stroke:#b8c1cd;stroke-opacity:.47;stroke-linejoin:round;stroke-linecap:round}
+ .minor{stroke-width:10}.major{stroke-width:14}
+ text{font-family:Arial,Helvetica,sans-serif;fill:#e2e6ec}
+ .street{font-size:25.333px;font-weight:700;fill:#dce1e8;}
+ .side{font-size:15.5px;font-weight:600;fill:#dce1e8;}
+ .land{font-size:17.333px;font-weight:300;fill:#c4cedb;opacity:.59;} .land text{fill:#c4cedb;opacity:.85;font-weight:300;} .land use{opacity:.82;}
+ .guide{fill:none;stroke:#c9d1da;stroke-opacity:.65;stroke-width:1.3}
+ .symbol{fill:#c8d0da;stroke:none}
+ </style>
+ <g id="anchor" fill="none" stroke="#c8d0da" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="10" r="5"/><path d="M25 15V47M11 25H39M5 34Q7 47 25 51Q43 47 45 34M5 34L13 38M45 34L37 38"/><path fill="#c8d0da" stroke="none" d="M25 0l2 4 5 .5-4 3 1 5-4-3-4 3 1-5-4-3 5-.5z"/></g>
+ <g id="lift" fill="none" stroke="#c8d0da" stroke-width="3" stroke-linejoin="round"><path d="M6 6H40V60L6 42Z M6 32H40M6 42L40 32M6 42L40 60M16 8V27M29 8V27"/><path fill="#c8d0da" d="M2 6L8 0H38L44 6Z"/></g>
+ <g id="fountain" fill="#c8d0da"><path d="M23 0h2l2 15 8 4-8 3 1 9 12 5-12 2v8h-8v-8L8 36l12-5 1-9-8-3 8-4z"/><ellipse cx="24" cy="47" rx="23" ry="8"/><ellipse cx="24" cy="44" rx="19" ry="4" fill="#0d1b2d"/><path d="M1 47v6q23 13 46 0v-6z"/></g>
+ <g id="monument" fill="none" stroke="#c8d0da" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 72H47V78H4Z M8 64H43V72H8Z M14 55H38V64H14Z"/><circle cx="27" cy="12" r="4.5"/><path d="M24 17L20 20 13 32 17 34 23 27 20 40 15 55H21L26 43 31 55H37L32 40 35 28 30 20Z M30 21L39 7 42 9 34 25"/></g>
+ <g id="train" fill="none" stroke="#c8d0da" stroke-width="3.5" stroke-linejoin="round"><rect x="8" y="2" width="34" height="35" rx="5"/><path d="M13 8H37V23H13zM15 37L5 48M35 37L45 48M12 42H38"/><circle cx="16" cy="30" r="1.8" fill="#c8d0da"/><circle cx="34" cy="30" r="1.8" fill="#c8d0da"/></g>
+ <g id="boat" fill="none" stroke="#c8d0da" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 27L25 20 48 27 42 41 25 49 9 41Z M9 25L13 8H38L43 25 M17 8V4H33V8 M16 12H23V19H16Z M28 12H35V19H28Z M10 33L25 38 41 33"/></g>
+<mask id="street-label-clearance" maskUnits="userSpaceOnUse" x="0" y="0" width="1408" height="1056"><rect width="1408" height="1056" fill="white"/><rect x="184" y="493.75" width="96" height="21.5" rx="5" fill="black"/><rect x="454" y="493.75" width="96" height="21.5" rx="5" fill="black"/><rect x="697.5" y="493.75" width="139" height="21.5" rx="5" fill="black"/><rect x="848.5" y="493.75" width="129" height="21.5" rx="5" fill="black"/><rect x="975.5" y="493.75" width="135" height="21.5" rx="5" fill="black"/><rect x="1148" y="493.75" width="58" height="21.5" rx="5" fill="black"/><rect x="1303.5" y="493.75" width="93" height="21.5" rx="5" fill="black"/></mask>
+</defs>
+<rect width="1408" height="1056" fill="#0d1b2d"/>
+<g mask="url(#street-label-clearance)"><line class="road major" x1="14" y1="132" x2="232" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="232" y1="132" x2="502" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="502" y1="132" x2="1394" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="376" x2="1394" y2="376" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="633" x2="1394" y2="633" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="871" x2="1394" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="232" y1="132" x2="232" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="502" y1="132" x2="502" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="767" y1="132" x2="767" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="913" y1="132" x2="913" y2="633" stroke-linecap="round"/>
+<line class="road minor" x1="1043" y1="132" x2="1043" y2="633" stroke-linecap="round"/>
+<line class="road minor" x1="1177" y1="376" x2="1177" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="1350" y1="376" x2="1350" y2="871" stroke-linecap="round"/></g>
+<path fill="url(#sea)" d="M0 930H86V957H112V930H303V957H330V930H548V957H575V930H912V957H940V930H1166V957H1195V930H1408V1056H0Z"/>
+<path class="road minor" d="M0 930H86V957H112V930H303V957H330V930H548V957H575V930H912V957H940V930H1166V957H1195V930H1408" stroke-width="6"/>
+<path fill="#829bb2" opacity=".13" d="M0 998Q85 976 163 1004T330 1002T500 1000T670 1006T840 1000T1010 1002T1180 1003T1408 993V1056H0Z"/>
+<path fill="#9aafc2" opacity=".12" d="M0 1026Q87 1005 170 1029T340 1025T510 1025T680 1031T850 1024T1020 1025T1190 1024T1408 1020V1056H0Z"/>
+<path fill="#b0bfcd" opacity=".09" d="M0 1046Q95 1030 190 1045T380 1044T570 1043T760 1046T950 1044T1140 1044T1408 1038V1056H0Z"/>
+<g text-anchor="middle" dominant-baseline="middle"><text class="street" x="112" y="163" font-size="25.333">Prat</text>
+<text class="street" x="367" y="163" font-size="25.333">Sotomayor</text>
+<text class="street" x="688" y="163" font-size="25.333">Serrano</text>
+<text class="street" x="676" y="407" font-size="25.333">Cochrane</text>
+<text class="street" x="676" y="664" font-size="25.333">Blanco</text>
+<text class="street" x="676" y="902" font-size="25.333">Errázuriz</text>
+<text class="side" x="232" y="504.5" font-size="15.5">Sotomayor</text>
+<text class="side" x="502" y="504.5" font-size="15.5">Sotomayor</text>
+<text class="side" x="767" y="504.5" font-size="15.5">Almirante Muñoz</text>
+<text class="side" x="913" y="504.5" font-size="15.5">Almirante Goñi</text>
+<text class="side" x="1043" y="504.5" font-size="15.5">Almirante Pérez</text>
+<text class="side" x="1177" y="504.5" font-size="15.5">Clave</text>
+<text class="side" x="1350" y="504.5" font-size="15.5">San Martín</text></g>
+<g class="land">
+ <use href="#anchor" x="276" y="32"/><text x="340" y="53">Armada</text><text x="340" y="75">de Chile</text><path class="guide" d="M364 90V118"/><circle cx="364" cy="120" r="4" fill="#c8d0da"/>
+ <use href="#lift" x="866" y="34"/><text x="950" y="53">Ascensor</text><text x="950" y="75">Cordillera</text><path class="guide" d="M930 89L913 115"/><circle cx="913" cy="115" r="4" fill="#c8d0da"/>
+ <use href="#fountain" x="1249" y="206"/><text x="1275" y="293" text-anchor="middle">Plaza</text><text x="1275" y="317" text-anchor="middle">Echaurren</text>
+ <text x="339" y="506" text-anchor="middle">Plaza</text><text x="339" y="532" text-anchor="middle">Sotomayor</text>
+ <use href="#monument" x="315" y="684"/><text x="340" y="792" text-anchor="middle">Monumento</text><text x="340" y="816" text-anchor="middle">Los Héroes</text>
+ <path class="guide" d="M166 915V955"/><circle cx="166" cy="915" r="4" fill="#c8d0da"/><use href="#train" transform="translate(143 960) scale(.8)"/><text x="191" y="977">Estación</text><text x="191" y="999">Puerto</text>
+ <path class="guide" d="M738 915V955"/><circle cx="738" cy="915" r="4" fill="#c8d0da"/><use href="#boat" transform="translate(704 959) scale(.9)"/><text x="762" y="988">Puerto</text>
+</g>
+</svg>
