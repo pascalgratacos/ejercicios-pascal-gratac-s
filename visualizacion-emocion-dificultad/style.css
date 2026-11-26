@@ -773,3 +773,15 @@ h1 span {
 .difficulty-stack .stacked-line:hover,.difficulty-stack .stacked-line:focus-visible {stroke-width:8;opacity:1;}
 .difficulty-stack.is-expanded .stacked-line {opacity:.90;}
 .difficulty-stack.is-expanded .stacked-line:hover,.difficulty-stack.is-expanded .stacked-line:focus-visible {opacity:1;}
+
+/* Filtros de dificultad exclusivos a la izquierda; capa emocional independiente a la derecha. */
+.comparison-difficulty .control-bar{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;flex-wrap:nowrap;}
+.comparison-difficulty .filter-group{flex:1;min-width:0;}
+.emotion-toggle{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap;align-self:center;margin-left:auto;padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--muted);font-size:12px;line-height:1.2;cursor:pointer;transition:color .18s ease,border-color .18s ease,background .18s ease;}
+.emotion-toggle-indicator{width:8px;height:8px;border-radius:50%;border:1px solid currentColor;display:block;flex-shrink:0;}
+.emotion-toggle:hover{color:var(--ink);border-color:var(--muted);}
+.emotion-toggle[aria-pressed="true"]{color:var(--ink);border-color:var(--entusiasmo);background:rgba(0,214,200,.08);}
+.emotion-toggle[aria-pressed="true"] .emotion-toggle-indicator{background:var(--entusiasmo);border-color:var(--entusiasmo);}
+.emotion-toggle:focus-visible{outline:1px dashed var(--muted);outline-offset:4px;}
+@media(max-width:1050px){.comparison-difficulty .control-bar{gap:8px;}.emotion-toggle{padding:8px;font-size:11px;}.comparison-difficulty .filter-group{gap:5px 10px;}}
+@media(prefers-reduced-motion:reduce){.emotion-toggle{transition:none;}}
