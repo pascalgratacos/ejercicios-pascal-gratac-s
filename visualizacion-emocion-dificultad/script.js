@@ -1621,10 +1621,10 @@ function createDifficultyStack(items,index,stage,tip){
 }
 function showDifficultyTooltip(event,item,stage=difficultyStage,tip=mapTooltip){
   tip.classList.remove("point-detail");tip.classList.add("difficulty-detail");
-  tip.querySelector(".point-location").textContent=((item.city||"VALPARAÍSO")+" · "+item.place).toLocaleUpperCase("es")+(item.displayPlace?" · "+item.displayPlace+" (referencial)":"");
+  tip.querySelector(".point-location").textContent=item.place;
   tip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
-  tip.querySelector(".point-title").textContent="Color: "+({alta:"Rojo",media:"Amarillo",facil:"Verde"}[item.level]);
-  tip.querySelector(".point-meta").textContent="Categoría: "+(FILTER_LABELS[item.category]||item.category);
+  tip.querySelector(".point-title").textContent=FILTER_LABELS[item.category]||item.category;
+  tip.querySelector(".point-meta").textContent="";
   tip.querySelector(".point-comment").textContent=difficultyLabel(item.level);
   tip.querySelector(".point-note").textContent="";
   tip.classList.add("is-visible");moveTooltip(stage,tip,event);
