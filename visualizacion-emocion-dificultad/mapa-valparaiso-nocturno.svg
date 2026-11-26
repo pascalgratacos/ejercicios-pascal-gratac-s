@@ -8,7 +8,7 @@
  .minor{stroke-width:10}.major{stroke-width:14}
  text{font-family:Arial,Helvetica,sans-serif;fill:#e2e6ec}
  .street{font-size:25.333px;font-weight:700;fill:#dce1e8;}
- .side{font-size:17.333px;font-weight:600;fill:#dce1e8;}
+ .side{font-size:15.5px;font-weight:600;fill:#dce1e8;}
  .land{font-size:17.333px;font-weight:300;fill:#c4cedb;opacity:.59;} .land text{fill:#c4cedb;opacity:.85;font-weight:300;} .land use{opacity:.82;}
  .guide{fill:none;stroke:#c9d1da;stroke-opacity:.65;stroke-width:1.3}
  .symbol{fill:#c8d0da;stroke:none}
@@ -19,7 +19,7 @@
  <g id="monument" fill="#c8d0da"><path d="M8 64H43V71H8zM4 72H47V78H4zM14 55H38V63H14zM24 17l3-5 4 3-1 6 5 3-4 10-3 11 3 10h-6l-5-14-4 10-5-1 5-15 3-10-4 4-4-2 8-12zM29 18l9-13 3 2-8 19z"/><circle cx="27" cy="13" r="4"/></g>
  <g id="train" fill="none" stroke="#c8d0da" stroke-width="3.5" stroke-linejoin="round"><rect x="8" y="2" width="34" height="35" rx="5"/><path d="M13 8H37V23H13zM15 37L5 48M35 37L45 48M12 42H38"/><circle cx="16" cy="30" r="1.8" fill="#c8d0da"/><circle cx="34" cy="30" r="1.8" fill="#c8d0da"/></g>
  <g id="boat" fill="#c8d0da"><path d="M3 26L25 20 48 26 42 41 25 49 9 41zM9 24l4-16h25l5 16-18-5zM17 4h16v5H17z"/><path fill="#0d1b2d" d="M16 12h7v9h-7zM28 12h7v9h-7z"/></g>
-<mask id="street-label-clearance" maskUnits="userSpaceOnUse" x="0" y="0" width="1408" height="1056"><rect width="1408" height="1056" fill="white"/><rect x="62" y="115.3335" width="100" height="33.333" rx="5" fill="black"/><rect x="281" y="115.3335" width="172" height="33.333" rx="5" fill="black"/><rect x="626" y="115.3335" width="124" height="33.333" rx="5" fill="black"/><rect x="602.5" y="359.3335" width="147" height="33.333" rx="5" fill="black"/><rect x="610.5" y="616.3335" width="115" height="33.333" rx="5" fill="black"/><rect x="946.5" y="854.3335" width="157" height="33.333" rx="5" fill="black"/><rect x="176" y="491.8335" width="112" height="25.333" rx="5" fill="black"/><rect x="446" y="491.8335" width="112" height="25.333" rx="5" fill="black"/><rect x="836" y="491.8335" width="154" height="25.333" rx="5" fill="black"/><rect x="963" y="392.3335" width="160" height="25.333" rx="5" fill="black"/><rect x="1142" y="491.8335" width="70" height="25.333" rx="5" fill="black"/><rect x="1292" y="491.8335" width="116" height="25.333" rx="5" fill="black"/><rect x="683" y="662.3335" width="168" height="25.333" rx="5" fill="black"/></mask>
+<mask id="street-label-clearance" maskUnits="userSpaceOnUse" x="0" y="0" width="1408" height="1056"><rect width="1408" height="1056" fill="white"/><rect x="184" y="493.75" width="96" height="21.5" rx="5" fill="black"/><rect x="454" y="493.75" width="96" height="21.5" rx="5" fill="black"/><rect x="697.5" y="493.75" width="139" height="21.5" rx="5" fill="black"/><rect x="848.5" y="493.75" width="129" height="21.5" rx="5" fill="black"/><rect x="975.5" y="493.75" width="135" height="21.5" rx="5" fill="black"/><rect x="1148" y="493.75" width="58" height="21.5" rx="5" fill="black"/><rect x="1303.5" y="493.75" width="93" height="21.5" rx="5" fill="black"/></mask>
 </defs>
 <rect width="1408" height="1056" fill="#0d1b2d"/>
 <g mask="url(#street-label-clearance)"><line class="road major" x1="14" y1="132" x2="232" y2="132" stroke-linecap="round"/>
@@ -40,19 +40,19 @@
 <path fill="#829bb2" opacity=".13" d="M0 998Q85 976 163 1004T330 1002T500 1000T670 1006T840 1000T1010 1002T1180 1003T1408 993V1056H0Z"/>
 <path fill="#9aafc2" opacity=".12" d="M0 1026Q87 1005 170 1029T340 1025T510 1025T680 1031T850 1024T1020 1025T1190 1024T1408 1020V1056H0Z"/>
 <path fill="#b0bfcd" opacity=".09" d="M0 1046Q95 1030 190 1045T380 1044T570 1043T760 1046T950 1044T1140 1044T1408 1038V1056H0Z"/>
-<g text-anchor="middle" dominant-baseline="middle"><text class="street" x="112" y="132">Prat</text>
-<text class="street" x="367" y="132">Sotomayor</text>
-<text class="street" x="688" y="132">Serrano</text>
-<text class="street" x="676" y="376">Cochrane</text>
-<text class="street" x="668" y="633">Blanco</text>
-<text class="street" x="1025" y="871">Errázuriz</text>
-<text class="side" x="232" y="504.5">Sotomayor</text>
-<text class="side" x="502" y="504.5">Sotomayor</text>
-<text class="side" x="913" y="504.5">Almirante Goñi</text>
-<text class="side" x="1043" y="405">Almirante Pérez</text>
-<text class="side" x="1177" y="504.5">Clave</text>
-<text class="side" x="1350" y="504.5">San Martín</text>
-<text class="side" x="767" y="675">Almirante Muñoz</text></g>
+<g text-anchor="middle" dominant-baseline="middle"><text class="street" x="112" y="163" font-size="25.333">Prat</text>
+<text class="street" x="367" y="163" font-size="25.333">Sotomayor</text>
+<text class="street" x="688" y="163" font-size="25.333">Serrano</text>
+<text class="street" x="676" y="407" font-size="25.333">Cochrane</text>
+<text class="street" x="676" y="664" font-size="25.333">Blanco</text>
+<text class="street" x="676" y="902" font-size="25.333">Errázuriz</text>
+<text class="side" x="232" y="504.5" font-size="15.5">Sotomayor</text>
+<text class="side" x="502" y="504.5" font-size="15.5">Sotomayor</text>
+<text class="side" x="767" y="504.5" font-size="15.5">Almirante Muñoz</text>
+<text class="side" x="913" y="504.5" font-size="15.5">Almirante Goñi</text>
+<text class="side" x="1043" y="504.5" font-size="15.5">Almirante Pérez</text>
+<text class="side" x="1177" y="504.5" font-size="15.5">Clave</text>
+<text class="side" x="1350" y="504.5" font-size="15.5">San Martín</text></g>
 <g class="land">
  <use href="#anchor" x="276" y="32"/><text x="340" y="53">Armada</text><text x="340" y="75">de Chile</text><path class="guide" d="M364 90V118"/><circle cx="364" cy="120" r="4" fill="#c8d0da"/>
  <use href="#lift" x="866" y="34"/><text x="950" y="53">Ascensor</text><text x="950" y="75">Cordillera</text><path class="guide" d="M930 89L913 115"/><circle cx="913" cy="115" r="4" fill="#c8d0da"/>
