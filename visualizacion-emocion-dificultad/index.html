@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-cover-01" />
+  <link rel="stylesheet" href="./style.css?v=final-comparativa-01" />
 </head>
 <body>
   <header class="animated-cover" aria-labelledby="cover-title">
@@ -97,16 +97,11 @@
       </div>
     </section>
 
-    <section class="screen" id="emocionalidad">
-      <div class="section-heading">
-        <div>
-          
-          <h2>Emociones del recorrido</h2>
-        </div>
-        <p>
-          Cada círculo representa una emoción, clasificada en tres niveles de intensidad: baja, media y alta. Al pasar el cursor sobre él, se expande y palpita según su intensidad, revelando el testimonio de la persona.
-        </p>
-      </div>
+    <section class="comparison-section comparison-emotions" aria-label="Comparación de emociones">
+      <p class="comparison-instruction">Cada círculo representa una emoción, clasificada en tres niveles de intensidad: baja, media y alta. Al pasar el cursor sobre él, se expande y palpita según su intensidad, revelando el testimonio de la persona.</p>
+      <div class="comparison-grid">
+        <section class="screen" id="emocionalidad">
+      <div class="section-heading"><h2>Emociones Barrio Puerto</h2></div>
 
       <div class="map-shell">
         <div class="map-topline">
@@ -137,17 +132,46 @@
       </div>
       
     </section>
+        <section class="screen" id="emocionalidad-arg">
+      <div class="section-heading"><h2>Emociones de Buenos Aires</h2></div>
 
-    <section class="screen" id="dificultad">
-      <div class="section-heading">
-        <div>
+      <div class="map-shell">
+        <div class="map-topline">
+          <span>Mapa emocional · Buenos Aires (esquema orientado según codificación)</span>
           
-          <h2>Dificultad física del entorno</h2>
         </div>
-        <p>
-          El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.
-        </p>
+
+        <div class="map-stage" id="argEmotionStage">
+          <svg id="argEmotionMap" viewBox="-150 -65 1500 1030" role="img" aria-label="Mapa emocional detallado del Buenos Aires"></svg>
+
+          <div class="emotion-tooltip" id="argEmotionTooltip" role="status" aria-live="polite">
+            <div class="point-location"></div>
+            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
+            <div class="point-meta"></div>
+            <div class="point-comment"></div>
+            <div class="point-note"></div>
+          </div>
+        </div>
+
+        <div class="map-bottom">
+          <div class="emotion-legend">
+            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
+            <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
+            <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
+          </div>
+          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
+        </div>
       </div>
+      
+    </section>
+      </div>
+    </section>
+
+    <section class="comparison-section comparison-difficulty" aria-label="Comparación de dificultad física">
+      <p class="comparison-instruction">El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.</p>
+      <div class="comparison-grid">
+        <section class="screen" id="dificultad">
+      <div class="section-heading"><h2>Dificultad física · Barrio Puerto</h2></div>
 
       <div class="control-bar">
         <div class="filter-group">
@@ -189,60 +213,8 @@
       </div>
     <p class="coding-note">162 franjas según la codificación del Grupo 3. Pasa el cursor sobre un tramo para desplegar sus franjas superpuestas. Asignación a filtros provisional por cantidad; todas las franjas tienen filtro asignado. Ubicaciones gráficas referenciales sobre los ejes de calle; los intertramos se proyectan al eje más cercano de su sector.</p>
     </section>
-
-    <section class="screen" id="emocionalidad-arg">
-      <div class="section-heading">
-        <div>
-          
-          <h2>Emociones del recorrido</h2>
-          <p class="country-subtitle">ARGENTINA</p>
-        </div>
-        <p>
-          Cada círculo representa una emoción, clasificada en tres niveles de intensidad: baja, media y alta. Al pasar el cursor sobre él, se expande y palpita según su intensidad, revelando el testimonio de la persona.
-        </p>
-      </div>
-
-      <div class="map-shell">
-        <div class="map-topline">
-          <span>Mapa emocional · Buenos Aires (esquema orientado según codificación)</span>
-          
-        </div>
-
-        <div class="map-stage" id="argEmotionStage">
-          <svg id="argEmotionMap" viewBox="-150 -65 1500 1030" role="img" aria-label="Mapa emocional detallado del Buenos Aires"></svg>
-
-          <div class="emotion-tooltip" id="argEmotionTooltip" role="status" aria-live="polite">
-            <div class="point-location"></div>
-            <div class="point-heading"><span class="tooltip-dot"></span><strong class="point-title"></strong></div>
-            <div class="point-meta"></div>
-            <div class="point-comment"></div>
-            <div class="point-note"></div>
-          </div>
-        </div>
-
-        <div class="map-bottom">
-          <div class="emotion-legend">
-            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
-            <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
-            <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
-          </div>
-          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
-        </div>
-      </div>
-      
-    </section>
-
-    <section class="screen" id="dificultad-arg">
-      <div class="section-heading">
-        <div>
-          
-          <h2>Dificultad física del entorno</h2>
-          <p class="country-subtitle">ARGENTINA</p>
-        </div>
-        <p>
-          El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.
-        </p>
-      </div>
+        <section class="screen" id="dificultad-arg">
+      <div class="section-heading"><h2>Dificultad física · Buenos Aires</h2></div>
 
       <div class="control-bar">
         <div class="filter-group">
@@ -283,6 +255,8 @@
         </div>
       </div>
     <p class="coding-note">141 franjas según la codificación del Grupo 3. Pasa el cursor sobre un tramo para desplegar sus franjas superpuestas. Asignación a filtros provisional por cantidad; 21 verdes sin filtro aparecen únicamente en Todas. Ubicaciones gráficas referenciales; los intertramos se proyectan a un eje adyacente.</p>
+    </section>
+      </div>
     </section>
   </main>
 
