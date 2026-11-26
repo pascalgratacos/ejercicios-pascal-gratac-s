@@ -671,3 +671,49 @@ h1 span {
 .map-tooltip.difficulty-detail .point-heading{align-items:center;margin:10px 0 8px;}
 .map-tooltip.difficulty-detail .point-title{font-size:25px;line-height:1.15;}
 .map-tooltip.difficulty-detail .point-comment{margin-top:7px;}
+
+/* Portada — Background Paths adaptado a la página estática, sin dependencias. */
+.animated-cover {
+  position:relative; isolation:isolate; overflow:hidden;
+  min-height:100vh; min-height:100svh; display:grid; place-items:center;
+  padding:64px 24px; background:var(--bg); text-align:center;
+  border-bottom:1px solid var(--line);
+}
+.cover-background { position:absolute; inset:0; z-index:-1; pointer-events:none; color:#dce8f0; overflow:hidden; }
+.cover-background::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(6,24,39,.82) 0%,rgba(6,24,39,.45) 35%,transparent 76%); }
+.cover-paths {position:absolute; inset:0; width:100%; height:100%; opacity:.52;}
+.cover-paths path { stroke-dasharray:.3 1; stroke-dashoffset:0; animation:cover-path-flow var(--path-duration,24s) var(--path-delay,0s) linear infinite; }
+@keyframes cover-path-flow {
+  0%,100% {stroke-dasharray:.3 1;stroke-dashoffset:0;opacity:.35}
+  50% {stroke-dasharray:1 1;stroke-dashoffset:-.6;opacity:.67}
+}
+.cover-content { width:min(100%,1100px); position:relative; z-index:1; display:flex; align-items:center; flex-direction:column; }
+.cover-content .eyebrow {font-size:11px;line-height:1.75;letter-spacing:.16em;max-width:90%;animation:cover-fade 1.4s ease both;}
+.cover-title { margin:34px 0 42px; font-family:"Jost",Arial,sans-serif; font-size:clamp(43px,10vw,140px); font-weight:400; line-height:.91; letter-spacing:-.04em; }
+.cover-title .cover-line {display:block;white-space:nowrap;font-size:1em;color:var(--ink);line-height:1.02;}
+.cover-title .cover-word {display:inline-block;white-space:nowrap;font-size:1em;color:inherit;}
+.cover-title .cover-versus {font-size:.56em;letter-spacing:-.02em;color:var(--muted);margin-left:.12em;}
+.cover-title .cover-letter {display:inline-block;font-size:1em;color:inherit;animation:cover-letter-in .86s cubic-bezier(.16,1,.3,1) var(--letter-delay,0s) both;}
+@keyframes cover-letter-in {from{opacity:0;transform:translateY(.78em)}to{opacity:1;transform:translateY(0)}}
+@keyframes cover-fade {from{opacity:0}to{opacity:1}}
+.cover-enter {display:inline-flex; align-items:center; gap:22px; padding:16px 26px; color:var(--ink); text-decoration:none; border:1px solid rgba(244,237,223,.30); border-radius:12px; background:rgba(4,17,28,.74); font-family:"Manrope",Arial,sans-serif;font-size:14px;letter-spacing:.015em;font-weight:500;transition:background .25s ease,border-color .25s ease,transform .25s ease;animation:cover-fade 1s 1.05s both;}
+.cover-enter:hover {background:var(--surface-soft);border-color:var(--muted);transform:translateY(-2px);}
+.cover-enter:focus-visible {outline:2px solid var(--ink);outline-offset:5px;}
+.cover-arrow {font-size:19px;line-height:1;transition:transform .25s ease;}
+.cover-enter:hover .cover-arrow {transform:translateY(3px);}
+.project-intro {padding:76px 0 62px; border-bottom:1px solid var(--line); scroll-margin-top:24px;}
+.project-intro .intro {max-width:760px; margin:0 auto; font-size:16px;line-height:1.9;}
+@media(max-width:600px) {
+ .animated-cover{padding:48px 15px;}
+ .cover-content .eyebrow{font-size:9px;letter-spacing:.12em;}
+ .cover-title{font-size:clamp(32px,10.5vw,64px);margin:27px 0 32px;}
+ .cover-enter{font-size:13px;padding:14px 19px;gap:15px;}
+ .project-intro{padding:48px 0 40px;}
+ .project-intro .intro{font-size:14px;}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto;}
+ .cover-paths path,.cover-content .eyebrow,.cover-title .cover-letter,.cover-enter{animation:none!important;transform:none;opacity:1;}
+ .cover-paths path{stroke-dasharray:none;stroke-dashoffset:0;}
+ .cover-enter,.cover-arrow{transition:none;}
+}
