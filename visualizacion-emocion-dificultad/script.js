@@ -1026,6 +1026,15 @@ const DIFFICULTY_SEGMENTS = [
 const NIGHT_SEGMENTS = {"pav-r1":[90,871,232,871],"pav-r2":[502,633,640,633],"pav-r3":[1177,132,1350,132],"pav-y1":[640,376,1177,376],"pav-y2":[913,633,1350,633],"pav-g1":[913,871,1043,871],"obs-r1":[232,633,232,376],"obs-r2":[232,633,502,633],"obs-r3":[502,871,502,633],"obs-r4":[215,132,565,132],"obs-y1":null,"obs-y2":[913,633,913,376],"obs-g1":[1177,132,1258,132],"obs-g2":[1258,132,1350,132],"sig-r1":[1177,633,1177,376],"sig-r2":[1350,633,1350,376],"sig-r3":[913,633,913,376],"sig-y1":null,"sig-y2":null,"sig-y3":[1350,871,1350,633],"sig-g1":[27,132,204,132],"sig-g2":[640,871,1177,871]};
 DIFFICULTY_SEGMENTS.forEach(item=>{const coords=NIGHT_SEGMENTS[item.id];if(!coords){item.offMap=true;return;}[item.x1,item.y1,item.x2,item.y2]=coords.map(v=>v*1200/1408);});
 
+// New categories. Old obstacle records are retained in the source but not displayed as rest-space evidence.
+const FILTER_DEFINITIONS = {
+  "superficie": "Abarca el estado del suelo, las irregularidades, los desniveles y el deterioro.",
+  "descanso": "Contempla las bancas, la sombra y los espacios para detenerse.",
+  "orientacion": "Contempla los cruces, la señalética y la comprensión del entorno.",
+  "todas": "Reúne las condiciones de superficie, descanso y orientación que influyen en el recorrido."
+};
+const FILTER_CATEGORY = {pavimento:"superficie", senalizacion:"orientacion", descanso:"descanso", superficie:"superficie", orientacion:"orientacion"};
+const FILTER_LABELS = {superficie:"Superficie", descanso:"Descanso", orientacion:"Orientación"};
 let activeFilter = "todas";
 const emotionMap = document.querySelector("#emotionMap");
 const difficultyMap = document.querySelector("#difficultyMap");
@@ -1134,7 +1143,7 @@ function segmentLength(segment) {
 function createDifficultyLine(item, index) {
   const group = svgEl("g");
   group.setAttribute("class", "difficulty-line-group");
-  group.dataset.category = item.category;
+  group.dataset.category = FILTER_CATEGORY[item.category] || item.category;
 
   const line = svgEl("line");
   line.setAttribute("x1", item.x1);
@@ -1160,7 +1169,7 @@ function showDifficultyTooltip(event,item){
   mapTooltip.classList.remove("point-detail");
   mapTooltip.querySelector(".point-location").textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
   mapTooltip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
-  mapTooltip.querySelector(".point-title").textContent=item.categoryLabel;
+  mapTooltip.querySelector(".point-title").textContent=FILTER_LABELS[FILTER_CATEGORY[item.category]] || item.categoryLabel;
   mapTooltip.querySelector(".point-meta").textContent=difficultyLabel(item.level);
   mapTooltip.querySelector(".point-comment").textContent=item.detail;
   mapTooltip.querySelector(".point-note").textContent="Tramo ilustrativo del prototipo; pendiente de validación.";
@@ -1182,7 +1191,8 @@ function renderDifficultyMap() {
   difficultyLayer.setAttribute("class", "difficulty-layer");
 
   const filtered = DIFFICULTY_SEGMENTS.filter(item => {
-    return !item.offMap && (activeFilter === "todas" || item.category === activeFilter);
+    const category = FILTER_CATEGORY[item.category];
+    return !item.offMap && !!category && (activeFilter === "todas" || category === activeFilter);
   });
 
   filtered.forEach((item, index) => {
@@ -1206,7 +1216,10 @@ function renderDifficultyMap() {
 }
 
 function setFilter(filter) {
+  if (!Object.hasOwn(FILTER_DEFINITIONS, filter)) return;
   activeFilter = filter;
+  const definition = document.querySelector("#filterDefinition");
+  if (definition) definition.textContent = FILTER_DEFINITIONS[filter];
 
   document.querySelectorAll(".filter-link").forEach(button => {
     const selected = button.dataset.filter === filter;
