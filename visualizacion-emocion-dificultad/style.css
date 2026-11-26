@@ -665,3 +665,9 @@ h1 span {
 .map-tooltip.difficulty-detail .point-comment{border:0;margin:6px 0 0;padding:0;}
 .map-tooltip.difficulty-detail .point-meta{margin-top:7px;}
 @media(prefers-reduced-motion:reduce){.difficulty-stack .stacked-line{animation:none;stroke-dashoffset:0;transition:none;}}
+
+/* Recuadro de franjas: ubicación, categoría junto al color, y nivel. */
+.map-tooltip.difficulty-detail .point-meta,.map-tooltip.difficulty-detail .point-note{display:none;}
+.map-tooltip.difficulty-detail .point-heading{align-items:center;margin:10px 0 8px;}
+.map-tooltip.difficulty-detail .point-title{font-size:25px;line-height:1.15;}
+.map-tooltip.difficulty-detail .point-comment{margin-top:7px;}
