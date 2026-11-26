@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-comparativa-02" />
+  <link rel="stylesheet" href="./style.css?v=final-emocion-toggle-01" />
 </head>
 <body>
   <header class="animated-cover" aria-labelledby="cover-title">
@@ -168,7 +168,7 @@
     </section>
 
     <section class="comparison-section comparison-difficulty" aria-label="Comparación de dificultad física">
-      <p class="comparison-instruction">El mismo mapa muestra ahora las condiciones físicas del recorrido. Filtra por superficie, descanso u orientación para comparar la dificultad física con las emociones del recorrido en el mismo territorio.</p>
+      <p class="comparison-instruction">Explora las condiciones físicas del recorrido por superficie, descanso u orientación. Activa Emoción para superponer los círculos emocionales y comparar ambas dimensiones.</p>
       <div class="comparison-grid">
         <section class="screen" id="dificultad">
       <div class="section-heading"><h2>Dificultad física · Barrio Puerto</h2></div>
@@ -181,8 +181,7 @@
           <button type="button" class="filter-link" data-filter="orientacion" aria-pressed="false">Orientación</button>
           <button type="button" class="filter-link is-active" data-filter="todas" aria-pressed="true">Todas</button>
         </div>
-
-        
+        <button type="button" class="emotion-toggle" aria-pressed="false" aria-controls="difficultyMap"><span class="emotion-toggle-indicator" aria-hidden="true"></span>Emoción</button>
       </div>
 
       <div class="map-shell">
@@ -224,8 +223,7 @@
           <button type="button" class="filter-link" data-filter="orientacion" aria-pressed="false">Orientación</button>
           <button type="button" class="filter-link is-active" data-filter="todas" aria-pressed="true">Todas</button>
         </div>
-
-        
+        <button type="button" class="emotion-toggle" aria-pressed="false" aria-controls="argDifficultyMap"><span class="emotion-toggle-indicator" aria-hidden="true"></span>Emoción</button>
       </div>
 
       <div class="map-shell">
@@ -260,6 +258,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=final-comparativa-02"></script>
+  <script src="./script.js?v=final-emocion-toggle-01"></script>
 </body>
 </html>
