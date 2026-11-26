@@ -621,3 +621,21 @@ h1 span {
 .main-street-labels{pointer-events:none;}
 .main-street-label{font-family:Arial,Helvetica,sans-serif;font-size:21.59px;font-weight:700;fill:#dce1e8;}
 .main-street-guide{fill:none;stroke:#b8c1cd;stroke-width:1.1;stroke-opacity:.66;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Jerarquía de textos y filtros: selección por línea fina, sin cápsulas. */
+.intro p{margin:0;}
+.intro p+p{margin-top:14px;}
+.filter-group{gap:24px;}
+.filter-link,.filter-link:hover,.filter-link.is-active{
+  border:0;
+  border-bottom:1px solid transparent;
+  border-radius:0;
+  padding:8px 0 9px;
+  background:transparent;
+  font:inherit;
+  box-shadow:none;
+}
+.filter-link{color:var(--muted);transition:color .18s ease,border-color .18s ease;}
+.filter-link:hover,.filter-link.is-active{color:var(--ink);}
+.filter-link.is-active{border-bottom-color:var(--ink);}
+.filter-link:focus-visible{outline:1px dashed var(--muted);outline-offset:5px;}
