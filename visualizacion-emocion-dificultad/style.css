@@ -211,8 +211,8 @@ h1 span {
 }
 
 .emotion-core {
-  stroke: rgba(255,255,255,.72);
-  stroke-width: 1.7;
+  stroke: none;
+  stroke-width: 0;
   transform-box: fill-box;
   transform-origin: center;
   transition: transform .22s ease, stroke-width .22s ease;
@@ -585,11 +585,10 @@ h1 span {
 
 /* Proyecto final: niveles emocionales, mismos puntos en las dos lecturas. */
 .map-stage{min-height:0;}
-#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/950;}
+#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/760;}
 .emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-leader{pointer-events:none;}
 .emotion-hit{pointer-events:all;}
-.emotion-core{stroke:#f4eddf;stroke-width:1.4;transition:transform .2s ease;}
-.emotion-core.is-reference{stroke-dasharray:2 2;}
+.emotion-core{stroke:none;stroke-width:0;transition:transform .2s ease;}
 .emotion-leader{stroke:#9eacb1;stroke-width:1;opacity:.55;}
 .emotion-point[data-level="1"].is-engaged .emotion-core{transform:scale(1.35);}
 .emotion-point[data-level="2"].is-engaged .emotion-core{transform:scale(2.1);}
@@ -613,3 +612,6 @@ h1 span {
 .emotion-tooltip .point-comment,.map-tooltip .point-comment{border-top:1px solid var(--line);font-family:"Manrope",Arial,sans-serif;font-size:12px;line-height:1.6;margin:12px 0 0;padding-top:10px;}
 .point-note{font-size:10px;color:var(--muted);line-height:1.45;margin-top:8px;}
 .data-note{font-size:11px;line-height:1.6;color:var(--muted);margin:14px 0 0;}
+
+/* Puntos sólidos en todas las categorías y estados de interacción. */
+.emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-point .emotion-hit{stroke:none!important;stroke-width:0!important;outline:none;}
