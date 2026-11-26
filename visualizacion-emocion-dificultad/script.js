@@ -58,53 +58,614 @@ const LANDMARKS = [
    No se inventa un punto de entusiasmo hasta incorporar una ficha real.
    ========================================================= */
 
+/* Encuestas CL, columna P y Q. Una ficha puede aportar a más de un nivel.
+   Los tramos de dificultad son del prototipo previo; no son datos validados.
+   Las coordenadas son diagramáticas, no geográficas. */
 const EMOTIONS = [
   {
-    id: "e4-entusiasmo",
-    x: 470, y: 120,
-    emotion: "entusiasmo",
-    label: "Entusiasmo",
-    difficulty: 1,
-    place: "Prat / Urriola",
-    quote: "Cita de entusiasmo por incorporar."
+    "id": "cl-4-1",
+    "sourceRow": 4,
+    "level": 1,
+    "label": "Comodidad",
+    "difficulty": 5,
+    "place": "Serrano y Prat",
+    "kind": "sin punto único",
+    "quote": "Prefiere caminar desde Serrano a Prat, incluso pasando por Sotomayor, antes que hacer un viaje corto por Cochrane o Blanco."
   },
   {
-    id: "e5-entusiasmo",
-    x: 965, y: 365,
-    emotion: "entusiasmo",
-    label: "Entusiasmo",
-    difficulty: 2,
-    place: "Blanco / Almte. Goñi",
-    quote: "Cita de entusiasmo por incorporar."
+    "id": "cl-5-1",
+    "sourceRow": 5,
+    "level": 1,
+    "label": "Confianza",
+    "difficulty": 4,
+    "place": "Sin calle única",
+    "kind": "sin punto único",
+    "quote": "Prefiere cruces declarados que adivinar por dónde cruzar."
   },
   {
-    id: "e1",
-    x: 315, y: 245,
-    emotion: "preocupacion",
-    label: "Preocupación",
-    difficulty: 4,
-    place: "Sotomayor / Cochrane",
-    quote: "“Es muy oscuro, me da miedo.”"
+    "id": "cl-6-2",
+    "sourceRow": 6,
+    "level": 2,
+    "label": "Molestia",
+    "difficulty": 4,
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "Le molesta que las bancas para descansar estén ocupadas por vendedores.",
+    "anchor": [
+      570,
+      245
+    ]
   },
   {
-    id: "e2",
-    x: 640, y: 485,
-    emotion: "frustracion",
-    label: "Frustración",
-    difficulty: 5,
-    place: "Serrano / Clave",
-    quote: "“Acá roban mucho.”"
+    "id": "cl-7-2",
+    "sourceRow": 7,
+    "level": 2,
+    "label": "Nostalgia",
+    "difficulty": 2,
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "Vivió aquí en su juventud y le apenan las condiciones en que se encuentra el Barrio Puerto.",
+    "anchor": [
+      570,
+      365
+    ]
   },
   {
-    id: "e3",
-    x: 805, y: 485,
-    emotion: "preocupacion",
-    label: "Preocupación",
-    difficulty: 4,
-    place: "Serrano / San Martín",
-    quote: "“Me da miedo.”"
+    "id": "cl-8-3",
+    "sourceRow": 8,
+    "level": 3,
+    "label": "Inseguridad",
+    "difficulty": 4,
+    "place": "Blanco, Clave, Cochrane y Echaurren",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-9-2",
+    "sourceRow": 9,
+    "level": 2,
+    "label": "Molestia y cansancio",
+    "difficulty": 3,
+    "place": "Almte. Goñi y Clave",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-10-2",
+    "sourceRow": 10,
+    "level": 2,
+    "label": "Cansancio",
+    "difficulty": 4,
+    "place": "Almte. Goñi, Clave, Blanco y Cochrane",
+    "kind": "sin punto único",
+    "quote": "Menciona pocos lugares para descansar"
+  },
+  {
+    "id": "cl-11-3",
+    "sourceRow": 11,
+    "level": 3,
+    "label": "Inseguridad",
+    "difficulty": 2,
+    "place": "Cruces de Sotomayor con Cochrane, Blanco y Serrano",
+    "kind": "sin punto único",
+    "quote": "Sobre todo se siente insegura al cruzar las calles"
+  },
+  {
+    "id": "cl-12-3",
+    "sourceRow": 12,
+    "level": 3,
+    "label": "Inseguridad",
+    "difficulty": 3,
+    "place": "Almte. Goñi, Clave, Blanco y Cochrane",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-13-3",
+    "sourceRow": 13,
+    "level": 3,
+    "label": "Pena por su estado",
+    "difficulty": 1,
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "anchor": [
+      400,
+      245
+    ]
+  },
+  {
+    "id": "cl-14-3",
+    "sourceRow": 14,
+    "level": 3,
+    "label": "Pena por su estado",
+    "difficulty": 2,
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "anchor": [
+      400,
+      365
+    ]
+  },
+  {
+    "id": "cl-15-1",
+    "sourceRow": 15,
+    "level": 1,
+    "label": "Encanto",
+    "difficulty": 1,
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "anchor": [
+      400,
+      485
+    ]
+  },
+  {
+    "id": "cl-16-1",
+    "sourceRow": 16,
+    "level": 1,
+    "label": "Agrado",
+    "difficulty": 2,
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "anchor": [
+      520,
+      485
+    ]
+  },
+  {
+    "id": "cl-17-2",
+    "sourceRow": 17,
+    "level": 2,
+    "label": "Costumbre",
+    "difficulty": 2,
+    "place": "Cochrane",
+    "kind": "referencial",
+    "quote": "Sin comentario extra registrado.",
+    "anchor": [
+      720,
+      245
+    ]
+  },
+  {
+    "id": "cl-18-1",
+    "sourceRow": 18,
+    "level": 1,
+    "label": "Encanto",
+    "difficulty": 1,
+    "place": "Barrio Puerto",
+    "kind": "sin punto único",
+    "quote": "Salgo todos los días, me encanta, camino por todas las calles, conozco a los malandrines."
+  },
+  {
+    "id": "cl-19-2",
+    "sourceRow": 19,
+    "level": 2,
+    "label": "Nostalgia y ambivalencia",
+    "difficulty": 1,
+    "place": "Barrio Puerto · día y noche",
+    "kind": "sin punto único",
+    "quote": "Me es cómodo, yo bajo del cerro y voy caminando al centro, me voy tranquilo.",
+    "interpretation": true
+  },
+  {
+    "id": "cl-20-3",
+    "sourceRow": 20,
+    "level": 3,
+    "label": "Disconformidad y decepción",
+    "difficulty": 5,
+    "place": "Barrio Puerto",
+    "kind": "sin punto único",
+    "quote": "Soy un argentino que viene de turista, está todo mal señalizado, las calles están sucias y dejan mucho que desear."
+  },
+  {
+    "id": "cl-21-1",
+    "sourceRow": 21,
+    "level": 1,
+    "label": "Interés por conversar",
+    "difficulty": 3,
+    "place": "Contexto de entrevista",
+    "kind": "contexto",
+    "quote": "“En las calles no caben las sillas de rueda.” “Hace falta lugar adecuado para la gente mayor.”"
+  },
+  {
+    "id": "cl-27-2",
+    "sourceRow": 27,
+    "level": 2,
+    "label": "Preocupación",
+    "difficulty": 5,
+    "place": "Blanco",
+    "kind": "mencionada",
+    "quote": "“Todas las calles están rotas, Blanco está abandonado, todo destruido, no hay propuestas para el escándalo del patrimonio.”",
+    "anchor": [
+      730,
+      365
+    ]
+  },
+  {
+    "id": "cl-29-1",
+    "sourceRow": 29,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 1,
+    "place": "Serrano",
+    "kind": "referencial",
+    "quote": "“No tengo ninguna discapacidad, soy buena para caminar, me encanta el Barrio Puerto, en Viña me desespero porque no conozco, soy nacida y criada en Valparaíso.”",
+    "anchor": [
+      720,
+      485
+    ]
+  },
+  {
+    "id": "cl-30-1",
+    "sourceRow": 30,
+    "level": 1,
+    "label": "Confianza al conversar",
+    "difficulty": 1,
+    "place": "Contexto de entrevista",
+    "kind": "contexto",
+    "quote": "“Serrano es la más fácil de caminar.”"
+  },
+  {
+    "id": "cl-32-3",
+    "sourceRow": 32,
+    "level": 3,
+    "label": "Enojo con el mundo",
+    "difficulty": 2,
+    "place": "Contexto de entrevista · Plaza Echaurren",
+    "kind": "contexto",
+    "quote": "“Me da nostalgia el barrio puerto, yo soy de toda la vida de aquí.” “No te confíes de nadie.”"
+  },
+  {
+    "id": "cl-33-2",
+    "sourceRow": 33,
+    "level": 2,
+    "label": "Nostalgia",
+    "difficulty": 1,
+    "place": "Barrio Puerto · plaza no identificada",
+    "kind": "sin punto único",
+    "quote": "“Muy lindo el recuerdo, siempre te encuentras con la misma gente, aquí en la plaza nos cuidamos.” “Es pacífico, nos conocemos.”",
+    "contextNote": "La disposición a conversar se registra como actitud durante la entrevista."
+  },
+  {
+    "id": "cl-35-1",
+    "sourceRow": 35,
+    "level": 1,
+    "label": "Tranquilidad",
+    "difficulty": 5,
+    "place": "Plaza Echaurren",
+    "kind": "mencionada",
+    "quote": "“Es difícil caminar porque las raíces de los árboles levantan el suelo y eso lo hace irregular, están llenas de hoyos las calles, está abandonado, dejado.”",
+    "anchor": [
+      900,
+      190
+    ]
+  },
+  {
+    "id": "cl-37-2",
+    "sourceRow": 37,
+    "level": 2,
+    "label": "Costumbre",
+    "difficulty": 2,
+    "place": "Barrio Puerto · mercado y Cochrane",
+    "kind": "sin punto único",
+    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”"
+  },
+  {
+    "id": "cl-37-1",
+    "sourceRow": 37,
+    "level": 1,
+    "label": "Cariño",
+    "difficulty": 2,
+    "place": "Barrio Puerto · mercado y Cochrane",
+    "kind": "sin punto único",
+    "quote": "Baja todos los sábados al mercado a comprar pescado. “En Cochrane las micros pasan pegadas a la vereda.”"
+  },
+  {
+    "id": "cl-38-3",
+    "sourceRow": 38,
+    "level": 3,
+    "label": "Inseguridad",
+    "difficulty": 4,
+    "place": "Blanco y Clave",
+    "kind": "sin punto único",
+    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”"
+  },
+  {
+    "id": "cl-38-2",
+    "sourceRow": 38,
+    "level": 2,
+    "label": "Cansancio",
+    "difficulty": 4,
+    "place": "Blanco y Clave",
+    "kind": "sin punto único",
+    "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”"
+  },
+  {
+    "id": "cl-39-2",
+    "sourceRow": 39,
+    "level": 2,
+    "label": "Preocupación por las caídas",
+    "difficulty": 4,
+    "place": "Cochrane y Almte. Goñi",
+    "kind": "sin punto único",
+    "quote": "“Por Sotomayor se puede ir más tranquila porque es ancha, pero para cruzar hay que esperar harto.”"
+  },
+  {
+    "id": "cl-40-3",
+    "sourceRow": 40,
+    "level": 3,
+    "label": "Miedo y rabia",
+    "difficulty": 5,
+    "place": "Barrio Puerto · especialmente Cochrane y Blanco",
+    "kind": "sin punto único",
+    "quote": "“Me operaron hace tres meses y salir al centro es una pesadilla, el semáforo dura nada y con la muleta no alcanzo a cruzar.”"
+  },
+  {
+    "id": "cl-41-2",
+    "sourceRow": 41,
+    "level": 2,
+    "label": "Desorientación",
+    "difficulty": 3,
+    "place": "Cochrane y Almte. Muñoz",
+    "kind": "sin punto único",
+    "quote": "“Hace años que no venía, el barrio es lindo pero está muy descuidado.”"
+  },
+  {
+    "id": "cl-42-2",
+    "sourceRow": 42,
+    "level": 2,
+    "label": "Resignación",
+    "difficulty": 2,
+    "place": "Serrano",
+    "kind": "mencionada",
+    "quote": "“Una ya se acostumbró, pero los sábados se llena de gente y la vereda no da.” “Los parlantes de los locales a veces no dejan ni conversar.”",
+    "anchor": [
+      875,
+      485
+    ]
+  },
+  {
+    "id": "cl-43-1",
+    "sourceRow": 43,
+    "level": 1,
+    "label": "Tranquilidad, me siento en casa",
+    "difficulty": 1,
+    "place": "Plaza Echaurren",
+    "kind": "mencionada",
+    "quote": "Se junta con amigos en la plaza Echaurren los sábados. “Uno ya sabe por dónde ir, el que viene de afuera se pierde.”",
+    "anchor": [
+      900,
+      190
+    ]
+  },
+  {
+    "id": "cl-44-3",
+    "sourceRow": 44,
+    "level": 3,
+    "label": "Miedo e impotencia",
+    "difficulty": 5,
+    "place": "Barrio Puerto",
+    "kind": "sin punto único",
+    "quote": "“Antes caminaba solo hasta el puerto, ahora ni a la esquina me atrevo.”"
+  },
+  {
+    "id": "cl-45-2",
+    "sourceRow": 45,
+    "level": 2,
+    "label": "Cansancio y calor",
+    "difficulty": 3,
+    "place": "Clave y Almte. Goñi",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-46-2",
+    "sourceRow": 46,
+    "level": 2,
+    "label": "Molestia",
+    "difficulty": 4,
+    "place": "Cruce Cochrane con Sotomayor y Blanco",
+    "kind": "sin punto único",
+    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”"
+  },
+  {
+    "id": "cl-46-3",
+    "sourceRow": 46,
+    "level": 3,
+    "label": "Ansiedad",
+    "difficulty": 4,
+    "place": "Cruce Cochrane con Sotomayor y Blanco",
+    "kind": "sin punto único",
+    "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”"
+  },
+  {
+    "id": "cl-47-2",
+    "sourceRow": 47,
+    "level": 2,
+    "label": "Preocupación",
+    "difficulty": 3,
+    "place": "Cochrane y Errázuriz",
+    "kind": "sin punto único",
+    "quote": "“En Serrano por lo menos se puede andar.”"
+  },
+  {
+    "id": "cl-48-2",
+    "sourceRow": 48,
+    "level": 2,
+    "label": "Nostalgia",
+    "difficulty": 1,
+    "place": "Barrio Puerto · menciona Blanco de noche",
+    "kind": "sin punto único",
+    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”"
+  },
+  {
+    "id": "cl-48-3",
+    "sourceRow": 48,
+    "level": 3,
+    "label": "Pena",
+    "difficulty": 1,
+    "place": "Barrio Puerto · menciona Blanco de noche",
+    "kind": "sin punto único",
+    "quote": "“Antes esto era otra cosa, había movimiento de verdad, ahora está botado.” “De día no tengo problema, de noche no ando ni loco por Blanco.”"
+  },
+  {
+    "id": "cl-49-3",
+    "sourceRow": 49,
+    "level": 3,
+    "label": "Frustración e impotencia",
+    "difficulty": 5,
+    "place": "Sotomayor",
+    "kind": "mencionada",
+    "quote": "“Solo se puede por Sotomayor y aun así hay que esquivar hoyos.” Su cuidadora señala que no salen los días de lluvia.",
+    "anchor": [
+      315,
+      430
+    ]
+  },
+  {
+    "id": "cl-50-2",
+    "sourceRow": 50,
+    "level": 2,
+    "label": "Sorpresa y atención",
+    "difficulty": 4,
+    "place": "Prat, Sotomayor y Serrano",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-51-2",
+    "sourceRow": 51,
+    "level": 2,
+    "label": "Desorientación y atención",
+    "difficulty": 3,
+    "place": "Cochrane y Sotomayor",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-52-3",
+    "sourceRow": 52,
+    "level": 3,
+    "label": "Miedo",
+    "difficulty": 2,
+    "place": "Prat, Errázuriz y Blanco",
+    "kind": "sin punto único",
+    "quote": "En general, busca comodidad"
+  },
+  {
+    "id": "cl-53-2",
+    "sourceRow": 53,
+    "level": 2,
+    "label": "Desagrado",
+    "difficulty": 2,
+    "place": "Blanco",
+    "kind": "referencial",
+    "quote": "Menciona veredas con excremento de perro",
+    "anchor": [
+      890,
+      365
+    ]
+  },
+  {
+    "id": "cl-54-3",
+    "sourceRow": 54,
+    "level": 3,
+    "label": "Inseguridad al cruzar",
+    "difficulty": 4,
+    "place": "Cruce Cochrane con Sotomayor",
+    "kind": "mencionada",
+    "quote": "No alcanza a distinguir bien el color del semáforo; cruza siguiendo a la gente que va adelante.",
+    "anchor": [
+      315,
+      245
+    ]
+  },
+  {
+    "id": "cl-55-3",
+    "sourceRow": 55,
+    "level": 3,
+    "label": "Agobio",
+    "difficulty": 3,
+    "place": "Almte. Goñi y Clave",
+    "kind": "sin punto único",
+    "quote": "Sin comentario extra registrado."
+  },
+  {
+    "id": "cl-56-1",
+    "sourceRow": 56,
+    "level": 1,
+    "label": "Orgullo de poder salir solo",
+    "difficulty": 2,
+    "place": "Barrio Puerto · Sotomayor, Serrano y Prat",
+    "kind": "sin punto único",
+    "quote": "Dice que claramente sería más fácil si las calles estuvieran mejor cuidadas."
+  },
+  {
+    "id": "cl-57-3",
+    "sourceRow": 57,
+    "level": 3,
+    "label": "Temor",
+    "difficulty": 5,
+    "place": "Barrio Puerto",
+    "kind": "sin punto único",
+    "quote": "Sin su hijo, no sale a la calle, dice que los autos pasan muy rápido"
+  },
+  {
+    "id": "cl-58-1",
+    "sourceRow": 58,
+    "level": 1,
+    "label": "Pertenencia y orgullo",
+    "difficulty": 1,
+    "place": "Barrio Puerto · Plaza Echaurren, Sotomayor y Cochrane",
+    "kind": "sin punto único",
+    "quote": "Siempre ha vivido aquí, entonces no se le hace difícil movilizarse",
+    "agePending": true
+  },
+  {
+    "id": "cl-59-3",
+    "sourceRow": 59,
+    "level": 3,
+    "label": "Miedo",
+    "difficulty": 3,
+    "place": "Almte. Goñi, Almte. Pérez y Almte. Muñoz",
+    "kind": "sin punto único",
+    "quote": "Evita lo más posible, los pasajes pequeños, sobre todo después de las cinco de la tarde"
   }
 ];
+const LEVEL_COLORS = {1:"#00D6C8",2:"#FF8A1F",3:"#9F2148"};
+const LEVEL_LABELS = {1:"Sensaciones positivas",2:"Sensaciones intermedias",3:"Emociones intensas"};
+const MAP_VIEWBOX = "0 0 1200 950";
+// Preserve source locations: exact street or reference; never assign an arbitrary street.
+function layoutEmotions() {
+  const occupied=[];
+  const unlocated={1:0,2:0,3:0};
+  EMOTIONS.forEach(item=>{
+    if(item.anchor){
+      const [ax,ay]=item.anchor;
+      const candidates=[[0,0],[24,0],[-24,0],[0,-24],[0,24],[24,-24],[-24,-24],[24,24],[-24,24],[48,0],[-48,0]];
+      const off=candidates.find(([dx,dy])=>occupied.every(([x,y])=>Math.hypot(ax+dx-x,ay+dy-y)>=23))||[0,48];
+      item.x=ax+off[0];item.y=ay+off[1];occupied.push([item.x,item.y]);
+    }else{
+      const i=unlocated[item.level]++;
+      item.x=60+(item.level-1)*390+(i%9)*40;
+      item.y=815+Math.floor(i/9)*39;
+    }
+  });
+}
+layoutEmotions();
+function drawUnlocatedPanel(svg){
+  const g=svgEl("g");g.setAttribute("class","unlocated-panel");
+  const rect=svgEl("rect");Object.entries({x:22,y:750,width:1156,height:185,rx:12,fill:"#0a2234",stroke:"#294253"}).forEach(([k,v])=>rect.setAttribute(k,v));g.append(rect);
+  const label=(x,y,txt,cls)=>{const t=svgEl("text");t.setAttribute("x",x);t.setAttribute("y",y);t.setAttribute("class",cls);t.textContent=txt;g.append(t);};
+  label(43,775,"REGISTROS SIN UBICACIÓN ÚNICA · BARRIO PUERTO / VARIAS CALLES / CONTEXTO DE ENTREVISTA","unlocated-title");
+  [1,2,3].forEach(l=>label(43+(l-1)*390,797,"Nivel "+l+" · "+LEVEL_LABELS[l],"unlocated-label"));
+  svg.append(g);
+}
+
 
 /* =========================================================
    PARTE 2 — DIFICULTAD FÍSICA
@@ -143,7 +704,7 @@ const DIFFICULTY_SEGMENTS = [
 
 let activeFilter = "todas";
 let showDifficulty = true;
-let showEmotions = false;
+let showEmotions = true;
 
 const emotionMap = document.querySelector("#emotionMap");
 const difficultyMap = document.querySelector("#difficultyMap");
@@ -213,9 +774,7 @@ function drawBaseMap(svg) {
   svg.appendChild(landmarkGroup);
 }
 
-function emotionFill(emotion) {
-  return EMOTION_COLORS[emotion] || "#ffffff";
-}
+function emotionFill(level) { return LEVEL_COLORS[level]; }
 
 function difficultyLabel(level) {
   if (level === "alta") return "Dificultad alta";
@@ -224,52 +783,54 @@ function difficultyLabel(level) {
 }
 
 function createEmotionPoint(item, context = "emotion") {
-  const group = svgEl("g");
-  group.setAttribute("class", "emotion-point");
-  group.dataset.emotion = item.emotion;
-  group.dataset.id = item.id;
-
-  const hit = svgEl("circle");
-  hit.setAttribute("cx", item.x);
-  hit.setAttribute("cy", item.y);
-  hit.setAttribute("r", "24");
-  hit.setAttribute("class", "emotion-hit");
-
-  const halo = svgEl("circle");
-  halo.setAttribute("cx", item.x);
-  halo.setAttribute("cy", item.y);
-  halo.setAttribute("r", "30");
-  halo.setAttribute("class", "emotion-halo");
-  halo.setAttribute("fill", emotionFill(item.emotion));
-
-  // Todos parten exactamente con el mismo tamaño base.
-  const core = svgEl("circle");
-  core.setAttribute("cx", item.x);
-  core.setAttribute("cy", item.y);
-  core.setAttribute("r", "10");
-  core.setAttribute("class", "emotion-core");
-  core.setAttribute("fill", emotionFill(item.emotion));
-
-  group.appendChild(hit);
-  group.appendChild(halo);
-  group.appendChild(core);
-
-  if (context === "emotion") {
-    group.addEventListener("mouseenter", event => showEmotionTooltip(event, item));
-    group.addEventListener("mousemove", event => moveTooltip(emotionStage, emotionTooltip, event, 250, 150));
-    group.addEventListener("mouseleave", () => emotionTooltip.classList.remove("is-visible"));
-  } else {
-    group.addEventListener("mouseenter", event => showMapEmotionTooltip(event, item));
-    group.addEventListener("mousemove", event => moveTooltip(difficultyStage, mapTooltip, event, 250, 150));
-    group.addEventListener("mouseleave", hideMapTooltip);
+  const group=svgEl("g");
+  group.setAttribute("class","emotion-point");
+  group.dataset.level=item.level;
+  group.dataset.id=item.id;
+  group.setAttribute("tabindex","0");
+  group.setAttribute("role","button");
+  group.setAttribute("aria-label",item.label+", "+item.place+", nivel "+item.level);
+  if(item.anchor && (item.x!==item.anchor[0]||item.y!==item.anchor[1])){
+    const leader=svgEl("line");
+    Object.entries({x1:item.anchor[0],y1:item.anchor[1],x2:item.x,y2:item.y,class:"emotion-leader"}).forEach(([k,v])=>leader.setAttribute(k,v));group.append(leader);
   }
-
+  for(const [cls,r] of [["emotion-hit",11],["emotion-halo",[0,19,30,43][item.level]],["emotion-core",9]]){
+    const circle=svgEl("circle");
+    Object.entries({cx:item.x,cy:item.y,r,class:cls,fill:cls==="emotion-hit"?"transparent":emotionFill(item.level)}).forEach(([k,v])=>circle.setAttribute(k,v));
+    if(cls==="emotion-core"&&item.kind==="referencial")circle.classList.add("is-reference");
+    group.append(circle);
+  }
+  const stage=context==="emotion"?emotionStage:difficultyStage;
+  const tip=context==="emotion"?emotionTooltip:mapTooltip;
+  const show=e=>{group.classList.add("is-engaged"); showPointTooltip(e,item,stage,tip);};
+  const hide=()=>{group.classList.remove("is-engaged");tip.classList.remove("is-visible");};
+  group.addEventListener("mouseenter",show);
+  group.addEventListener("mousemove",e=>moveTooltip(stage,tip,e));
+  group.addEventListener("mouseleave",hide);
+  group.addEventListener("focus",show);
+  group.addEventListener("blur",hide);
+  group.addEventListener("keydown",e=>{if(e.key==="Escape"){hide();group.blur();}});
   return group;
+}
+function showPointTooltip(event,item,stage,tip){
+  tip.classList.add("point-detail");
+  const place=tip.querySelector(".point-location");
+  place.textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
+  tip.querySelector(".tooltip-dot").style.background=emotionFill(item.level);
+  tip.querySelector(".point-title").textContent=item.label.toLocaleUpperCase("es");
+  tip.querySelector(".point-meta").textContent="Nivel "+item.level+" · Dificultad percibida: "+item.difficulty+"/5";
+  tip.querySelector(".point-comment").textContent=item.quote;
+  const note=tip.querySelector(".point-note");
+  note.textContent=[item.kind==="referencial"?"Ubicación referencial (según dificultad indicada)":item.kind==="sin punto único"?"Sin ubicación emocional única":item.kind==="contexto"?"Actitud registrada durante la entrevista, no emoción atribuida a la calle":"Lugar mencionado en la ficha; posición esquemática",item.agePending?"Edad pendiente de confirmar":"",item.interpretation?"Etiqueta interpretativa de una respuesta ambivalente":"",item.contextNote||""].filter(Boolean).join(" · ");
+  tip.classList.add("is-visible");
+  moveTooltip(stage,tip,event);
 }
 
 function renderEmotionMap() {
   emotionMap.innerHTML = "";
+  emotionMap.setAttribute("viewBox", MAP_VIEWBOX);
   drawBaseMap(emotionMap);
+  drawUnlocatedPanel(emotionMap);
 
   const pointsLayer = svgEl("g");
   pointsLayer.setAttribute("class", "emotion-layer");
@@ -281,34 +842,17 @@ function renderEmotionMap() {
   emotionMap.appendChild(pointsLayer);
 }
 
-function showEmotionTooltip(event, item) {
-  document.querySelector("#tooltipDot").style.background = emotionFill(item.emotion);
-  document.querySelector("#tooltipEmotion").textContent = item.label;
-  document.querySelector("#tooltipLevel").textContent = `Intensidad ${EMOTION_LEVEL[item.emotion]}`;
-  document.querySelector("#tooltipPlace").textContent = item.place;
-  document.querySelector("#tooltipDifficulty").textContent = `Dificultad ${item.difficulty} / 5`;
-  document.querySelector("#tooltipQuote").textContent = item.quote;
-
-  emotionTooltip.classList.add("is-visible");
-  moveTooltip(emotionStage, emotionTooltip, event, 250, 150);
-}
-
-function moveTooltip(stage, tooltipEl, event, tooltipWidth = 250, tooltipHeight = 150) {
-  const bounds = stage.getBoundingClientRect();
-
-  let left = event.clientX - bounds.left + 14;
-  let top = event.clientY - bounds.top + 14;
-
-  if (left + tooltipWidth > bounds.width - 10) {
-    left = event.clientX - bounds.left - tooltipWidth - 14;
-  }
-
-  if (top + tooltipHeight > bounds.height - 10) {
-    top = event.clientY - bounds.top - tooltipHeight - 14;
-  }
-
-  tooltipEl.style.left = `${Math.max(8, left)}px`;
-  tooltipEl.style.top = `${Math.max(8, top)}px`;
+function moveTooltip(stage, tip, event) {
+  const bounds=stage.getBoundingClientRect();
+  const target=event.currentTarget?.getBoundingClientRect();
+  const x=Number.isFinite(event.clientX)?event.clientX:target?target.left+target.width/2:bounds.left+bounds.width/2;
+  const y=Number.isFinite(event.clientY)?event.clientY:target?target.top+target.height/2:bounds.top+bounds.height/2;
+  const w=tip.offsetWidth,h=tip.offsetHeight;
+  let left=x-bounds.left+16,top=y-bounds.top+16;
+  if(left+w>bounds.width-8)left=x-bounds.left-w-16;
+  if(top+h>bounds.height-8)top=y-bounds.top-h-16;
+  tip.style.left=Math.max(8,Math.min(left,bounds.width-w-8))+"px";
+  tip.style.top=Math.max(8,Math.min(top,bounds.height-h-8))+"px";
 }
 
 function segmentLength(segment) {
@@ -340,28 +884,16 @@ function createDifficultyLine(item, index) {
   return group;
 }
 
-function showMapEmotionTooltip(event, item) {
-  document.querySelector("#mapTooltipDot").style.background = emotionFill(item.emotion);
-  document.querySelector("#mapTooltipTitle").textContent = item.label;
-  document.querySelector("#mapTooltipType").textContent = "Emoción";
-  document.querySelector("#mapTooltipPlace").textContent = item.place;
-  document.querySelector("#mapTooltipLevel").textContent = `Intensidad ${EMOTION_LEVEL[item.emotion]}`;
-  document.querySelector("#mapTooltipText").textContent = item.quote;
-
+function showDifficultyTooltip(event,item){
+  mapTooltip.classList.remove("point-detail");
+  mapTooltip.querySelector(".point-location").textContent="VALPARAÍSO · "+item.place.toLocaleUpperCase("es");
+  mapTooltip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
+  mapTooltip.querySelector(".point-title").textContent=item.categoryLabel;
+  mapTooltip.querySelector(".point-meta").textContent=difficultyLabel(item.level);
+  mapTooltip.querySelector(".point-comment").textContent=item.detail;
+  mapTooltip.querySelector(".point-note").textContent="Tramo ilustrativo del prototipo; pendiente de validación.";
   mapTooltip.classList.add("is-visible");
-  moveTooltip(difficultyStage, mapTooltip, event, 250, 150);
-}
-
-function showDifficultyTooltip(event, item) {
-  document.querySelector("#mapTooltipDot").style.background = DIFFICULTY_COLORS[item.level];
-  document.querySelector("#mapTooltipTitle").textContent = item.categoryLabel;
-  document.querySelector("#mapTooltipType").textContent = "Dificultad física";
-  document.querySelector("#mapTooltipPlace").textContent = item.place;
-  document.querySelector("#mapTooltipLevel").textContent = difficultyLabel(item.level);
-  document.querySelector("#mapTooltipText").textContent = item.detail;
-
-  mapTooltip.classList.add("is-visible");
-  moveTooltip(difficultyStage, mapTooltip, event, 250, 150);
+  moveTooltip(difficultyStage,mapTooltip,event);
 }
 
 function hideMapTooltip() {
@@ -370,6 +902,7 @@ function hideMapTooltip() {
 
 function renderDifficultyMap() {
   difficultyMap.innerHTML = "";
+  difficultyMap.setAttribute("viewBox", MAP_VIEWBOX);
   drawBaseMap(difficultyMap);
 
   // Capa 1: dificultad física.
@@ -389,6 +922,7 @@ function renderDifficultyMap() {
 
   // Capa 2: emociones. Siempre se agrega al final para quedar por encima.
   if (showEmotions) {
+    drawUnlocatedPanel(difficultyMap);
     const emotionLayer = svgEl("g");
     emotionLayer.setAttribute("class", "emotion-layer");
 
