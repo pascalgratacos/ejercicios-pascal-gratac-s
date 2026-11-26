@@ -585,7 +585,7 @@ h1 span {
 
 /* Proyecto final: niveles emocionales, mismos puntos en las dos lecturas. */
 .map-stage{min-height:0;}
-#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/900;}
+#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1500/1030;}
 .emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-leader{pointer-events:none;}
 .emotion-hit{pointer-events:all;}
 .emotion-core{stroke:none;stroke-width:0;transition:transform .2s ease;}
@@ -615,3 +615,9 @@ h1 span {
 
 /* Puntos sólidos en todas las categorías y estados de interacción. */
 .emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-point .emotion-hit{stroke:none!important;stroke-width:0!important;outline:none;}
+
+/* Map frame: both data layers keep the same coordinates inside a generous margin. */
+.map-stage{background:#0d1b2d;}
+.main-street-labels{pointer-events:none;}
+.main-street-label{font-family:Arial,Helvetica,sans-serif;font-size:21.59px;font-weight:700;fill:#dce1e8;}
+.main-street-guide{fill:none;stroke:#b8c1cd;stroke-width:1.1;stroke-opacity:.66;stroke-linecap:round;stroke-linejoin:round;}
