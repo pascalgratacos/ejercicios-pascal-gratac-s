@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-cl-02" />
+  <link rel="stylesheet" href="./style.css?v=final-cl-03" />
 </head>
 <body>
   <main class="page-shell">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="map-stage" id="emotionStage">
-          <svg id="emotionMap" viewBox="0 0 1200 760" role="img" aria-label="Mapa emocional detallado del Barrio Puerto"></svg>
+          <svg id="emotionMap" viewBox="0 0 1200 900" role="img" aria-label="Mapa emocional detallado del Barrio Puerto"></svg>
 
           <div class="emotion-tooltip" id="emotionTooltip" role="status" aria-live="polite">
             <div class="point-location"></div>
@@ -95,7 +95,7 @@
         </div>
 
         <div class="map-stage" id="difficultyStage">
-          <svg id="difficultyMap" viewBox="0 0 1200 760" role="img" aria-label="Mapa detallado de dificultad física del Barrio Puerto"></svg>
+          <svg id="difficultyMap" viewBox="0 0 1200 900" role="img" aria-label="Mapa detallado de dificultad física del Barrio Puerto"></svg>
 
           <div class="map-tooltip" id="mapTooltip" role="status" aria-live="polite">
             <div class="point-location"></div>
@@ -112,7 +112,7 @@
             <span><i class="medium"></i>Amarillo · Dificultad media</span>
             <span><i class="easy"></i>Verde · Sin dificultad</span>
           </div>
-          <span class="layer-note">Emociones por encima de las líneas. Capa física del prototipo, pendiente de validar.</span>
+          <span class="layer-note">Emociones por encima de las líneas. Capa física esquemática pendiente de validar; 3 tramos de calles ausentes del nuevo mapa no se dibujan.</span>
         </div>
       </div>
     </section>
@@ -124,6 +124,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=final-cl-02"></script>
+  <script src="./script.js?v=final-cl-03"></script>
 </body>
 </html>
