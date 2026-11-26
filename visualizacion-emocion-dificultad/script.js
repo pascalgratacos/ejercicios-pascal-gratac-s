@@ -1623,7 +1623,7 @@ function showDifficultyTooltip(event,item,stage=difficultyStage,tip=mapTooltip){
   tip.classList.remove("point-detail");tip.classList.add("difficulty-detail");
   tip.querySelector(".point-location").textContent=item.place;
   tip.querySelector(".tooltip-dot").style.background=DIFFICULTY_COLORS[item.level];
-  tip.querySelector(".point-title").textContent=FILTER_LABELS[item.category]||item.category;
+  tip.querySelector(".point-title").textContent=(FILTER_LABELS[item.category]||item.category).toLocaleUpperCase("es");
   tip.querySelector(".point-meta").textContent="";
   tip.querySelector(".point-comment").textContent=difficultyLabel(item.level);
   tip.querySelector(".point-note").textContent="";
