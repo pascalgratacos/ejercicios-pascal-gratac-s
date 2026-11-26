@@ -19,27 +19,40 @@
  <g id="monument" fill="#c8d0da"><path d="M8 64H43V71H8zM4 72H47V78H4zM14 55H38V63H14zM24 17l3-5 4 3-1 6 5 3-4 10-3 11 3 10h-6l-5-14-4 10-5-1 5-15 3-10-4 4-4-2 8-12zM29 18l9-13 3 2-8 19z"/><circle cx="27" cy="13" r="4"/></g>
  <g id="train" fill="none" stroke="#c8d0da" stroke-width="3.5" stroke-linejoin="round"><rect x="8" y="2" width="34" height="35" rx="5"/><path d="M13 8H37V23H13zM15 37L5 48M35 37L45 48M12 42H38"/><circle cx="16" cy="30" r="1.8" fill="#c8d0da"/><circle cx="34" cy="30" r="1.8" fill="#c8d0da"/></g>
  <g id="boat" fill="#c8d0da"><path d="M3 26L25 20 48 26 42 41 25 49 9 41zM9 24l4-16h25l5 16-18-5zM17 4h16v5H17z"/><path fill="#0d1b2d" d="M16 12h7v9h-7zM28 12h7v9h-7z"/></g>
+<mask id="street-label-clearance" maskUnits="userSpaceOnUse" x="0" y="0" width="1408" height="1056"><rect width="1408" height="1056" fill="white"/><rect x="62" y="115.3335" width="100" height="33.333" rx="5" fill="black"/><rect x="281" y="115.3335" width="172" height="33.333" rx="5" fill="black"/><rect x="626" y="115.3335" width="124" height="33.333" rx="5" fill="black"/><rect x="602.5" y="359.3335" width="147" height="33.333" rx="5" fill="black"/><rect x="610.5" y="616.3335" width="115" height="33.333" rx="5" fill="black"/><rect x="946.5" y="854.3335" width="157" height="33.333" rx="5" fill="black"/><rect x="176" y="491.8335" width="112" height="25.333" rx="5" fill="black"/><rect x="446" y="491.8335" width="112" height="25.333" rx="5" fill="black"/><rect x="836" y="491.8335" width="154" height="25.333" rx="5" fill="black"/><rect x="963" y="392.3335" width="160" height="25.333" rx="5" fill="black"/><rect x="1142" y="491.8335" width="70" height="25.333" rx="5" fill="black"/><rect x="1292" y="491.8335" width="116" height="25.333" rx="5" fill="black"/><rect x="683" y="662.3335" width="168" height="25.333" rx="5" fill="black"/></mask>
 </defs>
 <rect width="1408" height="1056" fill="#0d1b2d"/>
-<g class="road major"><path d="M0 132H1408 M0 376H1408 M0 633H1408 M0 871H1408"/></g>
-<g class="road minor"><path d="M186 40V132V376 M518 40V376 M1184 132V376 M202 376V871 M440 376V871 M766 376V871 M910 376V633 M1058 376V633 M1172 376V871 M1327 376V871 M896 633V871 M1072 633V871"/></g>
+<g mask="url(#street-label-clearance)"><line class="road major" x1="14" y1="132" x2="232" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="232" y1="132" x2="502" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="502" y1="132" x2="1394" y2="132" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="376" x2="1394" y2="376" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="633" x2="1394" y2="633" stroke-linecap="round"/>
+<line class="road major" x1="14" y1="871" x2="1394" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="232" y1="132" x2="232" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="502" y1="132" x2="502" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="767" y1="132" x2="767" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="913" y1="132" x2="913" y2="633" stroke-linecap="round"/>
+<line class="road minor" x1="1043" y1="132" x2="1043" y2="633" stroke-linecap="round"/>
+<line class="road minor" x1="1177" y1="376" x2="1177" y2="871" stroke-linecap="round"/>
+<line class="road minor" x1="1350" y1="376" x2="1350" y2="871" stroke-linecap="round"/></g>
 <path fill="url(#sea)" d="M0 930H86V957H112V930H303V957H330V930H548V957H575V930H912V957H940V930H1166V957H1195V930H1408V1056H0Z"/>
 <path class="road minor" d="M0 930H86V957H112V930H303V957H330V930H548V957H575V930H912V957H940V930H1166V957H1195V930H1408" stroke-width="6"/>
 <path fill="#829bb2" opacity=".13" d="M0 998Q85 976 163 1004T330 1002T500 1000T670 1006T840 1000T1010 1002T1180 1003T1408 993V1056H0Z"/>
 <path fill="#9aafc2" opacity=".12" d="M0 1026Q87 1005 170 1029T340 1025T510 1025T680 1031T850 1024T1020 1025T1190 1024T1408 1020V1056H0Z"/>
 <path fill="#b0bfcd" opacity=".09" d="M0 1046Q95 1030 190 1045T380 1044T570 1043T760 1046T950 1044T1140 1044T1408 1038V1056H0Z"/>
-<g class="street" text-anchor="middle">
-  <text x="710" y="166">Serrano</text>
-</g>
-<g class="side" text-anchor="middle" dominant-baseline="middle">
-  <text x="202" y="504.5">Sotomayor</text>
-  <text x="440" y="504.5">Sotomayor</text>
-  <text x="910" y="504.5">Almirante Goñi</text>
-  <text x="1058" y="504.5">Almirante Pérez</text>
-  <text x="766" y="752">Almirante Muñoz</text>
-  <text x="1172" y="504.5">Clave</text>
-  <text x="1327" y="504.5">San Martín</text>
-</g>
+<g text-anchor="middle" dominant-baseline="middle"><text class="street" x="112" y="132">Prat</text>
+<text class="street" x="367" y="132">Sotomayor</text>
+<text class="street" x="688" y="132">Serrano</text>
+<text class="street" x="676" y="376">Cochrane</text>
+<text class="street" x="668" y="633">Blanco</text>
+<text class="street" x="1025" y="871">Errázuriz</text>
+<text class="side" x="232" y="504.5">Sotomayor</text>
+<text class="side" x="502" y="504.5">Sotomayor</text>
+<text class="side" x="913" y="504.5">Almirante Goñi</text>
+<text class="side" x="1043" y="405">Almirante Pérez</text>
+<text class="side" x="1177" y="504.5">Clave</text>
+<text class="side" x="1350" y="504.5">San Martín</text>
+<text class="side" x="767" y="675">Almirante Muñoz</text></g>
 <g class="land">
  <use href="#anchor" x="276" y="32"/><text x="340" y="53">Armada</text><text x="340" y="75">de Chile</text><path class="guide" d="M364 90V118"/><circle cx="364" cy="120" r="4" fill="#c8d0da"/>
  <use href="#lift" x="866" y="34"/><text x="950" y="53">Ascensor</text><text x="950" y="75">Cordillera</text><path class="guide" d="M930 89L913 115"/><circle cx="913" cy="115" r="4" fill="#c8d0da"/>
