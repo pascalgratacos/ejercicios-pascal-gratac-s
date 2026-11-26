@@ -975,7 +975,7 @@ const EMOTIONS = [
 ];
 const LEVEL_COLORS = {1:"#00D6C8",2:"#FF8A1F",3:"#9F2148"};
 const LEVEL_LABELS = {1:"Sensaciones positivas",2:"Sensaciones intermedias",3:"Emociones intensas"};
-const MAP_VIEWBOX = "0 0 1200 900";
+const MAP_VIEWBOX = "-150 -65 1500 1030";
 // Positions are schematic. General experiences remain inside the map without a street attribution.
 function layoutEmotions() {
   const occupied=[];
@@ -1052,13 +1052,31 @@ function svgEl(tag) {
 
 function drawBaseMap(svg) {
   const image=svgEl("image");
-  image.setAttribute("href", new URL("./mapa-valparaiso-nocturno.svg?v=03",document.currentScript?.src || MAP_SCRIPT_URL).href);
+  image.setAttribute("href", new URL("./mapa-valparaiso-nocturno.svg?v=04",document.currentScript?.src || MAP_SCRIPT_URL).href);
   image.setAttribute("x",0);image.setAttribute("y",0);
   image.setAttribute("width",1200);image.setAttribute("height",900);
   image.setAttribute("preserveAspectRatio","xMidYMid meet");
   image.setAttribute("pointer-events","none");
   image.setAttribute("class","night-map-base");
   svg.append(image);
+  // Labels live in the left margin, sharing the original road coordinates.
+  const labels=svgEl("g");
+  labels.setAttribute("class","main-street-labels");
+  for(const [name,originalY] of [["Prat",132],["Cochrane",376],["Blanco",633],["Errázuriz",871]]){
+    const y=originalY*1200/1408;
+    const text=svgEl("text");
+    text.setAttribute("x",-138);
+    text.setAttribute("y",y);
+    text.setAttribute("dominant-baseline","middle");
+    text.setAttribute("class","main-street-label");
+    text.textContent=name;
+    labels.append(text);
+    const line=svgEl("path");
+    line.setAttribute("d","M-27 "+y+" H-5 l-5 -4 M-5 "+y+" l-5 4");
+    line.setAttribute("class","main-street-guide");
+    labels.append(line);
+  }
+  svg.append(labels);
 }
 
 function emotionFill(level) { return LEVEL_COLORS[level]; }
