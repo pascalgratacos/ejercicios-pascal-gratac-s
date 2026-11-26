@@ -640,11 +640,6 @@ h1 span {
 .filter-link.is-active{border-bottom-color:var(--ink);}
 .filter-link:focus-visible{outline:1px dashed var(--muted);outline-offset:5px;}
 
-/* Contextual definition occupies the same upper-right position as the former map instruction. */
-#dificultad .map-topline{align-items:center;}
-#dificultad .map-topline > span:first-child{flex-shrink:0;}
-#dificultad .filter-definition{max-width:72%;text-align:right;line-height:1.5;}
-@media(max-width:650px){
-  #dificultad .map-topline{align-items:flex-start;}
-  #dificultad .filter-definition{max-width:100%;text-align:left;}
-}
+/* Definición dinámica alineada a la izquierda. */
+#dificultad .map-topline{align-items:flex-start;justify-content:flex-start;}
+#dificultad .filter-definition{max-width:100%;text-align:left;line-height:1.5;}
