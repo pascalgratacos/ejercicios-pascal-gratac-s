@@ -1094,7 +1094,13 @@ function renderEmotionMap(city="cl") {
  const items=city==="arg"?ARG_EMOTIONS:EMOTIONS;
  svg.innerHTML="";svg.setAttribute("viewBox",MAP_VIEWBOX);drawBaseMap(svg,city);
  const layer=svgEl("g");layer.setAttribute("class","emotion-layer");
- items.forEach(item=>layer.appendChild(createEmotionPoint(item,"emotion",city)));
+ // Direction follows the x-coordinate, not the order of the source rows.
+ const ordered=[...items].sort((a,b)=>city==="arg"?b.x-a.x:a.x-b.x);
+ ordered.forEach((item,index)=>{
+   const point=createEmotionPoint(item,"emotion",city);
+   point.style.setProperty("--reveal-delay",Math.round(index*1700/Math.max(1,ordered.length-1))+"ms");
+   layer.appendChild(point);
+ });
  svg.appendChild(layer);
 }
 
@@ -1121,7 +1127,13 @@ function createDifficultyStack(items,index,stage,tip){
  const rect=svgEl("rect"),x0=Math.min(first.x1,first.x2),y0=Math.min(first.y1,first.y2),w=Math.abs(first.x2-first.x1),h=Math.abs(first.y2-first.y1);
  const setRect=(x,y,width,height)=>{rect.setAttribute("x",x);rect.setAttribute("y",y);rect.setAttribute("width",width);rect.setAttribute("height",height);};
  rect.setAttribute("fill","transparent");rect.setAttribute("class","stack-hit");setRect(x0-7,y0-7,w+14,h+14);group.appendChild(rect);
- const positions=items.map((item,i)=>n===1?[0,0]:vertical?[(i-(n-1)/2)*12,-12]:[0,-(i+1)*12]);
+ // Keep the expanded stack inside the frame, with 24-unit gaps (previously 12).
+ const step=24,margin=10;
+ const shift=(min,max,lo,hi)=>Math.max(lo-min,Math.min(0,hi-max));
+ const raw=items.map((item,i)=>n===1?[0,0]:vertical?[(i-(n-1)/2)*step,-12-i*8]:[0,-(i+1)*step]);
+ const dx=shift(x0+Math.min(...raw.map(p=>p[0])),x0+w+Math.max(...raw.map(p=>p[0])),margin,1200-margin);
+ const dy=shift(y0+Math.min(...raw.map(p=>p[1])),y0+h+Math.max(...raw.map(p=>p[1])),margin,824-margin);
+ const positions=raw.map(p=>n===1?p:[p[0]+dx,p[1]+dy]);
  items.forEach((item,i)=>{
    const line=svgEl("line");for(const k of ["x1","x2","y1","y2"])line.setAttribute(k,item[k]);
    line.setAttribute("class","difficulty-line stacked-line");line.dataset.level=item.level;line.dataset.id=item.id;line.dataset.category=item.category;
@@ -1214,3 +1226,22 @@ for(const city of ["cl","arg"]){
  section.querySelector(".emotion-toggle").addEventListener("click",()=>toggleEmotion(city));
  renderEmotionMap(city);renderDifficultyMap(city);
 }
+
+// Reveal only the upper emotion maps, once they enter the viewport.
+function initEmotionScrollReveal(){
+ if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const maps=[emotionMap,document.querySelector("#argEmotionMap")];
+ const observer=new IntersectionObserver(entries=>{
+   for(const entry of entries){
+     if(!entry.isIntersecting)continue;
+     entry.target.classList.add("emotion-reveal-visible");
+     observer.unobserve(entry.target);
+   }
+ },{threshold:.18});
+ maps.forEach(svg=>{
+   if(!svg)return;
+   svg.classList.add("emotion-reveal-ready");
+   observer.observe(svg);
+ });
+}
+initEmotionScrollReveal();
