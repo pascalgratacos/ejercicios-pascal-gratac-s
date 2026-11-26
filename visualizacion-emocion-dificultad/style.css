@@ -785,3 +785,20 @@ h1 span {
 .emotion-toggle:focus-visible{outline:1px dashed var(--muted);outline-offset:4px;}
 @media(max-width:1050px){.comparison-difficulty .control-bar{gap:8px;}.emotion-toggle{padding:8px;font-size:11px;}.comparison-difficulty .filter-group{gap:5px 10px;}}
 @media(prefers-reduced-motion:reduce){.emotion-toggle{transition:none;}}
+
+/* Portada: una flecha sin texto, fondo ni contenedor visible. */
+.cover-scroll-arrow{display:inline-flex;width:44px;height:44px;justify-content:center;align-items:center;color:var(--muted);text-decoration:none;border:0;background:transparent;border-radius:50%;animation:cover-fade 1s 1.05s both;transition:color .2s ease,transform .2s ease;}
+.cover-scroll-arrow:hover{color:var(--ink);transform:translateY(4px);}
+.cover-scroll-arrow:focus-visible{outline:1px dashed var(--muted);outline-offset:3px;}
+/* Una sola leyenda debajo de cada pareja de mapas. */
+.shared-legend{max-width:900px;margin:24px auto 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px;color:var(--muted);}
+.shared-legend .emotion-legend,.shared-legend .difficulty-legend,.shared-legend .emotion-behavior-note{justify-content:center;align-items:center;gap:8px 22px;font-size:11px;line-height:1.6;}
+.shared-legend-help{margin:0;font-size:11px;line-height:1.65;}
+.shared-legend-method{margin:0;font-size:10px;line-height:1.6;max-width:730px;}
+@supports(grid-template-rows:subgrid){@media(min-width:761px){.comparison-difficulty .comparison-grid > .screen{grid-row:span 3;}}}
+/* Scroll reveal: the order is set by each point's x coordinate in JS. */
+.emotion-reveal-ready .emotion-point{opacity:0;visibility:hidden;}
+.emotion-reveal-ready.emotion-reveal-visible .emotion-point{animation:emotion-scroll-in .48s ease-out var(--reveal-delay,0ms) both;visibility:visible;}
+.emotion-reveal-ready .emotion-point:focus{visibility:visible;opacity:1;animation:none;}
+@keyframes emotion-scroll-in{from{opacity:0;visibility:hidden;}to{opacity:1;visibility:visible;}}
+@media(prefers-reduced-motion:reduce){.cover-scroll-arrow{animation:none;transition:none;}.emotion-reveal-ready .emotion-point,.emotion-reveal-ready.emotion-reveal-visible .emotion-point{opacity:1;visibility:visible;animation:none;}}
