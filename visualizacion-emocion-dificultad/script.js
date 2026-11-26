@@ -26,130 +26,106 @@ const EMOTION_LEVEL = {
 const STREETS = [
   {
     "name": "Prat",
-    "x1": 0,
+    "x1": 11.9,
     "y1": 112.5,
-    "x2": 158.5,
+    "x2": 197.7,
     "y2": 112.5,
     "major": true
   },
   {
     "name": "Sotomayor",
-    "x1": 158.5,
+    "x1": 197.7,
     "y1": 112.5,
-    "x2": 441.5,
+    "x2": 427.8,
     "y2": 112.5,
     "major": true
   },
   {
     "name": "Serrano",
-    "x1": 441.5,
+    "x1": 427.8,
     "y1": 112.5,
-    "x2": 1200,
+    "x2": 1188.1,
     "y2": 112.5,
     "major": true
   },
   {
     "name": "Cochrane",
-    "x1": 0,
+    "x1": 11.9,
     "y1": 320.5,
-    "x2": 1200,
+    "x2": 1188.1,
     "y2": 320.5,
     "major": true
   },
   {
     "name": "Blanco",
-    "x1": 0,
+    "x1": 11.9,
     "y1": 539.5,
-    "x2": 1200,
+    "x2": 1188.1,
     "y2": 539.5,
     "major": true
   },
   {
     "name": "Errázuriz",
-    "x1": 0,
+    "x1": 11.9,
     "y1": 742.3,
-    "x2": 1200,
+    "x2": 1188.1,
     "y2": 742.3,
     "major": true
   },
   {
     "name": "Sotomayor",
-    "x1": 172.2,
-    "y1": 320.5,
-    "x2": 172.2,
+    "x1": 197.7,
+    "y1": 112.5,
+    "x2": 197.7,
     "y2": 742.3,
     "major": false
   },
   {
     "name": "Sotomayor",
-    "x1": 375,
-    "y1": 320.5,
-    "x2": 375,
+    "x1": 427.8,
+    "y1": 112.5,
+    "x2": 427.8,
     "y2": 742.3,
     "major": false
   },
   {
     "name": "Almte. Muñoz",
-    "x1": 652.8,
-    "y1": 320.5,
-    "x2": 652.8,
+    "x1": 653.7,
+    "y1": 112.5,
+    "x2": 653.7,
     "y2": 742.3,
     "major": false
   },
   {
     "name": "Almte. Goñi",
-    "x1": 775.6,
-    "y1": 320.5,
-    "x2": 775.6,
+    "x1": 778.1,
+    "y1": 112.5,
+    "x2": 778.1,
     "y2": 539.5,
     "major": false
   },
   {
     "name": "Almte. Pérez",
-    "x1": 901.7,
-    "y1": 320.5,
-    "x2": 901.7,
+    "x1": 888.9,
+    "y1": 112.5,
+    "x2": 888.9,
     "y2": 539.5,
     "major": false
   },
   {
     "name": "Clave",
-    "x1": 998.9,
+    "x1": 1003.1,
     "y1": 320.5,
-    "x2": 998.9,
+    "x2": 1003.1,
     "y2": 742.3,
     "major": false
   },
   {
     "name": "San Martín",
-    "x1": 1131,
+    "x1": 1150.6,
     "y1": 320.5,
-    "x2": 1131,
+    "x2": 1150.6,
     "y2": 742.3,
-    "major": false
-  },
-  {
-    "name": "Paso superior",
-    "x1": 158.5,
-    "y1": 34.1,
-    "x2": 158.5,
-    "y2": 320.5,
-    "major": false
-  },
-  {
-    "name": "Paso superior",
-    "x1": 441.5,
-    "y1": 34.1,
-    "x2": 441.5,
-    "y2": 320.5,
-    "major": false
-  },
-  {
-    "name": "Paso superior",
-    "x1": 1009.1,
-    "y1": 112.5,
-    "x2": 1009.1,
-    "y2": 320.5,
     "major": false
   }
 ];
@@ -191,7 +167,7 @@ const EMOTIONS = [
     "quote": "Prefiere cruces declarados que adivinar por dónde cruzar.",
     "originalPlace": "Sin calle única",
     "anchor": [
-      172.2,
+      197.7,
       368.2
     ],
     "locationNote": "Sotomayor figura como lugar de mayor dificultad; el comentario habla de cruces, sin asociar la confianza a un cruce exacto."
@@ -252,7 +228,7 @@ const EMOTIONS = [
     "originalLabel": "Molestia y cansancio",
     "originalPlace": "Almte. Goñi y Clave",
     "anchor": [
-      998.9,
+      1003.1,
       376.7
     ],
     "locationNote": "También indica Almte. Goñi."
@@ -268,7 +244,7 @@ const EMOTIONS = [
     "quote": "Menciona pocos lugares para descansar",
     "originalPlace": "Almte. Goñi, Clave, Blanco y Cochrane",
     "anchor": [
-      775.6,
+      778.1,
       378.4
     ],
     "locationNote": "También indica Clave, Blanco y Cochrane."
@@ -284,7 +260,7 @@ const EMOTIONS = [
     "quote": "Sobre todo se siente insegura al cruzar las calles",
     "originalPlace": "Cruces de Sotomayor con Cochrane, Blanco y Serrano",
     "anchor": [
-      375,
+      427.8,
       112.5
     ],
     "locationNote": "Menciona los cruces con Cochrane, Blanco y Serrano; punto representativo en el cruce esquemático con Serrano."
@@ -300,7 +276,7 @@ const EMOTIONS = [
     "quote": "Sin comentario extra registrado.",
     "originalPlace": "Almte. Goñi, Clave, Blanco y Cochrane",
     "anchor": [
-      775.6,
+      778.1,
       504.5
     ],
     "locationNote": "También indica Clave, Blanco y Cochrane."
@@ -597,7 +573,7 @@ const EMOTIONS = [
     "quote": "“Las baldosas sueltas son una trampa, uno pisa y salta el agua sucia.” “Para sentarse hay que irse a la plaza y casi siempre está llena.”",
     "originalPlace": "Blanco y Clave",
     "anchor": [
-      998.9,
+      1003.1,
       588.1
     ],
     "locationNote": "También indica Blanco; no identifica un punto exacto de descanso."
@@ -614,7 +590,7 @@ const EMOTIONS = [
     "originalLabel": "Preocupación por las caídas",
     "originalPlace": "Cochrane y Almte. Goñi",
     "anchor": [
-      375,
+      427.8,
       390.3
     ],
     "locationNote": "El comentario menciona Sotomayor y la espera al cruzar; también señala Cochrane y Almte. Goñi como difíciles."
@@ -710,7 +686,7 @@ const EMOTIONS = [
     "originalLabel": "Cansancio y calor",
     "originalPlace": "Clave y Almte. Goñi",
     "anchor": [
-      775.6,
+      778.1,
       415.9
     ],
     "locationNote": "También señala Clave."
@@ -726,7 +702,7 @@ const EMOTIONS = [
     "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”",
     "originalPlace": "Cruce Cochrane con Sotomayor y Blanco",
     "anchor": [
-      172.2,
+      197.7,
       320.5
     ],
     "locationNote": "También indica Blanco; el comentario habla del transporte y la falta de descanso."
@@ -742,7 +718,7 @@ const EMOTIONS = [
     "quote": "“Las micros no paran donde uno les hace la seña, hay que subirse casi corriendo.” “No hay paradero con techo ni dónde sentarse.”",
     "originalPlace": "Cruce Cochrane con Sotomayor y Blanco",
     "anchor": [
-      375,
+      427.8,
       320.5
     ],
     "locationNote": "También indica Blanco; el comentario habla del transporte y la falta de descanso."
@@ -805,7 +781,7 @@ const EMOTIONS = [
     "kind": "mencionada",
     "quote": "“Solo se puede por Sotomayor y aun así hay que esquivar hoyos.” Su cuidadora señala que no salen los días de lluvia.",
     "anchor": [
-      375,
+      427.8,
       600.9
     ],
     "originalLabel": "Frustración e impotencia"
@@ -822,7 +798,7 @@ const EMOTIONS = [
     "originalLabel": "Sorpresa y atención",
     "originalPlace": "Prat, Sotomayor y Serrano",
     "anchor": [
-      68.2,
+      51.1,
       112.5
     ],
     "locationNote": "También indica Sotomayor y Serrano."
@@ -839,7 +815,7 @@ const EMOTIONS = [
     "originalLabel": "Desorientación y atención",
     "originalPlace": "Cochrane y Sotomayor",
     "anchor": [
-      204.5,
+      221.6,
       320.5
     ],
     "locationNote": "También indica Sotomayor."
@@ -884,7 +860,7 @@ const EMOTIONS = [
     "kind": "mencionada",
     "quote": "No alcanza a distinguir bien el color del semáforo; cruza siguiendo a la gente que va adelante.",
     "anchor": [
-      375,
+      427.8,
       320.5
     ],
     "originalLabel": "Inseguridad al cruzar"
@@ -900,7 +876,7 @@ const EMOTIONS = [
     "quote": "Sin comentario extra registrado.",
     "originalPlace": "Almte. Goñi y Clave",
     "anchor": [
-      998.9,
+      1003.1,
       673.3
     ],
     "locationNote": "También indica Almte. Goñi."
@@ -967,7 +943,7 @@ const EMOTIONS = [
     "quote": "Evita lo más posible, los pasajes pequeños, sobre todo después de las cinco de la tarde",
     "originalPlace": "Almte. Goñi, Almte. Pérez y Almte. Muñoz",
     "anchor": [
-      775.6,
+      778.1,
       341.8
     ],
     "locationNote": "También indica Almte. Pérez y Almte. Muñoz; menciona pasajes pequeños sin identificarlos."
@@ -977,20 +953,36 @@ const LEVEL_COLORS = {1:"#00D6C8",2:"#FF8A1F",3:"#9F2148"};
 const LEVEL_LABELS = {1:"Sensaciones positivas",2:"Sensaciones intermedias",3:"Emociones intensas"};
 const MAP_VIEWBOX = "-150 -65 1500 1030";
 // Positions are schematic. General experiences remain inside the map without a street attribution.
+const LABEL_ZONES = [{"name":"Prat","x":95.45454545454545,"y":112.5,"w":42.61363636363637,"h":14.204403409090908},{"name":"Sotomayor","x":312.78409090909093,"y":112.5,"w":73.29545454545455,"h":14.204403409090908},{"name":"Serrano","x":586.3636363636364,"y":112.5,"w":52.84090909090909,"h":14.204403409090908},{"name":"Cochrane","x":576.1363636363636,"y":320.45454545454544,"w":62.64204545454545,"h":14.204403409090908},{"name":"Blanco","x":569.3181818181819,"y":539.4886363636364,"w":49.00568181818182,"h":14.204403409090908},{"name":"Errázuriz","x":873.5795454545455,"y":742.3295454545455,"w":66.9034090909091,"h":14.204403409090908},{"name":"Sotomayor","x":197.72727272727272,"y":429.97159090909093,"w":47.72727272727273,"h":10.7953125},{"name":"Sotomayor","x":427.8409090909091,"y":429.97159090909093,"w":47.72727272727273,"h":10.7953125},{"name":"Almirante Goñi","x":778.125,"y":429.97159090909093,"w":65.625,"h":10.7953125},{"name":"Almirante Pérez","x":888.9204545454546,"y":345.17045454545456,"w":68.18181818181819,"h":10.7953125},{"name":"Clave","x":1003.125,"y":429.97159090909093,"w":29.829545454545457,"h":10.7953125},{"name":"San Martín","x":1150.5681818181818,"y":429.97159090909093,"w":49.43181818181818,"h":10.7953125},{"name":"Almirante Muñoz","x":653.6931818181819,"y":575.2840909090909,"w":71.5909090909091,"h":10.7953125}];
 function layoutEmotions() {
   const occupied=[];
+  const legal=(x,y)=>x>=18&&x<=1186&&y>=40&&y<=845&&
+    LABEL_ZONES.every(z=>Math.abs(x-z.x)>z.w+28||Math.abs(y-z.y)>z.h+28)&&
+    occupied.every(([px,py])=>Math.hypot(x-px,y-py)>=23);
   EMOTIONS.forEach(item=>{
     const [ax,ay]=item.anchor;
-    const street=STREETS.find(s=>s.x1===s.x2 ? ax===s.x1&&ay>=s.y1&&ay<=s.y2 : ay===s.y1&&ax>=s.x1&&ax<=s.x2);
-    const candidates=[[0,0]];
-    for(let n=1;n<=8;n++){
-      const delta=24*n;
-      if(street&&street.x1===street.x2)candidates.push([0,delta],[0,-delta]);
-      else if(street)candidates.push([delta,0],[-delta,0]);
-      else candidates.push([delta,0],[-delta,0],[0,delta],[0,-delta],[delta,delta],[-delta,-delta]);
+    const matching=STREETS.filter(s=>s.x1===s.x2 ? Math.abs(ax-s.x1)<.2&&ay>=s.y1-.2&&ay<=s.y2+.2 : Math.abs(ay-s.y1)<.2&&ax>=s.x1-.2&&ax<=s.x2+.2);
+    const normalized=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    const road=matching.find(s=>normalized(item.place).includes(normalized(s.name)))||matching[0];
+    const options=[[ax,ay]];
+    for(let n=1;n<=100;n++){
+      const delta=12*n;
+      if(road){
+        if(road.x1===road.x2)options.push([ax,ay+delta],[ax,ay-delta]);
+        else options.push([ax+delta,ay],[ax-delta,ay]);
+      }else options.push([ax+delta,ay],[ax-delta,ay],[ax,ay+delta],[ax,ay-delta],[ax+delta,ay+delta],[ax-delta,ay-delta]);
     }
-    const off=candidates.find(([dx,dy])=>ax+dx>=55&&ax+dx<=1140&&ay+dy>=55&&ay+dy<=845&&occupied.every(([x,y])=>Math.hypot(ax+dx-x,ay+dy-y)>=23))||[0,0];
-    item.x=ax+off[0];item.y=ay+off[1];occupied.push([item.x,item.y]);
+    const within=(x,y)=>!road||(x>=Math.min(road.x1,road.x2)-.2&&x<=Math.max(road.x1,road.x2)+.2&&y>=Math.min(road.y1,road.y2)-.2&&y<=Math.max(road.y1,road.y2)+.2);
+    let p=options.find(([x,y])=>within(x,y)&&legal(x,y));
+    if(!p){
+      // A very short/crowded segment may need a nearby offset. Its original reference is retained.
+      const candidates=[];
+      for(let r=12;r<=240;r+=12)for(let a=0;a<16;a++)candidates.push([ax+Math.cos(a*Math.PI/8)*r,ay+Math.sin(a*Math.PI/8)*r]);
+      p=candidates.find(([x,y])=>legal(x,y));
+    }
+    if(!p)throw Error("No hay posición libre para "+item.id);
+    [item.x,item.y]=p;
+    occupied.push(p);
   });
 }
 layoutEmotions();
@@ -1031,7 +1023,7 @@ const DIFFICULTY_SEGMENTS = [
 ];
 
 // Remap legacy schematic physical segments onto the new drawing; unavailable street geometry is not fabricated.
-const NIGHT_SEGMENTS = {"pav-r1":[70,871,202,871],"pav-r2":[440,633,610,633],"pav-r3":[1172,132,1327,132],"pav-y1":[610,376,1172,376],"pav-y2":[910,633,1327,633],"pav-g1":[910,871,1058,871],"obs-r1":[202,633,202,376],"obs-r2":[202,633,440,633],"obs-r3":[440,871,440,633],"obs-r4":[186,132,518,132],"obs-y1":null,"obs-y2":[910,633,910,376],"obs-g1":[1172,132,1245,132],"obs-g2":[1245,132,1327,132],"sig-r1":[1172,633,1172,376],"sig-r2":[1327,633,1327,376],"sig-r3":[910,633,910,376],"sig-y1":null,"sig-y2":null,"sig-y3":[1327,871,1327,633],"sig-g1":[12,132,176,132],"sig-g2":[610,871,1172,871]};
+const NIGHT_SEGMENTS = {"pav-r1":[90,871,232,871],"pav-r2":[502,633,640,633],"pav-r3":[1177,132,1350,132],"pav-y1":[640,376,1177,376],"pav-y2":[913,633,1350,633],"pav-g1":[913,871,1043,871],"obs-r1":[232,633,232,376],"obs-r2":[232,633,502,633],"obs-r3":[502,871,502,633],"obs-r4":[215,132,565,132],"obs-y1":null,"obs-y2":[913,633,913,376],"obs-g1":[1177,132,1258,132],"obs-g2":[1258,132,1350,132],"sig-r1":[1177,633,1177,376],"sig-r2":[1350,633,1350,376],"sig-r3":[913,633,913,376],"sig-y1":null,"sig-y2":null,"sig-y3":[1350,871,1350,633],"sig-g1":[27,132,204,132],"sig-g2":[640,871,1177,871]};
 DIFFICULTY_SEGMENTS.forEach(item=>{const coords=NIGHT_SEGMENTS[item.id];if(!coords){item.offMap=true;return;}[item.x1,item.y1,item.x2,item.y2]=coords.map(v=>v*1200/1408);});
 
 let activeFilter = "todas";
@@ -1052,31 +1044,13 @@ function svgEl(tag) {
 
 function drawBaseMap(svg) {
   const image=svgEl("image");
-  image.setAttribute("href", new URL("./mapa-valparaiso-nocturno.svg?v=04",document.currentScript?.src || MAP_SCRIPT_URL).href);
+  image.setAttribute("href", new URL("./mapa-valparaiso-nocturno.svg?v=05",document.currentScript?.src || MAP_SCRIPT_URL).href);
   image.setAttribute("x",0);image.setAttribute("y",0);
   image.setAttribute("width",1200);image.setAttribute("height",900);
   image.setAttribute("preserveAspectRatio","xMidYMid meet");
   image.setAttribute("pointer-events","none");
   image.setAttribute("class","night-map-base");
   svg.append(image);
-  // Labels live in the left margin, sharing the original road coordinates.
-  const labels=svgEl("g");
-  labels.setAttribute("class","main-street-labels");
-  for(const [name,originalY] of [["Prat",132],["Cochrane",376],["Blanco",633],["Errázuriz",871]]){
-    const y=originalY*1200/1408;
-    const text=svgEl("text");
-    text.setAttribute("x",-138);
-    text.setAttribute("y",y);
-    text.setAttribute("dominant-baseline","middle");
-    text.setAttribute("class","main-street-label");
-    text.textContent=name;
-    labels.append(text);
-    const line=svgEl("path");
-    line.setAttribute("d","M-27 "+y+" H-5 l-5 -4 M-5 "+y+" l-5 4");
-    line.setAttribute("class","main-street-guide");
-    labels.append(line);
-  }
-  svg.append(labels);
 }
 
 function emotionFill(level) { return LEVEL_COLORS[level]; }
