@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-emocion-toggle-01" />
+  <link rel="stylesheet" href="./style.css?v=final-scroll-01" />
 </head>
 <body>
   <header class="animated-cover" aria-labelledby="cover-title">
@@ -86,7 +86,7 @@
   <div class="cover-content">
     <p class="eyebrow">Visualización de datos . Barrio Puerto, Valparaíso y Buenos Aires, Argentina</p>
     <h1 class="cover-title" id="cover-title" aria-label="EMOCIÓN vs. DIFICULTAD"><span class="cover-line" aria-hidden="true"><span class="cover-word"><span class="cover-letter" style="--letter-delay:0.120s">E</span><span class="cover-letter" style="--letter-delay:0.165s">M</span><span class="cover-letter" style="--letter-delay:0.210s">O</span><span class="cover-letter" style="--letter-delay:0.255s">C</span><span class="cover-letter" style="--letter-delay:0.300s">I</span><span class="cover-letter" style="--letter-delay:0.345s">Ó</span><span class="cover-letter" style="--letter-delay:0.390s">N</span></span> <span class="cover-word cover-versus"><span class="cover-letter" style="--letter-delay:0.435s">v</span><span class="cover-letter" style="--letter-delay:0.480s">s</span><span class="cover-letter" style="--letter-delay:0.525s">.</span></span></span><span class="cover-line" aria-hidden="true"><span class="cover-word"><span class="cover-letter" style="--letter-delay:0.570s">D</span><span class="cover-letter" style="--letter-delay:0.615s">I</span><span class="cover-letter" style="--letter-delay:0.660s">F</span><span class="cover-letter" style="--letter-delay:0.705s">I</span><span class="cover-letter" style="--letter-delay:0.750s">C</span><span class="cover-letter" style="--letter-delay:0.795s">U</span><span class="cover-letter" style="--letter-delay:0.840s">L</span><span class="cover-letter" style="--letter-delay:0.885s">T</span><span class="cover-letter" style="--letter-delay:0.930s">A</span><span class="cover-letter" style="--letter-delay:0.975s">D</span></span></span></h1>
-    <a class="cover-enter" href="#introduccion"><span>Explorar visualización</span><span class="cover-arrow" aria-hidden="true">↓</span></a>
+    <a class="cover-scroll-arrow" href="#introduccion" aria-label="Desplazarse a la introducción"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </header>
   <main class="page-shell">
@@ -98,7 +98,7 @@
     </section>
 
     <section class="comparison-section comparison-emotions" aria-label="Comparación de emociones">
-      <p class="comparison-instruction">Cada círculo representa una emoción, clasificada en tres niveles de intensidad: baja, media y alta. Al pasar el cursor sobre él, se expande y palpita según su intensidad, revelando el testimonio de la persona.</p>
+      <p class="comparison-instruction">Compara la intensidad emocional de los recorridos en ambas ciudades.</p>
       <div class="comparison-grid">
         <section class="screen" id="emocionalidad">
       <div class="section-heading"><h2>Emociones Barrio Puerto</h2></div>
@@ -121,14 +121,7 @@
           </div>
         </div>
 
-        <div class="map-bottom">
-          <div class="emotion-legend">
-            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
-            <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
-            <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
-          </div>
-          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
-        </div>
+        
       </div>
       
     </section>
@@ -153,22 +146,24 @@
           </div>
         </div>
 
-        <div class="map-bottom">
-          <div class="emotion-legend">
-            <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
-            <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
-            <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
-          </div>
-          <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
-        </div>
+        
       </div>
       
     </section>
       </div>
+      <div class="shared-legend" aria-label="Leyenda común de emociones">
+        <div class="emotion-legend">
+          <span data-emotion="entusiasmo"><i></i>Nivel 1 · Intensidad baja</span>
+          <span data-emotion="preocupacion"><i></i>Nivel 2 · Intensidad media</span>
+          <span data-emotion="frustracion"><i></i>Nivel 3 · Intensidad alta</span>
+        </div>
+        <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
+        <p class="shared-legend-help">Pasa el cursor sobre un círculo para leer el testimonio y observar su palpitación.</p>
+      </div>
     </section>
 
     <section class="comparison-section comparison-difficulty" aria-label="Comparación de dificultad física">
-      <p class="comparison-instruction">Explora las condiciones físicas del recorrido por superficie, descanso u orientación. Activa Emoción para superponer los círculos emocionales y comparar ambas dimensiones.</p>
+      <p class="comparison-instruction">Compara las condiciones físicas del recorrido por superficie, descanso u orientación.</p>
       <div class="comparison-grid">
         <section class="screen" id="dificultad">
       <div class="section-heading"><h2>Dificultad física · Barrio Puerto</h2></div>
@@ -201,16 +196,8 @@
           </div>
         </div>
 
-        <div class="map-bottom difficulty-bottom">
-          <div class="difficulty-legend">
-            <span><i class="hard"></i>Rojo · Dificultad alta</span>
-            <span><i class="medium"></i>Amarillo · Dificultad media</span>
-            <span><i class="easy"></i>Verde · Sin dificultad observable</span>
-          </div>
-          
-        </div>
+        
       </div>
-    <p class="coding-note">162 franjas según la codificación del Grupo 3. Pasa el cursor sobre un tramo para desplegar sus franjas superpuestas. Asignación a filtros provisional por cantidad; todas las franjas tienen filtro asignado. Ubicaciones gráficas referenciales sobre los ejes de calle; los intertramos se proyectan al eje más cercano de su sector.</p>
     </section>
         <section class="screen" id="dificultad-arg">
       <div class="section-heading"><h2>Dificultad física · Buenos Aires</h2></div>
@@ -243,21 +230,22 @@
           </div>
         </div>
 
-        <div class="map-bottom difficulty-bottom">
-          <div class="difficulty-legend">
-            <span><i class="hard"></i>Rojo · Dificultad alta</span>
-            <span><i class="medium"></i>Amarillo · Dificultad media</span>
-            <span><i class="easy"></i>Verde · Sin dificultad observable</span>
-          </div>
-          
-        </div>
+        
       </div>
-    <p class="coding-note">141 franjas según la codificación del Grupo 3. Pasa el cursor sobre un tramo para desplegar sus franjas superpuestas. Asignación a filtros provisional por cantidad; 21 verdes sin filtro aparecen únicamente en Todas. Ubicaciones gráficas referenciales; los intertramos se proyectan a un eje adyacente.</p>
     </section>
+      </div>
+      <div class="shared-legend" aria-label="Leyenda común de dificultad física">
+        <div class="difficulty-legend">
+          <span><i class="hard"></i>Rojo · Dificultad alta</span>
+          <span><i class="medium"></i>Amarillo · Dificultad media</span>
+          <span><i class="easy"></i>Verde · Sin dificultad observable</span>
+        </div>
+        <p class="shared-legend-help">Pasa el cursor sobre las franjas superpuestas para desplegarlas. Activa Emoción para ver los círculos.</p>
+        <p class="shared-legend-method">Ubicaciones esquemáticas y asignación de categorías por cantidades. En Buenos Aires, las franjas verdes sin categoría se muestran en Todas.</p>
       </div>
     </section>
   </main>
 
-  <script src="./script.js?v=final-emocion-toggle-01"></script>
+  <script src="./script.js?v=final-scroll-01"></script>
 </body>
 </html>
