@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción vs dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="./style.css?v=final-scroll-01" />
+  <link rel="stylesheet" href="./style.css?v=experimental-3d-01" />
 </head>
 <body>
   <header class="animated-cover" aria-labelledby="cover-title">
@@ -98,7 +98,7 @@
     </section>
 
     <section class="comparison-section comparison-emotions" aria-label="Comparación de emociones">
-      <p class="comparison-instruction">Compara la intensidad emocional de los recorridos en ambas ciudades.</p>
+      <p class="comparison-instruction">Compara la intensidad emocional de los recorridos en ambas ciudades. Explora la maqueta 3D: arrastra para desplazarte, usa + y − para acercarte, y las flechas curvas para girar.</p>
       <div class="comparison-grid">
         <section class="screen" id="emocionalidad">
       <div class="section-heading"><h2>Emociones Barrio Puerto</h2></div>
@@ -159,6 +159,7 @@
         </div>
         <div class="emotion-behavior-note"><span>Hover</span><span>Expansión pequeña · lenta</span><span>Media · moderada</span><span>Grande · rápida</span></div>
         <p class="shared-legend-help">Pasa el cursor sobre un círculo para leer el testimonio y observar su palpitación.</p>
+        <p class="shared-legend-help map-camera-note">Maqueta 3D esquemática: calles del mapa original; alturas y volúmenes ilustrativos. Mayús + arrastrar para girar e inclinar. Ctrl/⌘ + rueda para acercar.</p>
       </div>
     </section>
 
@@ -245,6 +246,7 @@
     </section>
   </main>
 
-  <script src="./script.js?v=final-scroll-01"></script>
+  <script src="./script.js?v=experimental-3d-01"></script>
+  <script src="./mapa-3d.js?v=experimental-3d-01"></script>
 </body>
 </html>
