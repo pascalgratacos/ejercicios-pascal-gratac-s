@@ -717,3 +717,52 @@ h1 span {
  .cover-paths path{stroke-dasharray:none;stroke-dashoffset:0;}
  .cover-enter,.cover-arrow{transition:none;}
 }
+
+/* Vista comparativa: dos columnas iguales, con adaptación a pantallas estrechas. */
+.animated-cover,.project-intro {border-bottom:0;}
+.page-shell {width:min(1840px,calc(100% - 48px));}
+.project-intro {padding-bottom:40px;}
+.comparison-section {padding:32px 0 70px;}
+.comparison-section + .comparison-section {padding-top:18px;}
+.comparison-instruction {max-width:840px;margin:0 auto 30px;text-align:center;color:var(--muted);font-size:14px;line-height:1.8;}
+.comparison-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start;}
+.comparison-grid > .screen {min-width:0;display:flex;flex-direction:column;padding:0;border:0;}
+.comparison-grid .section-heading {display:block;min-width:0;margin:0 0 20px;}
+.comparison-grid .section-heading h2 {font-size:clamp(25px,2.7vw,47px);line-height:1.12;letter-spacing:-.025em;overflow-wrap:normal;}
+.comparison-grid .map-shell {min-width:0;width:100%;border-radius:14px;}
+.comparison-grid .map-stage {min-height:0;height:auto;}
+.comparison-grid .map-stage > svg {display:block;width:100%;height:auto;min-height:0;aspect-ratio:1500/1030;}
+.comparison-grid .map-topline {min-height:52px;padding:12px 15px;font-size:9px;line-height:1.55;letter-spacing:.075em;align-items:center;}
+.comparison-difficulty .map-topline {min-height:65px;}
+.comparison-grid .control-bar {margin:0 0 14px;min-height:44px;gap:0;justify-content:flex-start;align-items:center;}
+.comparison-grid .filter-group {gap:8px clamp(10px,1.5vw,22px);font-size:12px;}
+.comparison-grid .filter-link {white-space:nowrap;padding:7px 0 8px;}
+.comparison-grid .control-label {font-size:9px;}
+.comparison-grid .map-bottom {padding:12px 15px;gap:8px;flex-direction:column;align-items:flex-start;justify-content:flex-start;}
+.comparison-grid .emotion-legend,.comparison-grid .difficulty-legend {gap:6px 14px;font-size:10px;line-height:1.5;}
+.comparison-grid .emotion-behavior-note {gap:6px 12px;font-size:9px;line-height:1.5;}
+.comparison-grid .coding-note {font-size:10px;line-height:1.6;margin-top:10px;}
+.comparison-grid .map-tooltip,.comparison-grid .emotion-tooltip {max-width:calc(100% - 16px);}
+@supports(grid-template-rows:subgrid) {
+  .comparison-grid {row-gap:0;align-items:stretch;}
+  .comparison-grid > .screen {display:grid;grid-template-rows:subgrid;grid-row:span 2;}
+  .comparison-difficulty .comparison-grid > .screen {grid-row:span 4;}
+}
+@media(max-width:1050px) and (min-width:761px) {
+  .comparison-grid{column-gap:16px;}
+  .comparison-grid .section-heading h2{font-size:clamp(22px,2.7vw,28px);}
+  .comparison-grid .control-bar{min-height:64px;}
+  .comparison-grid .filter-group{gap:5px 12px;}
+  .comparison-grid .map-topline{min-height:64px;}
+  .comparison-difficulty .map-topline{min-height:80px;}
+}
+@media(max-width:760px) {
+  .page-shell {width:calc(100% - 24px);}
+  .comparison-grid {grid-template-columns:minmax(0,1fr);gap:32px;}
+  .comparison-grid > .screen,.comparison-difficulty .comparison-grid > .screen {display:flex;grid-row:auto;}
+  .comparison-section {padding:22px 0 48px;}
+  .comparison-instruction {font-size:13px;text-align:left;margin-bottom:24px;}
+  .comparison-grid .section-heading h2 {font-size:clamp(25px,5vw,36px);}
+  .comparison-grid .map-topline,.comparison-difficulty .map-topline{min-height:0;}
+  .comparison-grid .control-bar{min-height:0;}
+}
