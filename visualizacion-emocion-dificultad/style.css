@@ -585,7 +585,7 @@ h1 span {
 
 /* Proyecto final: niveles emocionales, mismos puntos en las dos lecturas. */
 .map-stage{min-height:0;}
-#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/760;}
+#emotionMap,#difficultyMap{width:100%;height:auto;min-height:0;aspect-ratio:1200/900;}
 .emotion-point .emotion-core,.emotion-point .emotion-halo,.emotion-leader{pointer-events:none;}
 .emotion-hit{pointer-events:all;}
 .emotion-core{stroke:none;stroke-width:0;transition:transform .2s ease;}
