@@ -1198,6 +1198,30 @@ for(const city of ["cl","arg"]){
  renderEmotionMap(city);renderDifficultyMap(city);
 }
 
+
+// Vista previa vectorial: reutiliza las mismas capas y geometría ya renderizadas.
+// Es una copia visual independiente: los filtros y los eventos del mapa original no cambian.
+function renderPreviewLens(){
+ const preview=document.getElementById("previewLensMap");
+ if(!preview)return;
+ const sourceDifficulty=difficultyMap.querySelector(".difficulty-layer");
+ const sourceEmotions=emotionMap.querySelector(".emotion-layer");
+ if(!sourceDifficulty||!sourceEmotions)return;
+ preview.replaceChildren();
+ drawBaseMap(preview,"cl");
+ for(const source of [sourceDifficulty,sourceEmotions]){
+   const layer=source.cloneNode(true);
+   layer.querySelectorAll("[tabindex],[role],[aria-label]").forEach(node=>{
+     node.removeAttribute("tabindex");
+     node.removeAttribute("role");
+     node.removeAttribute("aria-label");
+   });
+   layer.setAttribute("aria-hidden","true");
+   preview.appendChild(layer);
+ }
+}
+renderPreviewLens();
+
 // Reveal only the upper emotion maps, once they enter the viewport.
 function initEmotionScrollReveal(){
  if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;

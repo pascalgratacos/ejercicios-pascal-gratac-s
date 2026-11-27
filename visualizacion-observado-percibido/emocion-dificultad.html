@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción y dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-correccion-03" />
+  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-correccion-04" />
 </head>
 <body>
   <header class="animated-cover" id="inicio" aria-labelledby="cover-title">
@@ -97,19 +97,6 @@
       </div>
     </section>
 
-    <section class="conditions-overview" id="habitar" aria-labelledby="conditions-title" data-closing-reveal>
-      <header class="closing-heading overview-heading">
-        <h2 id="conditions-title">Las condiciones que permiten habitar</h2>
-      </header>
-      <figure class="conditions-preview">
-        <div class="preview-lens"><img src="../visualizacion-emocion-dificultad/lupa-cochrane.png" width="302" height="302" alt="Detalle referencial de calle Cochrane: franjas de dificultad física y círculos emocionales de distintas intensidades." /></div>
-        <svg class="preview-arrow" viewBox="0 0 160 92" fill="none" aria-hidden="true"><path d="M2 62C42 62 53 18 91 18H151M141 11l10 7-10 7" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <figcaption class="preview-annotation">
-          <!-- Reemplazar por el texto definitivo de la anotación. -->
-          <p class="preview-annotation-text">Texto de apoyo por definir.</p>
-        </figcaption>
-      </figure>
-    </section>
     <div class="conditions-detail-wrap"><section class="closing-section closing-conditions" id="condiciones-detalle" aria-label="Superficie, descanso y orientación">
         <div class="conditions-scroll-panel">
         <header class="closing-heading">
@@ -122,6 +109,20 @@
         <p class="closing-statement">Habitar la ciudad implica mucho más que poder desplazarse por ella.</p>
         </div>
       </section></div>
+
+    <section class="conditions-overview" id="habitar" aria-labelledby="conditions-title" data-closing-reveal>
+      <header class="closing-heading overview-heading">
+        <h2 id="conditions-title">Las condiciones que permiten habitar</h2>
+      </header>
+      <figure class="conditions-preview">
+        <div class="preview-lens"><svg id="previewLensMap" class="preview-lens-map" viewBox="300 80 440 440" role="img" aria-label="Recorte vectorial del mapa de Cochrane con las capas reales de dificultad física y emociones"></svg></div>
+        <svg class="preview-arrow" viewBox="0 0 160 92" fill="none" aria-hidden="true"><path d="M2 72Q90 72 148 16M135 19L148 16 145 29" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <figcaption class="preview-annotation">
+          <!-- Reemplazar por el texto definitivo de la anotación. -->
+          <p class="preview-annotation-text">Texto de apoyo por definir.</p>
+        </figcaption>
+      </figure>
+    </section>
 
     <section class="comparison-section comparison-emotions" aria-label="Comparación de emociones">
       <p class="comparison-instruction">Compara la intensidad emocional de los recorridos en ambas ciudades.</p>
@@ -373,7 +374,7 @@
     </div>
   </footer>
 
-  <script src="../visualizacion-emocion-dificultad/script.js?v=final-scroll-01"></script>
+  <script src="../visualizacion-emocion-dificultad/script.js?v=final-correccion-04"></script>
 
   <script>
   (function(){
