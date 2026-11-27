@@ -845,7 +845,7 @@ h1 span {
 .closing-phrase{font-family:"Jost",Arial,sans-serif;font-size:clamp(35px,6.3vw,92px);font-weight:400;line-height:1.12;letter-spacing:-.035em;margin:0 0 36px;color:var(--ink);}
 .closing-phrase-line{display:block;}
 .closing-phrase-word{display:inline-block;white-space:nowrap;}
-.closing-phrase .cover-letter{animation:none;}
+.closing-phrase .cover-letter{display:inline-block;animation:none;}
 .closing-return:hover{transform:translateY(-4px);}
 .closing-ready .closing-heading,.closing-ready .closing-city,.closing-ready .closing-condition,.closing-ready .closing-scale{opacity:0;transform:translateY(20px);}
 .closing-ready.closing-visible .closing-heading,.closing-ready.closing-visible .closing-city,.closing-ready.closing-visible .closing-condition,.closing-ready.closing-visible .closing-scale{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
