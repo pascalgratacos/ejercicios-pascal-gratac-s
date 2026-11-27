@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emoción y dificultad</title>
   <meta name="description" content="Visualización interactiva de emocionalidad y dificultad física en Barrio Puerto de Valparaíso." />
-  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-cierre-01" />
+  <link rel="stylesheet" href="../visualizacion-emocion-dificultad/style.css?v=final-cierre-scroll-02" />
 </head>
 <body>
   <header class="animated-cover" id="inicio" aria-labelledby="cover-title">
@@ -256,7 +256,8 @@
         <p class="closing-reading">En los registros de Buenos Aires predomina la intensidad emocional baja y una mayor proporción de franjas sin dificultad observable. En Barrio Puerto, las intensidades medias y altas y las franjas de dificultad alta adquieren mayor presencia.</p>
         <p class="closing-caption">Cada círculo representa un registro emocional, no necesariamente una persona distinta. Las proporciones se calculan dentro de los registros de cada ciudad; describen el estudio y no a toda su población.</p>
       </section>
-      <section class="closing-section closing-conditions" id="habitar" aria-labelledby="conditions-title" data-closing-reveal>
+      <section class="closing-section closing-conditions" id="habitar" aria-labelledby="conditions-title">
+        <div class="conditions-scroll-panel">
         <header class="closing-heading">
           <p class="closing-overline">Una mirada desde el diseño</p>
           <h2 id="conditions-title">Las condiciones que permiten habitar</h2>
@@ -266,6 +267,7 @@
 <article class="closing-condition"><div class="closing-icon"><svg viewBox="0 0 144 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M25 40h94v25H25zM25 65 16 76h112l-9-11M16 76v8h112v-8M29 84v12m86-12v12M35 40V29m74 11V29M25 52h94M12 96h120"/></svg></div><p class="closing-overline">Descanso</p><h3>Permanecer</h3><p>Contar con espacios para detenerse, recuperar energía y permanecer en la ciudad.</p></article>
 <article class="closing-condition"><div class="closing-icon"><svg viewBox="0 0 144 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M69 9v82m7-82v82M76 19h31l12 11-12 11H76M69 48H36L24 59l12 11h33M55 91h35"/></svg></div><p class="closing-overline">Orientación</p><h3>Reconocer</h3><p>Comprender los cruces y las referencias del entorno para desplazarse con confianza.</p></article></div>
         <p class="closing-statement">Habitar la ciudad implica mucho más que poder desplazarse por ella.</p>
+        </div>
       </section>
       <section class="closing-section closing-scales" id="escalas" aria-labelledby="scales-title" data-closing-reveal>
         <header class="closing-heading">
@@ -377,6 +379,71 @@
       section.classList.add("closing-ready");
       observer.observe(section);
     });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const section=document.getElementById("habitar");
+    if(!section)return;
+    const panel=section.querySelector(".conditions-scroll-panel");
+    const cards=[...section.querySelectorAll(".closing-condition")];
+    const statement=section.querySelector(".closing-statement");
+    const motion=window.matchMedia("(prefers-reduced-motion: reduce)");
+    const wide=window.matchMedia("(min-width: 761px)");
+    const clamp=(v)=>Math.max(0,Math.min(1,v));
+    const smooth=v=>{v=clamp(v);return v*v*(3-2*v);};
+    let travel=0,frame=0,pinned=false;
+    function setReveal(el,value){
+      if(!el)return;
+      const p=smooth(value);
+      el.style.setProperty("--condition-opacity",p.toFixed(4));
+      el.style.setProperty("--condition-drop",((1-p)*-58).toFixed(2)+"px");
+    }
+    function naturalTop(el){
+      return el.getBoundingClientRect().top-(parseFloat(el.style.getPropertyValue("--condition-drop"))||0);
+    }
+    function render(){
+      frame=0;
+      if(motion.matches)return;
+      const vh=window.innerHeight;
+      if(pinned){
+        const p=clamp(-section.getBoundingClientRect().top/travel);
+        cards.forEach((card,i)=>setReveal(card,(p-(.025+i*.245))/.22));
+        setReveal(statement,(p-.77)/.12);
+      }else{
+        cards.forEach(card=>setReveal(card,(vh*.94-naturalTop(card))/(vh*.24)));
+        if(statement)setReveal(statement,(vh*.96-naturalTop(statement))/(vh*.18));
+      }
+    }
+    function schedule(){if(!frame)frame=requestAnimationFrame(render);}
+    function layout(){
+      section.classList.remove("conditions-pinned");
+      section.style.removeProperty("--conditions-travel");
+      pinned=false;
+      if(motion.matches){
+        section.classList.remove("conditions-enhanced");
+        [...cards,statement].filter(Boolean).forEach(el=>{el.style.removeProperty("--condition-opacity");el.style.removeProperty("--condition-drop");});
+        return;
+      }
+      section.classList.add("conditions-enhanced");
+      if(wide.matches){
+        section.classList.add("conditions-pinned");
+        const vh=window.innerHeight;
+        if(panel.getBoundingClientRect().height<=vh+2){
+          travel=Math.max(760,Math.round(vh*1.35));
+          section.style.setProperty("--conditions-travel",travel+"px");
+          pinned=true;
+        }else section.classList.remove("conditions-pinned");
+      }
+      render();
+    }
+    window.addEventListener("scroll",schedule,{passive:true});
+    window.addEventListener("resize",layout,{passive:true});
+    if(motion.addEventListener)motion.addEventListener("change",layout);
+    else if(motion.addListener)motion.addListener(layout);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+    layout();
   })();
   </script>
 </body>
