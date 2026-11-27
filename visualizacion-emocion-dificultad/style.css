@@ -945,3 +945,18 @@ h1 span {
 .preview-lens-map .difficulty-stack .stacked-line{animation:none;stroke-dasharray:none;stroke-dashoffset:0;transition:none;}
 .preview-lens-map .emotion-point{pointer-events:none;}
 .preview-lens-map .stack-hit,.preview-lens-map .emotion-hit,.preview-lens-map .emotion-halo{display:none;}
+
+/* Encabezado de los pilares y pausa narrativa entre la lupa y los mapas. */
+.conditions-detail-wrap{scroll-margin-top:24px;}
+.conditions-detail-wrap .conditions-heading{max-width:none;}
+.conditions-detail-wrap .conditions-heading h2{font-size:clamp(12px,4.4vw,64px);white-space:nowrap;line-height:1.12;letter-spacing:-.035em;}
+.conditions-heading.closing-ready{opacity:0;transform:translateY(20px);}
+.conditions-heading.closing-ready.closing-visible{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
+.conditions-overview{padding-bottom:clamp(135px,20vh,225px);}
+.conditions-overview .overview-heading h2{font-size:clamp(26px,4vw,58px);}
+@media(max-width:760px){
+ .conditions-overview{padding-bottom:100px;}
+ .conditions-overview .overview-heading h2{font-size:clamp(23px,5.5vw,38px);white-space:normal;}
+ .conditions-detail-wrap .conditions-heading h2{font-size:clamp(11px,4.4vw,33px);}
+}
+@media(prefers-reduced-motion:reduce){.conditions-heading.closing-ready{opacity:1!important;transform:none!important;transition:none!important;}}
